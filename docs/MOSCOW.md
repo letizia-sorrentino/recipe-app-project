@@ -1,5 +1,4 @@
 ## must have
-
 - loading
 - onboarding
 - homepage
@@ -11,11 +10,9 @@
 - settings
 
 ## should have
-
 - update settings
+- shopping list / grocery list
 
 ## could have
-
-- shopping list / grocery list
 - animations
 - meal planner
