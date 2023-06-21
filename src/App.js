@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import getData from './features/recipe/recipeAPI';
-//import Loading from './features/components/Loading';
+// import {data} from './app/store';
+// import Loading from './features/components/Loading';
 import './App.css';
 //import logo from './logo.svg';
 
@@ -9,7 +10,7 @@ const App = () => {
     getData();
 }, []); //[] means it runs once
 
-//below is the return
+// //below is the return
 // if (!data) return <Loading />;
 // if (data.length === 0) return <p>Try again!</p>;
 
