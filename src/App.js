@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import getData from './features/recipes/recipesAPI';
+import getData from './features/recipe/recipeAPI';
 //import Loading from './features/components/Loading';
 import './App.css';
 //import logo from './logo.svg';
