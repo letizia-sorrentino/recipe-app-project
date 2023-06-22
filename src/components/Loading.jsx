@@ -1,5 +1,9 @@
+import { ReactComponent as Logo } from '../assets/logo.svg';
+
 const Loading = () => {
-    return <div>Loading...</div>;
+    return <div> 
+      <Logo />
+      </div>;
   };
   
   export default Loading;
