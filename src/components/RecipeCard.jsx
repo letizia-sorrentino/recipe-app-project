@@ -1,12 +1,14 @@
 import Image from "./Image";
-import Name from "./Name";
+import Title from "./Title";
 
 
-const RecipeCard = () => {
+const RecipeCard = (props) => {
+
+  const {title, image} = props;
     return <div> 
 
-      <Image />
-      <Name />
+      <Image image={image} />
+      <Title title={title}/>
 
       </div>;
   };

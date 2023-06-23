@@ -1,4 +1,5 @@
-import RecipeCard from "./RecipeCard";
+//import RecipeCard from "./RecipeCard";
+import Recipes from "../features/storeRecipes/Recipes";
 import Search from "./Search";
 
 const Homepage = () => {
@@ -10,7 +11,7 @@ const Homepage = () => {
       </div>     
       <div>
         <h1>Recipes</h1>
-        <RecipeCard />
+        <Recipes />
       </div>
       <div>
         <h1>Categories</h1>

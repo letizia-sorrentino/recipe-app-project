@@ -1,8 +1,6 @@
-import { ReactComponent as Logo } from '../assets/logo.svg';
-
 const Loading = () => {
     return <div> 
-      <Logo />
+      <h1>Loading..</h1>
       </div>;
   };
   

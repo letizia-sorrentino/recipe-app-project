@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {};
 
 export const storeRecipesSlice = createSlice({
-    name: 'storeRecipe',
+    name: 'storeRecipes',
     initialState,
     reducers: {
         storeRecipes: (state, action) => {
-            state.recipes = action.payload;
+            state.storeRecipes = action.payload;
         },
 
     }
@@ -17,6 +17,6 @@ export const storeRecipesSlice = createSlice({
 export const { storeRecipes } = storeRecipesSlice.actions;
 
 //export data
-export const selectRecipes = (state) => state.recipes;
+export const selectRecipes = (state) => state.storeRecipes;
 
 export default storeRecipesSlice.reducer;
