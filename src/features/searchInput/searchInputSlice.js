@@ -8,14 +8,18 @@ export const searchInputSlice = createSlice({
     reducers: {
         setSearchInput: (state, action) => {
             state.searchInput = action.payload;
-        }
+        },
+
+        clearSearchInput: () => {
+            return '';
+        },
     }
 })
 
 //export actions
-export const { setSearchInput } = searchInputSlice.actions;
+export const { setSearchInput, clearSearchInput } = searchInputSlice.actions;
 
 //export data
-export const selectSearchInput = (state) => state.searchInput;
+export const selectSearchInput = (state) => state.searchInput.searchInput;
 
 export default searchInputSlice.reducer;

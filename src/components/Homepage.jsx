@@ -1,13 +1,12 @@
-//import RecipeCard from "./RecipeCard";
+import SearchBar from "../features/searchInput/SearchBar";
 import Recipes from "../features/storeRecipes/Recipes";
-import Search from "./Search";
 
 const Homepage = () => {
   return (
     <> 
     <div>
         <h1>Find the best recipes:</h1>
-        <Search />
+        <SearchBar />
       </div>     
       <div>
         <h1>Recipes</h1>

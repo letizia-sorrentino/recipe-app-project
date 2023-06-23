@@ -3,13 +3,12 @@ import { useSelector } from "react-redux";
 import getRecipes from './recipeAPI';
 import {selectRecipes } from './storeRecipesSlice';
 import Loading from '../../components/Loading'
+import './Recipes.css'
 
 const Recipes = () => { 
 
     //state hooks (destructure data from slice using useSelector)
 const allRecipes = useSelector(selectRecipes);
-//const searchInput = useSelector(selectSearchInput);
-
 //const dispatch = useDispatch();
 
 useEffect(() => {
