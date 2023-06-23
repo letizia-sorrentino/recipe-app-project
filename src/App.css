@@ -1,18 +1,44 @@
-/* .App {
+.App {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-} */
+.appMain {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  margin-left: 1rem;
+ margin-right: 1rem; 
+}
 
+.searchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6vh;
+  width: 70vw;
+  margin: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.appFooter {
+  position: sticky;
+  z-index: 1;
+}
 
 .navbar {
   display: flex;
   justify-content: space-between;
 }
 
-
-/* .navLink {
-
+a.navLink {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
 }
- */
+
 
 
 /* 

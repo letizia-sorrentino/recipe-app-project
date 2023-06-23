@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '../features/counter/counterSlice';
-import recipeReducer from '../features/recipe/recipeSlice';
+import recipesReducer from '../features/storeRecipes/storeRecipesSlice';
+import searchInputReducer from '../features/searchInput/searchInputSlice'
+
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    recipe: recipeReducer,
+    recipes: recipesReducer,
+    searchInput: searchInputReducer,
   },
 });
