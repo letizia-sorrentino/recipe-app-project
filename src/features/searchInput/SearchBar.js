@@ -22,7 +22,7 @@ const SearchBar = () => {
                 className="searchBar"
                 type="text"
                 value={searchInput}
-                onInput={onSearchInput}      
+                onChange={onSearchInput}      
                 placeholder='Search Recipes...'
             />
 

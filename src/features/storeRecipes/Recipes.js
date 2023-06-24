@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import getRecipes from './recipeAPI';
 import {selectRecipes } from './storeRecipesSlice';
-import Loading from '../../components/Loading'
 import './Recipes.css'
 
 const Recipes = () => { 
@@ -13,20 +12,16 @@ const allRecipes = useSelector(selectRecipes);
 
 useEffect(() => {
     getRecipes();
+ 
 }, []); //[] means it runs once
-
-//below is the return
-   if (!allRecipes) return <Loading />;
-   if (allRecipes.length === 0) return <p>Try again!</p>;
-
 return (
     <>
     <img 
     className="recipeImage" 
-    src={allRecipes.image} 
-    alt={allRecipes.title}
+    src={allRecipes.recipes[0].image} 
+    alt={allRecipes.recipes[0].title}
     />
-    <h2 className="recipeTitle">{allRecipes.title}</h2>
+    <h2 className="recipeTitle">{allRecipes.recipes[0].title}</h2>
     
     </>
 );
