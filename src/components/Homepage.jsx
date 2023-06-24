@@ -1,15 +1,15 @@
 import SearchBar from "../features/searchInput/SearchBar";
 import Recipes from "../features/storeRecipes/Recipes";
 //import Loading from "./Loading";
-import { useSelector } from "react-redux";
-import { selectRecipes } from "../features/storeRecipes/storeRecipesSlice";
+//import { useSelector } from "react-redux";
+//import { selectRecipes } from "../features/storeRecipes/storeRecipesSlice";
 
 const Homepage = () => {
-  const allRecipes = useSelector(selectRecipes);
+  //const recipes = useSelector(selectRecipes);
 
   // //below is the return
-  // if (!allRecipes) return <Loading />;
-  // if (allRecipes.length === 0) return <p>Try again!</p>;
+  // if (!recipes) return <Loading />;
+  // if (recipes.length === 0) return <p>Try again!</p>;
 
   return (
     <> 

@@ -17,6 +17,6 @@ export const storeRecipesSlice = createSlice({
 export const { storeRecipes } = storeRecipesSlice.actions;
 
 //export data
-export const selectRecipes = (state) => state.storeRecipes.storeRecipes;
+export const selectRecipes = ((state) => state.storeRecipes.storeRecipes);
 
 export default storeRecipesSlice.reducer;
