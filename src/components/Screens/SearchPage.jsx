@@ -1,4 +1,4 @@
-import SearchBar from "../features/searchInput/SearchBar";
+import SearchBar from "../../features/searchInput/SearchBar";
 
 const SearchPage = () => {
 

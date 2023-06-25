@@ -1,5 +1,5 @@
-import SearchBar from "../features/searchInput/SearchBar";
-import Recipes from "../features/storeRecipes/Recipes";
+import SearchBar from "../../features/searchInput/SearchBar";
+import RecipeCard from "../RecipeCard/RecipeCard";
 //import Loading from "./Loading";
 //import { useSelector } from "react-redux";
 //import { selectRecipes } from "../features/storeRecipes/storeRecipesSlice";
@@ -19,7 +19,7 @@ const Homepage = () => {
       </div>     
       <div>
         <h1>Recipes</h1>
-        <Recipes />
+        <RecipeCard />
       </div>
       <div>
         <h1>Categories</h1>

@@ -1,25 +1,30 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import getRecipes from './recipeAPI';
-import { selectRecipes } from './storeRecipesSlice';
+import { selectRecipes } from './recipesSlice';
 import './Recipes.css'
-import RecipeCard from "../../components/RecipeCard";
+import RecipeCard from "../../components/RecipeCard/RecipeCard";
 
 const Recipes = () => {
 
     //state hooks (destructure data from slice using useSelector)
-    const recipes = useSelector(selectRecipes);
+    const recipesInfo = useSelector(selectRecipes);
 
     useEffect(() => {
         getRecipes();
     }, []); //[] means it runs once
-     
-    //console.log(recipes);
-    
+
+    //console.log(recipesInfo)
+
     return (
-        < RecipeCard 
-            recipes={recipes}
-        />     
-    );
-}
+        <div>{Array.isArray(recipesInfo) && recipesInfo.map((recipe) => (
+            < RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+            />
+        ))}
+        </div>
+
+    )
+};
 export default Recipes;

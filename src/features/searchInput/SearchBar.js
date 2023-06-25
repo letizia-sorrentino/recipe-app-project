@@ -9,6 +9,7 @@ const SearchBar = () => {
 
     //Search box
     const onSearchInput = (e) => {
+        e.preventDefault();
         setSearchInput(e.target.value);
         dispatch(setSearchInput(e.target.value));
     };
@@ -21,9 +22,10 @@ const SearchBar = () => {
             <input
                 className="searchBar"
                 type="text"
-                value={searchInput}
-                onChange={onSearchInput}      
                 placeholder='Search Recipes...'
+                autoFocus={true}
+                value={searchInput}
+                onChange={onSearchInput}
             />
 
         </div>
