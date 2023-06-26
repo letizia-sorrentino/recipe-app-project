@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import getRecipes from './recipeAPI';
 import { selectAllRecipes } from './recipesSlice';
 import './Recipes.css'
-import RecipeCard from "../../components/RecipeCard/RecipeCard";
 
 const RecipesList = () => {
 
@@ -22,16 +21,16 @@ const RecipesList = () => {
 
     const renderedRecipes = Array.isArray(recipesInfo) && recipesInfo.map((recipe) => (
         <div key={recipe.id}>
-             <h2>{recipe.title}</h2>
+
             <img className="recipeImage" src={recipe.image}
                 alt={recipe.title}
             />
+            <h2>{recipe.title}</h2>
         </div>
 
     ))
     return (
         <section>
-            <h1>Recipes</h1>
             {renderedRecipes}
         </section>
 

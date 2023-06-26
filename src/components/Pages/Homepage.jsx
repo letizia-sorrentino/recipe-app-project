@@ -12,19 +12,20 @@ const Homepage = () => {
   // if (recipes.length === 0) return <p>Try again!</p>;
 
   return (
-    <> 
-    <div>
+    <>
+      <div>
         <h1>Find the best recipes:</h1>
         <SearchBar />
-      </div>     
-        <RecipesList/>
-      <div>
-        <h1>Categories</h1>
       </div>
-      <div>
-        <h1>Other Recipes</h1>
-      </div>
-      </>
+
+      <h2>Recipes</h2>
+      {/* <RecipesList/>
+        <RecipesList/> */}
+
+      <h2>Categories</h2>
+
+      <h2>Other Recipes</h2>
+    </>
   );
 };
 
