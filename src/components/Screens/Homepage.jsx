@@ -1,11 +1,11 @@
+import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
-import RecipeCard from "../RecipeCard/RecipeCard";
 //import Loading from "./Loading";
 //import { useSelector } from "react-redux";
-//import { selectRecipes } from "../features/storeRecipes/storeRecipesSlice";
+//import { selectAllRecipes } from "../features/storeRecipes/storeRecipesSlice";
 
 const Homepage = () => {
-  //const recipes = useSelector(selectRecipes);
+  //const recipes = useSelector(selectAllRecipes);
 
   // //below is the return
   // if (!recipes) return <Loading />;
@@ -19,7 +19,7 @@ const Homepage = () => {
       </div>     
       <div>
         <h1>Recipes</h1>
-        <RecipeCard />
+        <RecipesList/>
       </div>
       <div>
         <h1>Categories</h1>

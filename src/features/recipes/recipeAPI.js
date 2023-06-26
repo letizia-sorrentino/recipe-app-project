@@ -7,8 +7,9 @@ import { storeRecipes } from './recipesSlice';
 const getRecipes = async () => {
     try {
         const { data } = await axios.get(`https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`);
+        //send data to the store
         store.dispatch(storeRecipes(data));
-        // console.log(data.recipes[0].title);
+        //console.log(data.recipes[0].title);
 
 
     } catch (error) {
