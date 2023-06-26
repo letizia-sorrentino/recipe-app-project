@@ -17,10 +17,7 @@ const Homepage = () => {
         <h1>Find the best recipes:</h1>
         <SearchBar />
       </div>     
-      <div>
-        <h1>Recipes</h1>
         <RecipesList/>
-      </div>
       <div>
         <h1>Categories</h1>
       </div>
