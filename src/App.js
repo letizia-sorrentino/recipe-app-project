@@ -3,7 +3,7 @@ import Homepage from './components/Pages/Homepage';
 import SearchPage from './components/Pages/SearchPage';
 import Favourites from './components/Pages/Favourites';
 import Settings from './components/Pages/Settings';
-import Nav from './components/Nav';
+import Nav from './components/navigation/Nav';
 import './App.css';
 
 const App = () => {

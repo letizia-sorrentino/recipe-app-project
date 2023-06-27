@@ -19,12 +19,16 @@ const Homepage = () => {
       </div>
 
       <h2>Recipes</h2>
-      {/* <RecipesList/>
-        <RecipesList/> */}
+      <RecipesList />
+      {/* <RecipesList /> */}
 
       <h2>Categories</h2>
 
       <h2>Other Recipes</h2>
+      {/* <RecipesList /> */}
+      {/* <RecipesList /> */}
+      {/* <RecipesList /> */}
+
     </>
   );
 };
