@@ -27,5 +27,57 @@ export const getRandomRecipes = async () => {
     }
 }
 
+//get recipes by meal type
 
+//get breakfast recipes
+export const getBreakfastRecipes = async () => {
+    try {
+        const { data } = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=breakfast`);
+        //send data to the store
+        console.log(data)
+        store.dispatch(storeRecipes(data.results));
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+//get lunch recipes
+export const getLunchRecipes = async () => {
+    try {
+        const { data } = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=lunch`);
+        //send data to the store
+        console.log(data)
+        store.dispatch(storeRecipes(data.results));
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+//get snack recipes
+export const getSnackRecipes = async () => {
+    try {
+        const { data } = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=snack`);
+        //send data to the store
+        console.log(data)
+        store.dispatch(storeRecipes(data.results));
+
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+        //get dinner recipes
+export const getDinnerRecipes = async () => {
+    try {
+        const { data } = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=dinner`);
+        //send data to the store
+        console.log(data)
+        store.dispatch(storeRecipes(data.results));
+
+    } catch (error) {
+        console.log(error);
+
+    }
+}
 

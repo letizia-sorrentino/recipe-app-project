@@ -3,9 +3,10 @@
     justify-content: center;
     align-items: center;
     height: 6vh;
-    width: 70vw;
-    margin: 1.25rem;
+    width: 75vw;
+    margin-bottom: 1rem;
     border-radius: 0.5rem;
     border-color: rgba(244,201,72,255);
+    border-style: solid;
   }
   

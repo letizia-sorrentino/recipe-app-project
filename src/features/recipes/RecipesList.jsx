@@ -5,7 +5,7 @@ import { setLikeInput, selectAllRecipes, selectLikeInput } from './recipesSlice'
 import './Recipes.css'
 import { selectSearchInput } from "../searchInput/searchInputSlice";
 import Loading from '../../components/Pages/Loading'
-import LikeIcon from '../../components/elements/LikeIcon'
+import LikeButton from "../../components/elements/LikeButton";
 
 const RecipesList = () => {
 
@@ -36,8 +36,8 @@ const RecipesList = () => {
 
 
     const renderedRecipes = Array.isArray(recipes) && recipes.map((recipe) => (
-        <div key={recipe.id}>
-            <LikeIcon className="likeIcon" onLikeInput={onLikeInput} />
+        <div className="recipeListContainer" key={recipe.id}>
+            <LikeButton onLikeInput={onLikeInput} />
             
             <img className="recipeImage" src={recipe.image}
                 alt={recipe.title}
