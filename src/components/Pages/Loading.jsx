@@ -1,6 +1,8 @@
+import spinner from '../../assets/spinner.svg'
+
 const Loading = () => {
     return <div> 
-      <p>Loading..</p>
+      <img src={spinner} alt="spinner" />
       </div>;
   };
   

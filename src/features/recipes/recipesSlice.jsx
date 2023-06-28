@@ -13,14 +13,18 @@ export const recipesSlice = createSlice({
         storeRecipes: (state, action) => {
             state.recipes = action.payload;
         },
+        setLikeInput: (state, action) => {
+            state.likeInput = action.payload;
+        }
 
     }
 })
 
 //export actions
-export const { storeRecipes, filterRecipesbyIngredients } = recipesSlice.actions;
+export const { storeRecipes, setLikeInput } = recipesSlice.actions;
 
 //export data
 export const selectAllRecipes = (state) => state.recipes.recipes;
+export const selectLikeInput = (state) =>state.recipes.likeInput;
 
 export default recipesSlice.reducer;
