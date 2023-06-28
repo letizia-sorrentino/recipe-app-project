@@ -31,6 +31,37 @@ a.navLink {
   font-weight: bold;
 }
 
+.button {
+  background-color: rgba(244,201,72,255);
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+
+}
+
+.searchFilters{
+  display: flex;
+
+}
+
+/* Homepage */
+
+.categoriesContainer {
+  display: flex;
+  justify-content: space-between;
+
+}
+.categoryCard {
+  background-color: rgba(244,201,72,255);
+  width: 40vw;
+  margin-bottom: 1rem;
+
+  }
+.categoryTitle {
+  font-size: small;
+}
+
+
+
 /* 
 .App-logo {
   height: 40vmin;

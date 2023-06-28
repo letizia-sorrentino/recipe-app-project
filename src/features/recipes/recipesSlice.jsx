@@ -13,11 +13,7 @@ export const recipesSlice = createSlice({
         storeRecipes: (state, action) => {
             state.recipes = action.payload;
         },
-        // filterRecipesbyIngredients: (state, action) => {
-        //     const filteredRecipes = state.recipes.filter((recipe) => {
-        //         return recipe.ingredients === action.payload;
-        //     })
-        // },
+
     }
 })
 

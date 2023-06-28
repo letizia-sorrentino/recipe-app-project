@@ -32,7 +32,7 @@ const RecipesList = () => {
             <img className="recipeImage" src={recipe.image}
                 alt={recipe.title}
             />
-            <h2>{recipe.title}</h2>
+            <h2 className="recipeTitle">{recipe.title}</h2>
         </div>
 
     ))
