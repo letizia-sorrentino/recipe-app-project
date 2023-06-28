@@ -6,8 +6,10 @@ import CategoryCard from "../elements/CategoryCard";
 
 const SearchPage = () => {
 
+
     return (
       <> 
+      <div><h1>Search</h1></div>
   <div>
       <SearchBar />
   </div>
@@ -18,6 +20,7 @@ const SearchPage = () => {
   </div>
 
 <div className="searchResults">
+  
   <RecipesList/>
 
 </div>

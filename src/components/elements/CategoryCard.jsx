@@ -1,7 +1,7 @@
-const CategoryCard = () => {
+const CategoryCard = (props) => {
 return (
     <div className="categoryCard">
-        <h3 className="categoryTitle">Category</h3>
+                {props.children}
     </div>
 )
 };
