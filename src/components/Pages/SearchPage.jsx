@@ -16,6 +16,7 @@ const SearchPage = () => {
       <div>
         <SearchBar />
       </div>
+      <h2>Filter Recipes</h2>
       <div className="searchFilters">
         <FilterButton>
           <p>Breakfast</p>
@@ -37,7 +38,7 @@ const SearchPage = () => {
       </div>
 
       <div>
-        <h3>Recipes by Diet</h3>
+        <h2>Recipes by Diet</h2>
         <div className="categoriesContainer">
           <CategoryCard>
             <img
