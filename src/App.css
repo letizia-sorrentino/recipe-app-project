@@ -52,23 +52,31 @@
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 1rem;
   margin-bottom: 3rem;
 }
 
 .categoryCard {
   background-color: rgba(244, 201, 72, 255);
-  height: 8rem;
-  width: 40vw;
   border-radius: 1rem;
-  display: flex;
+  display: grid;
+  justify-content: center;
+  grid-template-rows: 20vh 10vh;
+  height: 30vh;
+}
+
+.categoryPicture {
+  height: 100%;
+  width: auto;
+  align-self: start;
 }
 
 .categoryTitle {
   font-size: 1rem;
   color: rgb(255, 255, 255);
   text-align: center;
-  padding-left: 0.5rem
+  padding-left: 0.5rem;
+  align-self: flex-end;
 }
 
 .lunchIcon,

@@ -2,7 +2,10 @@ import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
 import CategoryCard from "../elements/CategoryCard";
 import FilterButton from "../elements/FilterButton";
-import lunchIcon from "../../assets/lunchIcon.svg";
+import vegetarianDish from "../../assets/vegetarianDish.png";
+import veganDish from "../../assets/veganDish.png";
+import pescatarianDish from "../../assets/pescatarianDish.png";
+import whole30Dish from "../../assets/Whole30Dish.png";
 
 const SearchPage = () => {
   return (
@@ -37,20 +40,32 @@ const SearchPage = () => {
         <h3>Recipes by Diet</h3>
         <div className="categoriesContainer">
           <CategoryCard>
+            <img
+              className="categoryPicture"
+              src={vegetarianDish}
+              alt="vegetarianDish"
+            />
             <h3 className="categoryTitle">Vegeterian</h3>
-            <img className="lunchIcon" src={lunchIcon} alt="lunchIcon" />
           </CategoryCard>
           <CategoryCard>
+            <img className="categoryPicture" src={veganDish} alt="veganDish" />
             <h3 className="categoryTitle">Vegan</h3>
-            <img className="lunchIcon" src={lunchIcon} alt="lunchIcon" />
           </CategoryCard>
           <CategoryCard>
+            <img
+              className="categoryPicture"
+              src={pescatarianDish}
+              alt="pescatarianDish"
+            />
             <h3 className="categoryTitle">Pescetarian </h3>
-            <img className="lunchIcon" src={lunchIcon} alt="lunchIcon" />
           </CategoryCard>
           <CategoryCard>
+            <img
+              className="categoryPicture"
+              src={whole30Dish}
+              alt="whole30Dish"
+            />
             <h3 className="categoryTitle">Whole30</h3>
-            <img className="lunchIcon" src={lunchIcon} alt="lunchIcon" />
           </CategoryCard>
         </div>
       </div>
