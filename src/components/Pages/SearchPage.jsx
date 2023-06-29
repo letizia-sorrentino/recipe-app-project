@@ -34,7 +34,7 @@ const SearchPage = () => {
 
       <div className="searchResults">
         <h2>Recipes Ideas</h2>
-        <RecipesList />
+        {/* <RecipesList /> */}
       </div>
 
       <div>
@@ -58,7 +58,7 @@ const SearchPage = () => {
               src={pescatarianDish}
               alt="pescatarianDish"
             />
-            <h3 className="categoryTitle">Pescetarian </h3>
+            <h3 className="categoryTitle">Pescatarian </h3>
           </CategoryCard>
           <CategoryCard>
             <img
