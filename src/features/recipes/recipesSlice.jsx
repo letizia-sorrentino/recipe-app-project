@@ -12,19 +12,25 @@ export const recipesSlice = createSlice({
     reducers: {
         storeRecipes: (state, action) => {
             state.recipes = action.payload;
+        },  
+        filterRecipesbyType: (state, action) => {
+            state.recipes = action.payload;
         },
-        setLikeInput: (state, action) => {
-            state.likeInput = action.payload;
+        filterRecipesByDiet: (state, action) => {
+            state.recipes = action.payload;
         }
 
     }
 })
 
 //export actions
-export const { storeRecipes, setLikeInput } = recipesSlice.actions;
+export const { storeRecipes, filterRecipesbyType, filterRecipesByDiet } = recipesSlice.actions;
 
 //export data
 export const selectAllRecipes = (state) => state.recipes.recipes;
-export const selectLikeInput = (state) =>state.recipes.likeInput;
+export const selectRecipesByType = (state) => state.recipes.recipes;
+export const selectRecipesbyDiet = (state) => state.recipes.recipes;
+
+
 
 export default recipesSlice.reducer;
