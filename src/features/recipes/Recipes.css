@@ -4,7 +4,6 @@
     margin-left: 1rem; */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     grid-gap: 1rem;
 }
 
@@ -21,7 +20,7 @@
     height: 2rem;
     position: absolute;
     z-index: 1;
-    }
+}
 
 
 .recipeTitle {

@@ -10,7 +10,6 @@ export const searchInputManagerSlice = createSlice({
     initialState,
     reducers: {
         setSearchInput: (state, action) => {
-            //console.log(action.payload);
             state.searchInput = action.payload;
         },
 

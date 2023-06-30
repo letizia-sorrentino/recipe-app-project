@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     quantity: 1, 
-
 };
 
 export const controlsSlice = createSlice({

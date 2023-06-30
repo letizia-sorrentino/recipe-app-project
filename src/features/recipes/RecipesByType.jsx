@@ -9,11 +9,13 @@ import LikeButton from "../like/LikeButton";
 
 const RecipesByType = () => {
   const recipes = useSelector(selectAllRecipes);
-  const type = useSelector(selectRecipesByType);
 
   useEffect(() => {
-    getRecipesByType(type);
-  }, [type]);
+    getRecipesByType('breakfast');
+    //console.log(type);
+    console.log("use effect run -GET RECIPES BY TYPE")
+
+  }, []);
 
   const filteredRecipesByType =
     Array.isArray(recipes) &&
@@ -28,7 +30,7 @@ const RecipesByType = () => {
 
   if (!recipes || recipes.length === 0) return <Loading />;
   if (!recipes.type || recipes.type.length === 0) return <RecipesList />;
-  if (recipes.type === type) return <section>{filteredRecipesByType}</section>;
+  //if (recipes.type === type) return <section>{filteredRecipesByType}</section>;
 };
 
 export default RecipesByType;

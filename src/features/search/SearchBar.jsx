@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSearchInput, setSearchInput } from "./searchInputManagerSlice";
+import { getRecipes } from "../recipes/recipeAPI";
+import Button from "../../components/elements/Button"
 
 const SearchBar = () => {
   const searchInput = useSelector(selectSearchInput);
@@ -9,9 +11,9 @@ const SearchBar = () => {
   //Search box
   const onSearchInput = (e) => {
     e.preventDefault();
-    setSearchInput(e.target.value);
     dispatch(setSearchInput(e.target.value));
   };
+ console.log(searchInput);
 
   return (
     <div>
@@ -21,8 +23,11 @@ const SearchBar = () => {
         placeholder="Search Recipes..."
         autoFocus={true}
         value={searchInput}
-        onChange={onSearchInput}
+        onInput={onSearchInput}
       />
+
+      <button onClick={() => {getRecipes(searchInput)}}>click me</button>
+      
     </div>
   );
 };

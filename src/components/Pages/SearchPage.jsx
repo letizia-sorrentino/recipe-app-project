@@ -11,6 +11,7 @@ import { getRecipesByType } from "../../features/recipes/recipeAPI";
 
 
 const SearchPage = () => {
+  console.log("search page loading")
   return (
     <>
       <div>
@@ -21,7 +22,7 @@ const SearchPage = () => {
       </div>
       <h2>Popular filters:</h2>
       <div className="searchFilters">
-        <FilterButton onclick={getRecipesByType('breakfast')}>
+        <FilterButton onClick={() => {getRecipesByType('breakfast')}}>
           <p>Breakfast</p>
         </FilterButton>
         <FilterButton>
@@ -37,7 +38,7 @@ const SearchPage = () => {
 
       <div className="searchResults">
         
-        {/* <RecipesByType/> */}
+        <RecipesByType/>
       </div>
 
       <div>

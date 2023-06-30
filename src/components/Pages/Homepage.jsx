@@ -2,6 +2,7 @@ import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/search/SearchBar";
 import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
+import LikeButton from "../../features/like/LikeButton";
 
 const Homepage = () => {
   return (
@@ -9,12 +10,15 @@ const Homepage = () => {
       <div>
         <h1>Find the best recipes:</h1>
         <div className="controlsBar"> 
-        <SearchBar /> <Controls/>
+        <SearchBar /> 
+        
+         <Controls/>
         </div>
       </div>
       <div>
         <h2>Recipes</h2>
-        {/* <RecipesList /> */}
+        <LikeButton/>
+        <RecipesList />
       </div>
       <div>
         <h2>Popular Recipes</h2>

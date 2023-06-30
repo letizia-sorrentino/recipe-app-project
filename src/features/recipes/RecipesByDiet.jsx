@@ -9,11 +9,13 @@ import LikeButton from "../like/LikeButton";
 
 const RecipesByDiet = () => {
   const recipes = useSelector(selectAllRecipes);
-  const diet = useSelector(selectRecipesByDiet);
+  //const diet = useSelector(selectRecipesByDiet);
 
   useEffect(() => {
     getRecipesByDiet(diet);
-  }, [diet]);
+    console.log("use effect run -GET RECIPES BY DIET")
+  }, []);
+
 
   const filteredRecipesByDiet =
     Array.isArray(recipes) &&
