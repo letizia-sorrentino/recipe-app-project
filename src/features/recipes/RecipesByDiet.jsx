@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAllRecipes, selectRecipesByDiet } from "./recipeManagerSlice";
+import { selectAllRecipes } from "./recipeManagerSlice";
 import { useEffect } from "react";
 import { getRecipesByDiet } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
@@ -9,11 +9,10 @@ import LikeButton from "../like/LikeButton";
 
 const RecipesByDiet = () => {
   const recipes = useSelector(selectAllRecipes);
-  //const diet = useSelector(selectRecipesByDiet);
 
   useEffect(() => {
-    getRecipesByDiet(diet);
-    console.log("use effect run -GET RECIPES BY DIET")
+    getRecipesByDiet();
+    console.log("useEffect run -GET RECIPES BY DIET")
   }, []);
 
 
@@ -30,7 +29,7 @@ const RecipesByDiet = () => {
 
   if (!recipes || recipes.length === 0) return <Loading />;
   if (!recipes.diet || recipes.diet.length === 0) return <RecipesList />;
-  if (recipes.diet === diet) return <section>{filteredRecipesByDiet}</section>;
+  if (recipes.diet === "") return <section>{filteredRecipesByDiet}</section>;
 };
 
 export default RecipesByDiet;

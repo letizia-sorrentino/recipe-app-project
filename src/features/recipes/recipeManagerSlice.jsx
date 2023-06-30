@@ -30,7 +30,5 @@ export const { storeRecipes, filterRecipesbyType, filterRecipesByDiet } =
 
 //export data
 export const selectAllRecipes = (state) => state.recipeManager.recipes;
-//export const selectRecipesByType = (state) => state.recipeManager.recipes;
-//export const selectRecipesbyDiet = (state) => state.recipeManager.recipes;
 
 export default recipeManagerSlice.reducer;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectAllRecipes, selectRecipesByType } from "./recipeManagerSlice";
+import { selectAllRecipes } from "./recipeManagerSlice";
 import { useEffect } from "react";
 import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
@@ -13,7 +13,7 @@ const RecipesByType = () => {
   useEffect(() => {
     getRecipesByType('breakfast');
     //console.log(type);
-    console.log("use effect run -GET RECIPES BY TYPE")
+    console.log("useEffect run - GET RECIPES BY TYPE")
 
   }, []);
 
@@ -30,7 +30,7 @@ const RecipesByType = () => {
 
   if (!recipes || recipes.length === 0) return <Loading />;
   if (!recipes.type || recipes.type.length === 0) return <RecipesList />;
-  //if (recipes.type === type) return <section>{filteredRecipesByType}</section>;
+  if (recipes.type === "") return <section>{filteredRecipesByType}</section>;
 };
 
 export default RecipesByType;

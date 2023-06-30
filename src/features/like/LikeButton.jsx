@@ -8,7 +8,7 @@ const LikeButton = () => {
   const onLikeInput = (e) => {
     const likeInput = e.target.value;
     dispatch(setLikeInput(likeInput));
-    dispatch(setFillColour("white"));
+    dispatch(setFillColour("red"));
     console.log("clicked");
   };
 
