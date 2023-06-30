@@ -4,7 +4,7 @@ import { selectAllRecipes, selectRecipesByType } from "./recipeManagerSlice";
 import { useEffect } from "react";
 import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
-import LikeButton from "../likeInput/LikeButton";
+import LikeButton from "../like/LikeButton";
 
 const RecipesByType = () => {
   const recipes = useSelector(selectAllRecipes);

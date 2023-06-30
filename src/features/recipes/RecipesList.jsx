@@ -3,9 +3,9 @@ import { useSelector } from "react-redux";
 import { getRecipes, getRandomRecipes } from "./recipeAPI";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import "./Recipes.css";
-import { selectSearchInput } from "../searchInput/searchManagerSlice";
+import { selectSearchInput } from "../search/searchInputManagerSlice";
 import Loading from "../../components/elements/Loading";
-import LikeButton from "../likeInput/LikeButton";
+import LikeButton from "../like/LikeButton";
 
 const RecipesList = () => {
   //destructure data from slice using useSelector

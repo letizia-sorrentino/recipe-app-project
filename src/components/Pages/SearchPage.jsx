@@ -1,4 +1,4 @@
-import SearchBar from "../../features/searchInput/SearchBar";
+import SearchBar from "../../features/search/SearchBar";
 import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
 import FilterButton from "../elements/FilterButton";
