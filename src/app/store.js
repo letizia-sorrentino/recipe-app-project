@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
-import recipesReducer from '../features/recipes/recipesSlice';
-import searchInputReducer from '../features/searchInput/searchInputSlice'
-import likeInputReducer from '../features/likeInput/likeInputSlice'
+import recipeManagerReducer from '../features/recipes/recipeManagerSlice';
+import searchManagerReducer from '../features/search/searchManagerSlice'
+import likeManagerReducer from '../features/like/likeManagerSlice'
 import controlsReducer from '../features/controls/controlsSlice'
 
 export const store = configureStore({
   reducer: {
-    recipes: recipesReducer,
-    searchInput: searchInputReducer,
-    likeInput: likeInputReducer,
+    recipeManager: recipeManagerReducer,
+    searchInput: searchManagerReducer,
+    likeInput: likeManagerReducer,
     controls: controlsReducer,
   },
 });

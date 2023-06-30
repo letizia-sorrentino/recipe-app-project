@@ -45,7 +45,39 @@
   padding: 1rem;
 }
 
+/* Search and Controls */
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    width: 75vw;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    border: 2px solid rgba(244, 201,72,255);
+  }
+
+.controlsBar{
+  display: flex;
+  justify-content: space-around;
+  }
+  
+  .selectQuantity {
+      background-color: rgba(244, 201, 72, 255);
+      border-color: rgba(244, 201, 72, 255);
+      border-radius: 0.5rem;
+      color: rgb(255, 255, 255);
+      font-weight: 400;
+      width: 3rem;
+      height: 3rem;
+  }
+
+
+
 /* Homepage */
+
+
 .categoriesContainer {
   display: grid;
   grid-template-columns: 1fr 1fr;

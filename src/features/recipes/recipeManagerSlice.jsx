@@ -6,8 +6,8 @@ const initialState = {
     error: null
 };
 
-export const recipesSlice = createSlice({
-    name: 'recipes',
+export const recipeManagerSlice = createSlice({
+    name: 'recipeManager',
     initialState,
     reducers: {
         storeRecipes: (state, action) => {
@@ -24,13 +24,13 @@ export const recipesSlice = createSlice({
 })
 
 //export actions
-export const { storeRecipes, filterRecipesbyType, filterRecipesByDiet } = recipesSlice.actions;
+export const { storeRecipes, filterRecipesbyType, filterRecipesByDiet } = recipeManagerSlice.actions;
 
 //export data
-export const selectAllRecipes = (state) => state.recipes.recipes;
-export const selectRecipesByType = (state) => state.recipes.recipes;
-export const selectRecipesbyDiet = (state) => state.recipes.recipes;
+export const selectAllRecipes = (state) => state.recipeManager.recipes;
+export const selectRecipesByType = (state) => state.recipeManager.recipes;
+export const selectRecipesbyDiet = (state) => state.recipeManager.recipes;
 
 
 
-export default recipesSlice.reducer;
+export default recipeManagerSlice.reducer;

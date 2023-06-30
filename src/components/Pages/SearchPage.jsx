@@ -1,4 +1,3 @@
-import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
 import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
@@ -7,6 +6,9 @@ import vegetarianDish from "../../assets/vegetarianDish.png";
 import veganDish from "../../assets/veganDish.png";
 import pescatarianDish from "../../assets/pescatarianDish.png";
 import whole30Dish from "../../assets/Whole30Dish.png";
+import RecipesByType from "../../features/recipes/RecipesByType";
+import { getRecipesByType } from "../../features/recipes/recipeAPI";
+
 
 const SearchPage = () => {
   return (
@@ -14,12 +16,12 @@ const SearchPage = () => {
       <div>
         <h1>Search</h1>
       </div>
-      <div>
+      <div className="controlsBar">
         <SearchBar /> <Controls/>
       </div>
-      <h2>Filter Recipes</h2>
+      <h2>Popular filters:</h2>
       <div className="searchFilters">
-        <FilterButton>
+        <FilterButton onclick={getRecipesByType('breakfast')}>
           <p>Breakfast</p>
         </FilterButton>
         <FilterButton>
@@ -34,12 +36,12 @@ const SearchPage = () => {
       </div>
 
       <div className="searchResults">
-        <h2>Recipes Ideas</h2>
-        {/* <RecipesList /> */}
+        
+        {/* <RecipesByType/> */}
       </div>
 
       <div>
-        <h2>Recipes by Diet</h2>
+        <h2>Filter recipes by diet:</h2>
         <div className="categoriesContainer">
           <CategoryCard>
             <img

@@ -4,7 +4,7 @@ import { setQuantity } from "./controlsSlice";
 const Controls = () => {
 
 return (
-    <select
+    <select className="selectQuantity"
     onChange={(e) => {
       setQuantity(e.target.value);
     }}

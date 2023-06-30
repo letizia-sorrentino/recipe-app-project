@@ -5,8 +5,8 @@ const initialState = {
 
 };
 
-export const searchInputSlice = createSlice({
-    name: 'searchInput',
+export const searchManagerSlice = createSlice({
+    name: 'searchManager',
     initialState,
     reducers: {
         setSearchInput: (state, action) => {
@@ -21,9 +21,9 @@ export const searchInputSlice = createSlice({
 })
 
 //export actions
-export const { setSearchInput, clearSearchInput } = searchInputSlice.actions;
+export const { setSearchInput, clearSearchInput } = searchManagerSlice.actions;
 
 //export data
-export const selectSearchInput = (state) => state.searchInput.searchInput;
+export const selectSearchInput = (state) => state.searchManager.searchInput;
 
-export default searchInputSlice.reducer;
+export default searchManagerSlice.reducer;

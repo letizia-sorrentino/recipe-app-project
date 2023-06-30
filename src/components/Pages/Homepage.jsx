@@ -2,15 +2,15 @@ import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
 import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
-// import easyLunch from "../../assets/easyLunch.png";
-// import quickDinner from "../../assets/quickDinner.png";
 
 const Homepage = () => {
   return (
     <>
       <div>
         <h1>Find the best recipes:</h1>
+        <div className="controlsBar"> 
         <SearchBar /> <Controls/>
+        </div>
       </div>
       <div>
         <h2>Recipes</h2>
@@ -30,11 +30,6 @@ const Homepage = () => {
             <h3 className="categoryTitle">Easy Dinners</h3>
           </CategoryCard>
         </div>
-      </div>
-
-      <div>
-        <h2>Other recipes</h2>
-        {/* <RecipesList /> */}
       </div>
     </>
   );

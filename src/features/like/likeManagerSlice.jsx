@@ -6,8 +6,8 @@ const initialState = {
 
 };
 
-export const likeInputSlice = createSlice({
-    name: 'like',
+export const likeManagerSlice = createSlice({
+    name: 'likeManager',
     initialState,
     reducers: {
         setLikeInput: (state, action) => {
@@ -20,10 +20,10 @@ export const likeInputSlice = createSlice({
 })
 
 ///export actions
-export const { setLikeInput, setFillColour } = likeInputSlice.actions;
+export const { setLikeInput, setFillColour } = likeManagerSlice.actions;
 
 //export data
-export const selectLikeInput = (state) =>state.likeInput.likeInput;
-export const selectFillColour = (state) => state.likeInput.fillColour;
+export const selectLikeInput = (state) =>state.likeManager.likeInput;
+export const selectFillColour = (state) => state.likeManager.fillColour;
 
-export default likeInputSlice.reducer;
+export default likeManagerSlice.reducer;
