@@ -4,6 +4,7 @@ import { selectAllRecipes, selectRecipesByDiet } from "./recipeManagerSlice";
 import { useEffect } from "react";
 import { getRecipesByDiet } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
+import RecipesList from "../recipes/RecipesList";
 import LikeButton from "../like/LikeButton";
 
 const RecipesByDiet = () => {
@@ -13,8 +14,6 @@ const RecipesByDiet = () => {
   useEffect(() => {
     getRecipesByDiet(diet);
   }, [diet]);
-
-  if (!recipes || recipes.length === 0) return <Loading />;
 
   const filteredRecipesByDiet =
     Array.isArray(recipes) &&
@@ -26,7 +25,10 @@ const RecipesByDiet = () => {
         <h2 className="recipeTitle">{recipe.title}</h2>
       </div>
     ));
-  return <section>{filteredRecipesByDiet}</section>;
+
+  if (!recipes || recipes.length === 0) return <Loading />;
+  if (!recipes.diet || recipes.diet.length === 0) return <RecipesList />;
+  if (recipes.diet === diet) return <section>{filteredRecipesByDiet}</section>;
 };
 
 export default RecipesByDiet;

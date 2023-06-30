@@ -4,6 +4,7 @@ import { selectAllRecipes, selectRecipesByType } from "./recipeManagerSlice";
 import { useEffect } from "react";
 import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
+import RecipesList from "../recipes/RecipesList";
 import LikeButton from "../like/LikeButton";
 
 const RecipesByType = () => {
@@ -26,14 +27,8 @@ const RecipesByType = () => {
     ));
 
   if (!recipes || recipes.length === 0) return <Loading />;
-  if (recipes.type === "breakfast")
-    return <section>{filteredRecipesByType}</section>;
-  if (recipes.type === "lunch")
-    return <section>{filteredRecipesByType}</section>;
-  if (recipes.type === "snack")
-    return <section>{filteredRecipesByType}</section>;
-  if (recipes.type === "dinner")
-    return <section>{filteredRecipesByType}</section>;
+  if (!recipes.type || recipes.type.length === 0) return <RecipesList />;
+  if (recipes.type === type) return <section>{filteredRecipesByType}</section>;
 };
 
 export default RecipesByType;
