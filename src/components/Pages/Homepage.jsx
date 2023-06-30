@@ -2,7 +2,6 @@ import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/search/SearchBar";
 import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
-import LikeButton from "../../features/like/LikeButton";
 import vegetarianDish from "../../assets/vegetarianDish.png";
 import veganDish from "../../assets/veganDish.png";
 import pescatarianDish from "../../assets/pescatarianDish.png";

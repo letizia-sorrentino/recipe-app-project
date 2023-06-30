@@ -13,14 +13,14 @@ const LikeButton = () => {
   };
 
   return (
-    <div>
+    <>
       <img
         className="likeButton"
         onClick={onLikeInput}
         src={likeIcon}
         alt="likeIcon"
       />
-    </div>
+    </>
   );
 };
 
