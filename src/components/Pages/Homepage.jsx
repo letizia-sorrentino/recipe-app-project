@@ -1,15 +1,16 @@
 import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
+import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
-import easyLunch from "../../assets/easyLunch.png";
-import quickDinner from "../../assets/quickDinner.png";
+// import easyLunch from "../../assets/easyLunch.png";
+// import quickDinner from "../../assets/quickDinner.png";
 
 const Homepage = () => {
   return (
     <>
       <div>
         <h1>Find the best recipes:</h1>
-        <SearchBar />
+        <SearchBar /> <Controls/>
       </div>
       <div>
         <h2>Recipes</h2>

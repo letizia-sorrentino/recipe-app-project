@@ -1,5 +1,6 @@
 import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/searchInput/SearchBar";
+import Controls from "../../features/controls/Controls";
 import CategoryCard from "../elements/CategoryCard";
 import FilterButton from "../elements/FilterButton";
 import vegetarianDish from "../../assets/vegetarianDish.png";
@@ -14,7 +15,7 @@ const SearchPage = () => {
         <h1>Search</h1>
       </div>
       <div>
-        <SearchBar />
+        <SearchBar /> <Controls/>
       </div>
       <h2>Filter Recipes</h2>
       <div className="searchFilters">
