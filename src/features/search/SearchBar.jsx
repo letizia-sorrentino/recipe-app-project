@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSearchInput, setSearchInput } from "./searchInputManagerSlice";
 import { getRecipes } from "../recipes/recipeAPI";
+import Controls from "./Controls";
 
 const SearchBar = () => {
   const searchInput = useSelector(selectSearchInput);
@@ -12,7 +13,7 @@ const SearchBar = () => {
     e.preventDefault();
     dispatch(setSearchInput(e.target.value));
   };
- console.log(searchInput);
+  console.log(searchInput);
 
   return (
     <div>
@@ -25,8 +26,15 @@ const SearchBar = () => {
         onInput={onSearchInput}
       />
 
-      <button onClick={() => {getRecipes(searchInput)}}>click me</button>
-      
+      <Controls />
+
+      <button
+        onClick={() => {
+          getRecipes(searchInput);
+        }}
+      >
+        click me
+      </button>
     </div>
   );
 };

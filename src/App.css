@@ -74,9 +74,37 @@ button {
   }
 
 
+/* Recipes */
+.recipeListContainer {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+
+}
+.recipeImage {
+  border-radius: 0.5rem;
+  width: 30%;
+}
+
+.recipeListInfo {
+  display: flex;
+
+}
+
+.recipeTitle {
+  font-size: small;
+}
+
+.addButton {
+  width: fit-content;
+}
+
+
+
+
+
 
 /* Homepage */
-
 
 .categoriesContainer {
   display: grid;

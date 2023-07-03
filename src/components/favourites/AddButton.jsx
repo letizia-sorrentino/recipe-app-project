@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addRecipe  } from "../recipes/recipeManagerSlice";
+import { addRecipe  } from "../../features/recipes/recipeManagerSlice";
 
 const AddButton = () => {
   const dispatch = useDispatch();

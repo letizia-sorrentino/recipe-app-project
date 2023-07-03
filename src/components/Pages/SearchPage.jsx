@@ -1,6 +1,4 @@
 import SearchBar from "../../features/search/SearchBar";
-import Controls from "../../features/controls/Controls";
-//import FilterButton from "../elements/FilterButton";
 import RecipesByType from "../../features/recipes/RecipesByType";
 import { getRecipesByType } from "../../features/recipes/recipeAPI";
 
@@ -11,7 +9,8 @@ const SearchPage = () => {
         <h1>Search</h1>
       </div>
       <div className="controlsBar">
-        <SearchBar /> <Controls />
+        <SearchBar /> 
+        
       </div>
       <h2>Popular filters:</h2>
       <div className="searchFilters">
