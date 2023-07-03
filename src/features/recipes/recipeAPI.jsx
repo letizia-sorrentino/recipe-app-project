@@ -56,6 +56,7 @@ export const getRecipesByDiet = async (diet) => {
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`
     );
+    console.log(data);
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {

@@ -5,14 +5,13 @@ import { useEffect } from "react";
 import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
 import RecipesList from "../recipes/RecipesList";
-import LikeButton from "../like/LikeButton";
+import AddButton from "../favourites/AddButton";
 
 const RecipesByType = () => {
   const recipes = useSelector(selectAllRecipes);
 
   useEffect(() => {
     getRecipesByType('breakfast');
-    //console.log(type);
     console.log("useEffect run - GET RECIPES BY TYPE")
 
   }, []);
@@ -21,7 +20,7 @@ const RecipesByType = () => {
     Array.isArray(recipes) &&
     recipes.map((recipe) => (
       <div className="recipeListContainer" key={recipe.id}>
-        <LikeButton />
+        <AddButton />
 
         <img className="recipeImage" src={recipe.image} alt={recipe.title} />
         <h2 className="recipeTitle">{recipe.title}</h2>

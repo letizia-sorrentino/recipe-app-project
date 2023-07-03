@@ -7,9 +7,9 @@ import veganDish from "../../assets/veganDish.png";
 import pescatarianDish from "../../assets/pescatarianDish.png";
 import whole30Dish from "../../assets/Whole30Dish.png";
 import { getRecipesByDiet } from "../../features/recipes/recipeAPI";
-import RecipesByDiet from "../../features/recipes/RecipesByDiet";
 
 const Homepage = () => {
+
   return (
     <>
       <div>
@@ -85,9 +85,6 @@ const Homepage = () => {
           </CategoryCard>
         </div>
 
-        <div className="searchResults">
-          <RecipesByDiet />
-        </div>
       </div>
     </>
   );

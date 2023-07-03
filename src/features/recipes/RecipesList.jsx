@@ -4,7 +4,8 @@ import { getRandomRecipes } from "./recipeAPI";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import "./Recipes.css";
 import Loading from "../../components/elements/Loading";
-import LikeButton from "../like/LikeButton";
+import AddButton from "../favourites/AddButton";
+
 
 const RecipesList = () => {
   //destructure data from slice using useSelector
@@ -21,9 +22,13 @@ const RecipesList = () => {
     Array.isArray(recipes) &&
     recipes.map((recipe) => (
       <div className="recipeListContainer" key={recipe.id}>
-        <LikeButton />
+        <div className="recipeTile"> 
         <img className="recipeImage" src={recipe.image} alt={recipe.title} />
+        <div className="recipeListInfo"> 
         <h2 className="recipeTitle">{recipe.title}</h2>
+        <AddButton/>
+        </div>
+        </div>
       </div>
     ));
   return <section>{renderedRecipes}</section>;

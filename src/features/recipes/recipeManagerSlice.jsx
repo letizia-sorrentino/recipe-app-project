@@ -4,8 +4,6 @@ const initialState = {
   recipes: [],
   status: "idle",
   error: null,
-
-
 };
 
 export const recipeManagerSlice = createSlice({
@@ -21,12 +19,24 @@ export const recipeManagerSlice = createSlice({
     filterRecipesByDiet: (state, action) => {
       state.recipes = action.payload;
     },
+    addRecipe: (state, action) => {
+      state.recipes.push(action.payload);
+    },
+
+    removeRecipe: (state, action) => {
+      state.recipes.filter((recipe) => recipe.id !== action.payload.id);
+    },
   },
 });
 
 //export actions
-export const { storeRecipes, filterRecipesbyType, filterRecipesByDiet } =
-  recipeManagerSlice.actions;
+export const {
+  storeRecipes,
+  filterRecipesbyType,
+  filterRecipesByDiet,
+  addRecipe,
+  removeRecipe,
+} = recipeManagerSlice.actions;
 
 //export data
 export const selectAllRecipes = (state) => state.recipeManager.recipes;
