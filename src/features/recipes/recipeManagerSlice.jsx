@@ -20,11 +20,13 @@ export const recipeManagerSlice = createSlice({
       state.recipes = action.payload;
     },
     addRecipe: (state, action) => {
-      state.recipes.push(action.payload);
+      state.recipes.findIndex((recipe) => {return recipe.id === action.payload;});
+      
     },
 
     removeRecipe: (state, action) => {
-      state.recipes.filter((recipe) => recipe.id !== action.payload.id);
+      const indexOf = state.recipes.findIndex((recipe) => {return recipe.id === action.payload;});
+      state.recipes.splice(indexOf, 1);
     },
   },
 });

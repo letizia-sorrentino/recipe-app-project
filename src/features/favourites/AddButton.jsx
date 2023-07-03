@@ -7,9 +7,7 @@ const AddButton = () => {
  const onSaveInput = (e) => {
     const userInput = e.target.value;
     dispatch(addRecipe(userInput));
-    //console.log('clicked');
   };
-
 
   return (
     <> 
