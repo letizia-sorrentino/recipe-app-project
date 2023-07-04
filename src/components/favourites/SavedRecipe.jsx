@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectAllRecipes } from "../../features/recipes/recipeManagerSlice";
 import RemoveButton from "./RemoveButton";
+import {Link} from "react-router-dom";
 
 const SavedRecipe = () => {
   const favourites = useSelector(selectAllRecipes);
@@ -8,12 +9,14 @@ const SavedRecipe = () => {
 
   const renderedFavouriteRecipes =
     Array.isArray(favourites) &&
-    favourites.map((item) => (
-      <div className="recipeListContainer" key={item.id}>
+    favourites.map((recipe) => (
+      <div className="recipeListContainer" key={recipe.id}>
         <div className="recipeTile">
-          <img className="recipeImage" src={item.image} alt={item.title} />
+          <img className="recipeImage" src={recipe.image} alt={recipe.title} />
           <div className="recipeListInfo">
-            <h2 className="recipeTitle">{item.title}</h2>
+          <Link className="recipeLink" to={"/recipe/"+recipe.id}>
+            <h2 className="recipeTitle">{recipe.title}</h2>
+           </Link>
             <RemoveButton />
           </div>
         </div>

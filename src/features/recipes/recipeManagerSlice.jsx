@@ -21,8 +21,7 @@ export const recipeManagerSlice = createSlice({
     },
     addRecipe: (state, action) => {
       state.recipes.findIndex((recipe) => {return recipe.id === action.payload;});
-      //state.recipes.push(indexOf);
-
+      //state.recipes.push(newRecipe, 1);
     },
 
     removeRecipe: (state, action) => {

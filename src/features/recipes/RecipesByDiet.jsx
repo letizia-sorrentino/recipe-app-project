@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getRecipesByDiet } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
 import LikeButton from "../like/LikeButton";
+import { Link } from "react-router-dom";
 
 const RecipesByDiet = () => {
   const recipes = useSelector(selectAllRecipes);
@@ -14,7 +15,6 @@ const RecipesByDiet = () => {
     console.log("useEffect run -GET RECIPES BY DIET");
   }, []);
 
-
   const filteredRecipesByDiet =
     Array.isArray(recipes) &&
     recipes.map((recipe) => (
@@ -22,7 +22,11 @@ const RecipesByDiet = () => {
         <LikeButton />
 
         <img className="recipeImage" src={recipe.image} alt={recipe.title} />
-        <h2 className="recipeTitle">{recipe.title}</h2>
+        <div className="recipeListInfo">
+          <Link className="recipeLink" to={"/recipe/" + recipe.id}>
+            <h2 className="recipeTitle">{recipe.title}</h2>
+          </Link>
+        </div>
       </div>
     ));
 

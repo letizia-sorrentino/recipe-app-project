@@ -9,7 +9,7 @@ const Controls = () => {
         setQuantity(e.target.value);
       }}
     >
-      {[1, 2, 3, 4, 5].map((item) => {
+      {[1, 2, 3, 4, 5, ].map((item) => {
         return <option value={item}>{item}</option>;
       })}
     </select>

@@ -49,6 +49,7 @@ export const getRecipesByType = async (type) => {
 };
 
 // get recipes by diet
+
 export const getRecipesByDiet = async (diet) => {
   try {
     console.log("get recipes");
@@ -63,3 +64,4 @@ export const getRecipesByDiet = async (diet) => {
     console.log(error);
   }
 };
+

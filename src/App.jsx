@@ -3,8 +3,11 @@ import Homepage from './components/Pages/Homepage';
 import SearchPage from './components/Pages/SearchPage';
 import FavouriteRecipes from './components/Pages/FavouriteRecipes';
 import Settings from './components/Pages/Settings';
+import SearchResults from './components/Pages/SearchResults';
 import Nav from './components/navigation/Nav';
+import RecipeCard from './components/Pages/RecipeCard';
 import './App.css';
+
 
 const App = () => {
 
@@ -19,6 +22,8 @@ const App = () => {
           <Route path="search" element={<SearchPage />} />
           <Route path="favourites" element={<FavouriteRecipes />} />
           <Route path="settings" element={<Settings />} />
+          <Route path='searchResults' element={<SearchResults/>}/>
+          <Route path="recipe/:id" element={<RecipeCard/>}/>
 
 
         </Routes>

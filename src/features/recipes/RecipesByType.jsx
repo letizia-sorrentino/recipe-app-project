@@ -6,12 +6,13 @@ import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
 import RecipesList from "../recipes/RecipesList";
 import AddButton from "../../components/favourites/AddButton";
+import { Link } from "react-router-dom";
 
 const RecipesByType = () => {
   const recipes = useSelector(selectAllRecipes);
 
   useEffect(() => {
-    getRecipesByType('breakfast');
+    getRecipesByType();
     console.log("useEffect run - GET RECIPES BY TYPE")
 
   }, []);
@@ -23,7 +24,12 @@ const RecipesByType = () => {
         <AddButton />
 
         <img className="recipeImage" src={recipe.image} alt={recipe.title} />
+        <div className="recipeListInfo"> 
+
+        <Link className="recipeLink" to={"/recipe/"+recipe.id}> 
         <h2 className="recipeTitle">{recipe.title}</h2>
+        </Link>
+      </div>
       </div>
     ));
 

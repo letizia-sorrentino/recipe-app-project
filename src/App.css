@@ -46,7 +46,6 @@ button {
 }
 
 /* Search and Controls */
-
 .searchBar {
     display: flex;
     justify-content: center;
@@ -77,8 +76,8 @@ button {
 /* Recipes */
 .recipeListContainer {
   display: flex;
-  flex-direction: column; 
-  justify-content: center;
+  flex-direction: row; 
+  justify-content: right;
 
 }
 .recipeImage {
@@ -93,14 +92,25 @@ button {
 
 .recipeTitle {
   font-size: small;
+  
+}
+
+.recipeLink {
+  text-decoration: none;
+  color: inherit;
 }
 
 .addButton {
   width: fit-content;
 }
 
+/* Recipe Card */
+.recipeCardImage {
+  width: 100vw;
+  height:auto;
+  margin-left: 0;
 
-
+}
 
 
 
@@ -131,18 +141,14 @@ button {
   align-self: start;
 }
 
-.categoryTitle {
-  font-size: 1rem;
+.categoryLink{
+  font-size: 1.25rem;
+  text-decoration: none;
   color: rgb(255, 255, 255);
+}
+.categoryTitle {
   text-align: center;
   padding-left: 0.5rem;
-  align-self: flex-end;
-}
-
-.lunchIcon,
-.dinnerIcon {
-  height: 65%;
-  width: auto;
   align-self: flex-end;
 }
 
