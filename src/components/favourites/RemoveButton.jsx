@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { removeRecipe } from "../../features/recipes/recipeManagerSlice";
+import closeIcon from "../../assets/closeIcon.svg"
 
 const RemoveButton = () => {
   const dispatch = useDispatch();
@@ -10,8 +11,8 @@ const RemoveButton = () => {
 
   return (
     <>
-      <button className="addButton" onClick={onRemoveInput}>
-        Unsave
+      <button className="removeButton" onClick={onRemoveInput}>
+        <img className="closeIcon" src={closeIcon} alt={closeIcon}/>
       </button>
     </>
   );

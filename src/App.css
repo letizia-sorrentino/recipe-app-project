@@ -9,16 +9,23 @@
   display: flex;
   flex-direction: column;
   min-height: 95vh;
+  margin-bottom: 4rem;
+
+}
+
+h1,
+h2 {
   margin-left: 1rem;
 }
 
 button {
-  background-color: rgba(244, 201, 72, 255);
-  border-color: rgba(244, 201, 72, 255);
-  color: rgb(255, 255, 255);
-  font-weight: 400;
-  margin: 0.5rem;
-  border-radius: 1rem;
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 .spinner {
@@ -45,53 +52,75 @@ button {
   padding: 1rem;
 }
 
-/* Search and Controls */
+/* Search Bar */
+.searchBarContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 0.5rem;
+  width: 100%;
+}
+
 .searchBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 6vh;
-    width: 75vw;
-    margin-bottom: 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid rgba(244, 201,72,255);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.35rem;
+  width: 60vw;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid rgba(244, 201, 72, 255);
+}
 
-.controlsBar{
-  display: inline;
-  }
-  
-  .selectQuantity {
-      background-color: rgba(244, 201, 72, 255);
-      border-color: rgba(244, 201, 72, 255);
-      border-radius: 0.5rem;
-      color: rgb(255, 255, 255);
-      font-weight: 400;
-      width: 3rem;
-      height: 3rem;
-  }
+.selectQuantity {
+  background-color: rgba(244, 201, 72, 255);
+  border-color: rgba(244, 201, 72, 255);
+  border-radius: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.25rem;
+  font-weight: 800;
+  width: 2.75rem;
+  height: 2.75rem;
+}
 
+.searchButton {
+  background-color: rgba(244, 201, 72, 255);
+  border-color: rgba(244, 201, 72, 255);
+  border-radius: 0.5rem;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+  width: 2.75rem;
+  height: 2.75rem;
+}
+
+.forwardArrow {
+  width: 2rem;
+  height: auto;
+}
 
 /* Recipes */
 .recipeListContainer {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: right;
-
+  margin-left: 1rem;
 }
+
 .recipeImage {
   border-radius: 0.5rem;
-  width: 70vw;
+  width: 90vw;
 }
 
 .recipeListInfo {
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 80vw 1fr;
+  justify-items: start;
+  width: 90vw;
 }
 
-.recipeTitle {
-  font-size: small;
-  
+.recipeListInfo h3 {
+  align-self: baseline ;
+  margin-top: 0;
 }
 
 .recipeLink {
@@ -100,23 +129,42 @@ button {
 }
 
 .addButton {
-  width: fit-content;
+  align-self: baseline;
+  justify-self: flex-end;
+}
+
+.addButtonIcon {
+ width: 2rem;
+ height: 2rem;
 }
 
 /* Recipe Card */
 .recipeCardImage {
   width: 100vw;
-  height:auto;
+  height: auto;
   margin-left: 0;
+}
 
+.recipeCardInfo, .recipeCardIngredients, .recipeCardInstructions {
+  margin-left: 1rem;
 }
 
 /* Saved Recipes */
 
 .savedRecipeImage {
-  width: 80vw;
-  height:auto;
+  width: 90vw;
+  height: auto;
   border-radius: 0.5rem;
+  text-align: center;
+}
+
+.removeButton {
+  align-self: baseline;
+  justify-self: flex-end;
+}
+.closeIcon {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Homepage */
@@ -126,7 +174,7 @@ button {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-gap: 1rem;
-  margin-left: auto;
+  margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 3rem;
 }
@@ -146,11 +194,12 @@ button {
   align-self: start;
 }
 
-.categoryLink{
+.categoryLink {
   font-size: 1.25rem;
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
+
 .categoryTitle {
   text-align: center;
   padding-left: 0.5rem;
@@ -159,7 +208,7 @@ button {
 
 /* Search Page */
 
-.filtersContainer{
+.filtersContainer {
   margin-bottom: 2rem;
 }
 

@@ -26,7 +26,7 @@ const RecipesList = () => {
         <img className="recipeImage" src={recipe.image} alt={recipe.title} />
         <div className="recipeListInfo"> 
         <Link className="recipeLink" to={"/recipe/"+recipe.id}>
-        <h2 className="recipeTitle">{recipe.title}</h2>
+        <h3 className="recipeTitle">{recipe.title}</h3>
         </Link>
         <AddButton/>
         </div>

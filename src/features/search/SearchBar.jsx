@@ -2,7 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { selectSearchInput, setSearchInput } from "./searchInputManagerSlice";
 import { getRecipes } from "../recipes/recipeAPI";
-import Controls from "./Controls";
+import forwardArrow from "../../assets/forwardArrow.svg";
+import { setQuantity } from "./searchInputManagerSlice";
 
 const SearchBar = () => {
   const searchInput = useSelector(selectSearchInput);
@@ -16,7 +17,7 @@ const SearchBar = () => {
   console.log(searchInput);
 
   return (
-    <div>
+    <div className="searchBarContainer">
       <input
         className="searchBar"
         type="text"
@@ -26,14 +27,24 @@ const SearchBar = () => {
         onInput={onSearchInput}
       />
 
-      <Controls />
+      {/* <select
+        className="selectQuantity"
+        onChange={(e) => {
+          setQuantity(e.target.value);
+        }}
+      >
+        {[1, 2, 3, 4, 5].map((item) => {
+          return <option value={item}>{item}</option>;
+        })}
+      </select> */}
 
       <button
+        className="searchButton"
         onClick={() => {
           getRecipes(searchInput);
         }}
       >
-        click me
+        <img className="forwardArrow" src={forwardArrow} alt="forwardArrow" />
       </button>
     </div>
   );

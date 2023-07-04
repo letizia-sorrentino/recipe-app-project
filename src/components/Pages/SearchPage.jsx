@@ -7,9 +7,10 @@ const SearchPage = () => {
     <>
       <div>
         <h1>Search</h1>
+        
       </div>
       <div className="controlsBar">
-        <SearchBar /> 
+      <SearchBar /> 
         
       </div>
       <div className="filtersContainer">

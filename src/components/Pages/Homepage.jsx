@@ -13,7 +13,7 @@ const Homepage = () => {
     <>
       <div>
         <h1>Find the best recipes:</h1>
-        <div className="controlsBar">
+        <div>
           <SearchBar />
         </div>
       </div>

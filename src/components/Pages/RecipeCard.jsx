@@ -28,36 +28,42 @@ const RecipeCard = () => {
   }, [params.id]);
 
   return (
-    <div>
-      <img className="recipeCardImage" src={details.image} alt={details.title} />
+    <div className="recipeCardContainer">
+      <img
+        className="recipeCardImage"
+        src={details.image}
+        alt={details.title}
+      />
 
-      <div>
-        <h2>{details.title}</h2>
-      </div>
-
-      <div>
+      <div className="recipeCardContent">
         <div>
+          <h2>{details.title}</h2>
+        </div>
+
+        <div className="recipeCardInfo">
           <p>
             Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}
             minutes
           </p>
         </div>
 
-        <h3> Ingredients</h3>
-        {details.extendedIngredients ? (
-          <ul>
-            {details.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
-            ))}
-          </ul>
-        ) : (
-          <p>No ingredients found</p>
-        )}
+        <div className="recipeCardIngredients">
+          <h3>Ingredients</h3>
+          {details.extendedIngredients ? (
+            <ul>
+              {details.extendedIngredients.map((ingredient) => (
+                <li key={ingredient.id}>{ingredient.original}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>No ingredients found</p>
+          )}
+        </div>
 
-        <h3> Directions</h3>
-       <div dangerouslySetInnerHTML={{__html: details.instructions}}></div>
-        
-       
+        <div className="recipeCardInstructions">
+          <h3>Instructions</h3>
+          <div dangerouslySetInnerHTML={{ __html: details.instructions }}></div>
+        </div>
       </div>
     </div>
   );
