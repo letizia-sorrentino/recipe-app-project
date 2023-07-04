@@ -12,6 +12,7 @@ const SearchPage = () => {
         <SearchBar /> 
         
       </div>
+      <div className="filtersContainer">
       <h2>Popular filters:</h2>
       <div className="searchFilters">
         <button
@@ -43,7 +44,7 @@ const SearchPage = () => {
           Dinner
         </button>
       </div>
-
+      </div>
       <div className="searchResults">
         <RecipesByType />
       </div>

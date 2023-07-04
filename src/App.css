@@ -58,8 +58,7 @@ button {
   }
 
 .controlsBar{
-  display: flex;
-  justify-content: space-around;
+  display: inline;
   }
   
   .selectQuantity {
@@ -76,13 +75,13 @@ button {
 /* Recipes */
 .recipeListContainer {
   display: flex;
-  flex-direction: row; 
+  flex-direction: column; 
   justify-content: right;
 
 }
 .recipeImage {
   border-radius: 0.5rem;
-  width: 30%;
+  width: 70vw;
 }
 
 .recipeListInfo {
@@ -112,7 +111,13 @@ button {
 
 }
 
+/* Saved Recipes */
 
+.savedRecipeImage {
+  width: 80vw;
+  height:auto;
+  border-radius: 0.5rem;
+}
 
 /* Homepage */
 
@@ -153,6 +158,12 @@ button {
 }
 
 /* Search Page */
+
+.filtersContainer{
+  margin-bottom: 2rem;
+}
+
+
 .searchFilters {
   display: flex;
   justify-content: space-around;

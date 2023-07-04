@@ -12,7 +12,7 @@ const SavedRecipe = () => {
     favourites.map((recipe) => (
       <div className="recipeListContainer" key={recipe.id}>
         <div className="recipeTile">
-          <img className="recipeImage" src={recipe.image} alt={recipe.title} />
+          <img className="savedRecipeImage" src={recipe.image} alt={recipe.title} />
           <div className="recipeListInfo">
           <Link className="recipeLink" to={"/recipe/"+recipe.id}>
             <h2 className="recipeTitle">{recipe.title}</h2>

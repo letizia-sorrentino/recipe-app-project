@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import apiKey from "../../features/recipes/config";
 
-
 const RecipeCard = () => {
   let params = useParams();
   const [details, setDetails] = useState({});
