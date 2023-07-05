@@ -1,4 +1,4 @@
-import SavedRecipe from "../favourites/SavedRecipe"
+import SavedRecipe from "../../features/recipes/SavedRecipe"
 
 const FavouriteRecipes = () => {
 

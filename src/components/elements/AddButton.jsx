@@ -14,7 +14,7 @@ const AddButton = () => {
     <> 
     <button className="addButton" 
       onClick={onSaveInput}>
-      <img class="addButtonIcon" src={favouritesIcon} alt={favouritesIcon}/>
+      <img className="addButtonIcon" src={favouritesIcon} alt={favouritesIcon}/>
     </button>
     </>
   );

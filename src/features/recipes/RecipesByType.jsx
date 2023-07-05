@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { getRecipesByType } from "./recipeAPI";
 import Loading from "../../components/elements/Loading";
 import RecipesList from "../recipes/RecipesList";
-import AddButton from "../../components/favourites/AddButton";
+import AddButton from "../../components/elements/AddButton";
 import { Link } from "react-router-dom";
 
 const RecipesByType = () => {

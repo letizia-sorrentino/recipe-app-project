@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { getRandomRecipes } from "./recipeAPI";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import Loading from "../../components/elements/Loading";
-import AddButton from "../../components/favourites/AddButton";
+import AddButton from "../../components/elements/AddButton";
 import { Link } from "react-router-dom";
 
 const RecipesList = () => {
