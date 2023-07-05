@@ -1,4 +1,4 @@
-import RecipesByDiet from "../../features/recipes/RecipesByType";
+import RecipesList from "../../features/recipes/RecipesList";
 
 const SearchResults = () => {
   return (
@@ -6,7 +6,7 @@ const SearchResults = () => {
       {" "}
       <div> 
       <h1>Recipes</h1>
-      <RecipesByDiet />
+      <RecipesList />
       </div>
     </>
   );

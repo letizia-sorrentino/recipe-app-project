@@ -7,10 +7,17 @@ import SearchResults from './components/Pages/SearchResults';
 import Nav from './components/navigation/Nav';
 import RecipeCard from './components/Pages/RecipeCard';
 import './App.css';
+import { useEffect } from 'react';
+import { getRandomRecipes } from './features/recipes/recipeAPI';
 
 
 const App = () => {
-
+ 
+  useEffect(() => {
+    getRandomRecipes();
+    console.log("useEffect run");
+  }, [])
+  
   return (
     <div className="App">
       <header className="appHeader"> </header>

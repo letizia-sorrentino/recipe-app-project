@@ -41,6 +41,8 @@ export const getRecipesByType = async (type) => {
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=${type}`
     );
+    console.log(data, `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=${type}`
+    );
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
@@ -57,7 +59,7 @@ export const getRecipesByDiet = async (diet) => {
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`
     );
-    //console.log(data);
+    console.log(data,  `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`);
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {

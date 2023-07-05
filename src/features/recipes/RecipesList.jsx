@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { getRandomRecipes } from "./recipeAPI";
+import {
+  getRandomRecipes
+} from "./recipeAPI";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import Loading from "../../components/elements/Loading";
 import AddButton from "../../components/elements/AddButton";
@@ -10,30 +12,23 @@ const RecipesList = () => {
   //destructure data from slice using useSelector
   const recipes = useSelector(selectAllRecipes);
 
-  useEffect(() => {
-    getRandomRecipes();
-    console.log("use effect run -GET RANDOM RECIPES")
-  }, []);
-
   if (!recipes || recipes.length === 0) return <Loading />;
 
-  const renderedRecipes =
-    Array.isArray(recipes) &&
-    recipes.map((recipe) => (
+  const renderedRecipes = recipes.map((recipe) => (
       <div className="recipeListContainer" key={recipe.id}>
-        
-        <div className="recipeTile"> 
-        <img className="recipeImage" src={recipe.image} alt={recipe.title} />
-        <div className="recipeListInfo"> 
-        <Link className="recipeLink" to={"/recipe/"+recipe.id}>
-        <h3 className="recipeTitle">{recipe.title}</h3>
-        </Link>
-        <AddButton/>
+        <div className="recipeTile">
+          <img className="recipeImage" src={recipe.image} alt={recipe.title} />
+          <div className="recipeListInfo">
+            <Link className="recipeLink" to={"/recipe/" + recipe.id}>
+              <h3 className="recipeTitle">{recipe.title}</h3>
+            </Link>
+            <AddButton id={recipe.id}/>
+          </div>
         </div>
-        </div>
-        
       </div>
     ));
+  
+
   return <section>{renderedRecipes}</section>;
 };
 export default RecipesList;

@@ -1,5 +1,5 @@
 import SearchBar from "../../features/search/SearchBar";
-import RecipesByType from "../../features/recipes/RecipesByType";
+import RecipesList from "../../features/recipes/RecipesList";
 import { getRecipesByType } from "../../features/recipes/recipeAPI";
 
 const SearchPage = () => {
@@ -47,7 +47,7 @@ const SearchPage = () => {
       </div>
       </div>
       <div className="searchResults">
-        <RecipesByType />
+        <RecipesList />
       </div>
     </>
   );
