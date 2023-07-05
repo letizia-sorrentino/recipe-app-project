@@ -1,4 +1,5 @@
 import RecipesByDiet from "../../features/recipes/RecipesByType";
+
 const SearchResults = () => {
   return (
     <>

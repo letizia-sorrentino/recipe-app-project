@@ -6,11 +6,11 @@ import { storeRecipes } from "./recipeManagerSlice";
 // get recipes from API based on search input
 export const getRecipes = async (searchInput) => {
   try {
-    console.log("get recipes");
+    //console.log("get recipes");
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&query=${searchInput}`
     );
-    
+
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
@@ -21,7 +21,7 @@ export const getRecipes = async (searchInput) => {
 // get random recipes results from API
 export const getRandomRecipes = async () => {
   try {
-    console.log("get recipes");
+    //console.log("get recipes");
 
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/random?&apiKey=${apiKey}`
@@ -36,7 +36,7 @@ export const getRandomRecipes = async () => {
 //get recipes by meal type
 export const getRecipesByType = async (type) => {
   try {
-    console.log("get recipes");
+    //console.log("get recipes by type");
 
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=${type}`
@@ -52,16 +52,15 @@ export const getRecipesByType = async (type) => {
 
 export const getRecipesByDiet = async (diet) => {
   try {
-    console.log("get recipes");
+    //console.log("get recipes by diet");
 
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`
     );
-    console.log(data);
+    //console.log(data);
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
   }
 };
-

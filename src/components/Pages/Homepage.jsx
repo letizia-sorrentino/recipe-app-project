@@ -1,6 +1,5 @@
 import RecipesList from "../../features/recipes/RecipesList";
 import SearchBar from "../../features/search/SearchBar";
-import CategoryCard from "../elements/CategoryCard";
 import vegetarianDish from "../../assets/vegetarianDish.png";
 import veganDish from "../../assets/veganDish.png";
 import pescatarianDish from "../../assets/pescatarianDish.png";
@@ -24,14 +23,17 @@ const Homepage = () => {
       <div>
         <h2>Popular Recipes</h2>
         <div className="categoriesContainer">
-          <CategoryCard>
+        <div className="categoryCard">
             <Link className="categoryLink" to={"/searchResults"}>
+              <div> 
               <img
                 className="categoryPicture"
                 src={vegetarianDish}
                 alt="vegetarianDish"
               />
-              <h3
+              </div>
+              <div> 
+              <button
                 className="categoryTitle"
                 onClick={() => {
                   getRecipesByDiet("vegetarian");
@@ -39,17 +41,21 @@ const Homepage = () => {
                 }}
               >
                 Vegeterian
-              </h3>
+              </button>
+              </div>
             </Link>
-          </CategoryCard>
-          <CategoryCard>
+          </div>
+          <div className="categoryCard">
             <Link className="categoryLink" to={"/searchResults"}>
+              <div> 
               <img
                 className="categoryPicture"
                 src={veganDish}
                 alt="veganDish"
               />
-              <h3
+              </div>
+              <div> 
+              <button
                 className="categoryTitle"
                 onClick={() => {
                   getRecipesByDiet("vegan");
@@ -57,43 +63,54 @@ const Homepage = () => {
                 }}
               >
                 Vegan
-              </h3>
+              </button>
+              </div>
             </Link>
-          </CategoryCard>
-          <CategoryCard>
-            <Link className="categoryLink" to={"/searchResults"}>
+          </div>
+          <div className="categoryCard">
+                        <Link className="categoryLink" to={"/searchResults"}>
+              <div> 
               <img
                 className="categoryPicture"
                 src={pescatarianDish}
                 alt="pescatarianDish"
               />
-              <h3
+              </div>
+              <div> 
+              <button
                 className="categoryTitle"
                 onClick={() => {
                   getRecipesByDiet("pescatarian");
+                  console.log('pescatarian recipes')
                 }}
               >
                 Pescatarian{" "}
-              </h3>
+              </button>
+              </div>
             </Link>{" "}
-          </CategoryCard>
-          <CategoryCard>
-            <Link className="categoryLink" to={"/searchResults"}>
+          </div>
+          <div className="categoryCard">
+                        <Link className="categoryLink" to={"/searchResults"}>
+              <div> 
               <img
                 className="categoryPicture"
                 src={whole30Dish}
                 alt="whole30Dish"
               />
-              <h3
+              </div>
+              <div> 
+              <button
                 className="categoryTitle"
                 onClick={() => {
                   getRecipesByDiet("whole30");
+                  console.log('whole30')
                 }}
               >
                 Whole30
-              </h3>
+              </button>
+              </div>
             </Link>{" "}
-          </CategoryCard>
+          </div>
         </div>
       </div>
     </>

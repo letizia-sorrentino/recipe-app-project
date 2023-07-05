@@ -13,8 +13,7 @@ const RecipesByType = () => {
 
   useEffect(() => {
     getRecipesByType();
-    console.log("useEffect run - GET RECIPES BY TYPE")
-
+    console.log("useEffect run - GET RECIPES BY TYPE");
   }, []);
 
   const filteredRecipesByType =

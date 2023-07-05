@@ -182,29 +182,25 @@ button {
 .categoryCard {
   background-color: rgba(244, 201, 72, 255);
   border-radius: 1rem;
-  display: grid;
-  justify-content: center;
-  grid-template-rows: 20vh 10vh;
+  display: flex;
+  flex-direction: column;
+  justify-items: baseline;
+  align-items: center;
   height: 30vh;
 }
 
 .categoryPicture {
-  height: 100%;
+  height: 6rem;
   width: auto;
-  align-self: start;
 }
 
 .categoryLink {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
 
-.categoryTitle {
-  text-align: center;
-  padding-left: 0.5rem;
-  align-self: flex-end;
-}
 
 /* Search Page */
 
