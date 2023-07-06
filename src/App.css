@@ -133,10 +133,6 @@ button {
   justify-self: flex-end;
 }
 
-.addButtonIcon {
- width: 2rem;
- height: 2rem;
-}
 
 /* Recipe Card */
 .recipeCardImage {
@@ -162,10 +158,7 @@ button {
   align-self: baseline;
   justify-self: flex-end;
 }
-.closeIcon {
-  width: 2rem;
-  height: 2rem;
-}
+
 
 /* Homepage */
 

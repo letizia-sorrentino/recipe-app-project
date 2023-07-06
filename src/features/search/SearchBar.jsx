@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { selectSearchInput, setSearchInput } from "./searchInputManagerSlice";
 import { getRecipes } from "../recipes/recipeAPI";
 import forwardArrow from "../../assets/forwardArrow.svg";
-import { setQuantity } from "./searchInputManagerSlice";
+// import { setQuantity } from "./searchInputManagerSlice";
 
 const SearchBar = () => {
   const searchInput = useSelector(selectSearchInput);

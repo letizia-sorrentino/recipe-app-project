@@ -1,8 +1,4 @@
-import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import {
-  getRandomRecipes
-} from "./recipeAPI";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import Loading from "../../components/elements/Loading";
 import AddButton from "../../components/elements/AddButton";
