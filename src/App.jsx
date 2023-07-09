@@ -1,8 +1,8 @@
-import Nav from "./components/navigation/Nav";
+import Nav from "./navigation/Nav";
 import { useEffect } from "react";
 import { getRandomRecipes } from "./features/recipes/recipeAPI";
-import Interface from "./components/navigation/Interface";
-import "./App.css";
+import Interface from "./navigation/Interface";
+import "./styles/App.css";
 
 const App = () => {
     useEffect(() => {

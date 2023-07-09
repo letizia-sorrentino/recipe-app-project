@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectAllRecipes } from "./recipeManagerSlice";
-import Loading from "../../components/elements/Loading";
-import AddButton from "../../components/elements/AddButton";
+import Loading from "../../components/Loading";
+import AddButton from "../../components/AddButton";
 import { Link } from "react-router-dom";
 
 const RecipesList = () => {

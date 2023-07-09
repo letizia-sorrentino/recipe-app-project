@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import apiKey from "../../features/recipes/config";
+import apiKey from "../features/recipes/config";
 
 const RecipeCard = () => {
   let params = useParams();

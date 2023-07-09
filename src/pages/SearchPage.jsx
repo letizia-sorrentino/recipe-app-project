@@ -1,6 +1,6 @@
-import SearchBar from "../../features/search/SearchBar";
-import RecipesList from "../../features/recipes/RecipesList";
-import { getRecipesByType } from "../../features/recipes/recipeAPI";
+import SearchBar from "../features/search/SearchBar";
+import RecipesList from "../features/recipes/RecipesList";
+import { getRecipesByType } from "../features/recipes/recipeAPI";
 
 const SearchPage = () => {
   return (

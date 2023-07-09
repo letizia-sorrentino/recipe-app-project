@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { removeRecipe } from "../../features/recipes/recipeManagerSlice";
-import closeIcon from "../../assets/closeIcon.svg"
+import { removeRecipe } from "../features/recipes/recipeManagerSlice";
+import closeIcon from "../assets/closeIcon.svg"
 
 const RemoveButton = () => {
   const dispatch = useDispatch();

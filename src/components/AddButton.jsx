@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addRecipe } from "../../features/recipes/recipeManagerSlice";
-import { ReactComponent as SaveIcon } from "../../assets/saveIcon.svg";
+import { addRecipe } from "../features/recipes/recipeManagerSlice";
+import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import { useSelector } from "react-redux";
-import { selectFavourites } from "../../features/recipes/recipeManagerSlice";
+import { selectFavourites } from "../features/recipes/recipeManagerSlice";
 
 const AddButton = (props) => {
   const dispatch = useDispatch();

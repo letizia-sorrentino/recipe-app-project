@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import homeIcon from "../../assets/homeIcon.svg";
-import searchIcon from "../../assets/searchIcon.svg";
-import favouritesIcon from "../../assets/favouritesIcon.svg";
-import settingsIcon from "../../assets/settingsIcon.svg"
+import homeIcon from "../assets/homeIcon.svg";
+import searchIcon from "../assets/searchIcon.svg";
+import favouritesIcon from "../assets/favouritesIcon.svg";
+import settingsIcon from "../assets/settingsIcon.svg"
 
 const Nav = () => {
   return (

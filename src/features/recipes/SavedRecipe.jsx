@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { selectAllRecipes, selectFavourites } from "./recipeManagerSlice";
-import RemoveButton from "../../components/elements/RemoveButton";
+import RemoveButton from "../../components/RemoveButton";
 import { Link } from "react-router-dom";
 
 const SavedRecipe = () => {
