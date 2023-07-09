@@ -29,6 +29,7 @@ export const recipeManagerSlice = createSlice({
       const indexOf = state.recipes.findIndex((recipe) => { return recipe.id === action.payload; });
       state.recipes.splice(indexOf, 1);
     },
+
   },
 });
 
