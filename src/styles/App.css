@@ -72,16 +72,6 @@ button {
   border: 2px solid rgba(244, 201, 72, 255);
 }
 
-/* .selectQuantity {
-  background-color: rgba(244, 201, 72, 255);
-  border-color: rgba(244, 201, 72, 255);
-  border-radius: 0.5rem;
-  color: rgb(255, 255, 255);
-  font-size: 1.25rem;
-  font-weight: 800;
-  width: 2.75rem;
-  height: 2.75rem;
-} */
 
 .searchButton {
   background-color: rgba(244, 201, 72, 255);
@@ -244,7 +234,6 @@ text-align: center;
 .filtersContainer {
   margin-bottom: 2rem;
 }
-
 
 .searchFilters {
   display: flex;

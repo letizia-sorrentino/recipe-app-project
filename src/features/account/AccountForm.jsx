@@ -25,19 +25,35 @@ const AccountForm = () => {
   };
   return (
     <div>
+      {" "}
       <h1>Create an Account</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input type="text" value={username} onChange={handleUsernameChange} />
-        </div>
+      <div className="accountFormContainer">
+        <form className="accountForm" onSubmit={handleSubmit}>
+          <div className="usernameFormContainer">
+            <label>Username: </label>
+            <input
+              className="usernameInput"
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </div>
 
-        <div>
-          <label>Password:</label>
-          <input type="text" value={password} onChange={handlePasswordChange} />
-        </div>
-        <button type="submit">Create Account </button>
-      </form>
+          <div className="passwordFormContainer">
+            <label>Password: </label>
+            <input
+              className="passwordInput"
+              type="text"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+
+          <button className="submitButton" type="submit">
+            Create Account{" "}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
