@@ -7,7 +7,7 @@ import FavouriteRecipes from "../pages/FavouriteRecipes";
 import Settings from "../pages/Settings";
 import SearchResults from "../pages/SearchResults";
 import RecipeCard from "../pages/RecipeCard";
-import CreateAccountPage from "../pages/CreateAccountPage.jsx.jsx";
+import CreateAccountPage from "../pages/CreateAccountPage.jsx";
 
 const Interface = () => {
 
