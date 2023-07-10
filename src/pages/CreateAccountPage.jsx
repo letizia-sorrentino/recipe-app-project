@@ -1,13 +1,10 @@
-import AccountForm from '../features/account/AccountForm';
+import AccountForm from "../features/account/AccountForm";
 
 const CreateAccountPage = () => {
-
-
-return (
+  return (
     <div>
-    <AccountForm/>
+      <AccountForm />
     </div>
-)
-
+  );
 };
 export default CreateAccountPage;
