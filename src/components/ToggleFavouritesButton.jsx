@@ -1,19 +1,20 @@
 import { useDispatch } from "react-redux";
 import {
-  addRecipe,
   selectFavourites,
+  toggleFavouritedRecipe,
 } from "../features/recipes/recipeManagerSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import { useSelector } from "react-redux";
 
-const AddButton = (props) => {
+const ToggleFavouritesButton = (props) => {
   const dispatch = useDispatch();
   const favourites = useSelector(selectFavourites);
 
   const onSaveInput = () => {
-    dispatch(addRecipe(props.id));
+    dispatch(toggleFavouritedRecipe(props.id));
   };
 
+  console.log(favourites, props.id);
   return (
     <>
       <button className="addButton" onClick={onSaveInput}>
@@ -27,4 +28,4 @@ const AddButton = (props) => {
   );
 };
 
-export default AddButton;
+export default ToggleFavouritesButton;

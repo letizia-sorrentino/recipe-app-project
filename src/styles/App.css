@@ -136,3 +136,7 @@ button {
   align-self: baseline;
   justify-self: flex-end;
 }
+
+.userMessage {
+  margin-left: 1rem;
+}

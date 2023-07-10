@@ -21,14 +21,19 @@ export const recipeManagerSlice = createSlice({
     filterRecipesByDiet: (state, action) => {
       state.recipes = action.payload;
     },
-    addRecipe: (state, action) => {
-      state.favourites.push(action.payload);
+    toggleFavouritedRecipe: (state, action) => {
+      if (state.favourites.includes(action.payload)) {
+        //remove item
+        const indexOf = state.favourites.indexOf(action.payload);
+        state.favourites.splice(indexOf, 1);
+      } else {
+        state.favourites.push(action.payload)
+      }
     },
 
-    removeRecipe: (state, action) => {
-      const indexOf = state.recipes.findIndex((recipe) => { return recipe.id === action.payload; });
-      state.recipes.splice(indexOf, 1);
-    },
+
+
+
 
   },
 });
@@ -38,8 +43,7 @@ export const {
   storeRecipes,
   filterRecipesbyType,
   filterRecipesByDiet,
-  addRecipe,
-  removeRecipe,
+  toggleFavouritedRecipe,
 } = recipeManagerSlice.actions;
 
 //export data

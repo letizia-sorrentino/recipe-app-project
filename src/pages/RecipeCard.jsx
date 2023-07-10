@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import apiKey from "../features/recipes/config";
-import RemoveButton from "../components/RemoveButton";
+import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
 import "../styles/recipeCard.css";
 
 const RecipeCard = () => {
@@ -38,14 +38,14 @@ const RecipeCard = () => {
       />
 
       <div className="recipeCardContent">
-        <div className="recipeCardIntro"> 
-        <div className="recipeCardTitle">
-          <h2>{details.title}</h2>
-        </div>
+        <div className="recipeCardIntro">
+          <div className="recipeCardTitle">
+            <h2>{details.title}</h2>
+          </div>
 
-        <div className="buttonContainer">
-          <RemoveButton />{" "}
-        </div>
+          <div className="buttonContainer">
+            <ToggleFavouritesButton />{" "}
+          </div>
         </div>
         <div className="recipeCardInfo">
           <p>

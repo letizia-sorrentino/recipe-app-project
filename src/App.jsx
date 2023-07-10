@@ -2,7 +2,7 @@ import Nav from "./navigation/Nav";
 import { useEffect } from "react";
 import { getRandomRecipes } from "./features/recipes/recipeAPI";
 import Interface from "./navigation/Interface";
-import "./styles/App.css";
+import "./styles/app.css";
 
 const App = () => {
     useEffect(() => {

@@ -1,12 +1,13 @@
-import SavedRecipe from "../features/recipes/SavedRecipe"
+import SavedList from "../features/recipes/SavedList";
 
 const FavouriteRecipes = () => {
-
-    return (<div> 
+  return (
+    <div>
       <h1>Saved Recipes</h1>
-      <SavedRecipe/>
-      </div>
-      )
-  };
-  
-  export default FavouriteRecipes;
+
+      <SavedList />
+    </div>
+  );
+};
+
+export default FavouriteRecipes;

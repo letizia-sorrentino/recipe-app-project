@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { selectAllRecipes } from "./recipeManagerSlice";
 import Loading from "../../components/Loading";
-import AddButton from "../../components/AddButton";
+import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const RecipesList = () => {
@@ -18,7 +18,7 @@ const RecipesList = () => {
             <Link className="recipeLink" to={"/recipe/" + recipe.id}>
               <h3 className="recipeTitle">{recipe.title}</h3>
             </Link>
-            <AddButton id={recipe.id}/>
+            <ToggleFavouritesButton id={recipe.id}/>
           </div>
         </div>
       </div>
