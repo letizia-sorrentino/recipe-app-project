@@ -6,6 +6,7 @@ import pescatarianDish from "../assets/pescatarianDish.png";
 import whole30Dish from "../assets/Whole30Dish.png";
 import { getRecipesByDiet } from "../features/recipes/recipeAPI";
 import { Link } from "react-router-dom";
+import "../styles/homepage.css"
 
 const Homepage = () => {
   return (

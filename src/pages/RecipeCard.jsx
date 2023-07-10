@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import apiKey from "../features/recipes/config";
+import RemoveButton from "../components/RemoveButton";
+import "../styles/recipeCard.css";
 
 const RecipeCard = () => {
   let params = useParams();
@@ -36,10 +38,15 @@ const RecipeCard = () => {
       />
 
       <div className="recipeCardContent">
-        <div>
+        <div className="recipeCardIntro"> 
+        <div className="recipeCardTitle">
           <h2>{details.title}</h2>
         </div>
 
+        <div className="buttonContainer">
+          <RemoveButton />{" "}
+        </div>
+        </div>
         <div className="recipeCardInfo">
           <p>
             Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}

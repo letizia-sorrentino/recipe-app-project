@@ -1,0 +1,33 @@
+/* Homepage */
+
+.categoriesContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.categoryCard {
+  background-color: rgba(244, 201, 72, 255);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: baseline;
+  align-items: center;
+  height: 30vh;
+}
+
+.categoryPicture {
+  height: 6rem;
+  width: auto;
+}
+
+.categoryLink {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
