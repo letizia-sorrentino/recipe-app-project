@@ -10,7 +10,7 @@ const SavedList = () => {
   const favouriteRecipes = recipes.filter((recipe) => {
     return favourites.includes(recipe.id);
   });
-  console.log(favouriteRecipes, recipes);
+  //console.log(favouriteRecipes, recipes);
 
   const renderedFavouriteRecipes = favouriteRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>

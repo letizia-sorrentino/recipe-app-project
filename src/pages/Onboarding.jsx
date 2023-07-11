@@ -1,12 +1,11 @@
-//import { useState } from "react";
 import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import "../styles/onboarding.css"
 
 const Onboarding = () => {
-  //const [showNav, setShowNav] = useState(true);
-
+  
   return (
+   <> 
     <div className="onboardingContainer">
       <div className="logoContainer">
         <img className="logo" src={logo} alt="logo" />
@@ -28,6 +27,7 @@ const Onboarding = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

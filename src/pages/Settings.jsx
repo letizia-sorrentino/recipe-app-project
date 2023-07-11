@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import { ReactComponent as ForwardArrow } from "../assets/forwardArrow.svg";
-
 import "../styles/settings.css"
 
 const Settings = () => {
   return (
     <>
       <div className="settingsContainer">
+      <div> 
         <h1>Settings</h1>
+        </div>
         <div className="settingsList">
           <Link className="settingsLink" to={"/createAccount"}>
             <p className="settingsListItem">Create an Account</p>

@@ -14,7 +14,7 @@ const ToggleFavouritesButton = (props) => {
     dispatch(toggleFavouritedRecipe(props.id));
   };
 
-  console.log(favourites, props.id);
+  //console.log(favourites, props.id);
   return (
     <>
       <button className="addButton" onClick={onSaveInput}>

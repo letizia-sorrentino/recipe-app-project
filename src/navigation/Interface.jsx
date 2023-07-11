@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Onboarding from "../pages/Onboarding";
 import Homepage from "../pages/Homepage";
 import SearchPage from "../pages/SearchPage";
@@ -10,12 +10,8 @@ import RecipeCard from "../pages/RecipeCard";
 import CreateAccountPage from "../pages/CreateAccountPage.jsx";
 
 const Interface = () => {
-// const navigate = useNavigate();
   return (
-    //     <div>
-    //     <button onClick={navigate(-1)}>Go Back</button>
-    // </div>
-
+    
     <Routes>
         <Route path="/" element={<Onboarding />} />
         <Route path="createAccount" element={<CreateAccountPage/>}/>

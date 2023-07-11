@@ -4,9 +4,9 @@ const SearchResults = () => {
   return (
     <>
       {" "}
-      <div> 
-      <h1>Recipes</h1>
-      <RecipesList />
+      <div>
+        <h1>Recipes</h1>
+        <RecipesList />
       </div>
     </>
   );

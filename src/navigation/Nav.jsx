@@ -5,7 +5,9 @@ import favouritesIcon from "../assets/favouritesIcon.svg";
 import settingsIcon from "../assets/settingsIcon.svg";
 
 const Nav = () => {
+  
   return (
+    
     <nav className="navbar">
       <Link className="navLink" to="/home">
         <img className="navIcon" src={homeIcon} alt="homeIcon" />

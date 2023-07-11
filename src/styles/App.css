@@ -5,16 +5,20 @@
   box-sizing: border-box;
 }
 
-.appMain {
+.appContainer {
   display: flex;
   flex-direction: column;
   min-height: 95vh;
   margin-bottom: 4rem;
-
 }
 
-h1,
-h2 {
+.appHeader {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  height: 3rem;
+}
+
+h1, h2 {
   margin-left: 1rem;
 }
 
@@ -71,7 +75,6 @@ button {
   border-radius: 0.5rem;
   border: 2px solid rgba(244, 201, 72, 255);
 }
-
 
 .searchButton {
   background-color: rgba(244, 201, 72, 255);

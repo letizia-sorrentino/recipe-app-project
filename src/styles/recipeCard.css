@@ -20,9 +20,9 @@
   justify-content: flex-start;
 }
 
-.buttonContainer {
+/* .buttonContainer {
   justify-content: flex-end;
-}
+} */
 
 .recipeCardInfo,
 .recipeCardIngredients,
