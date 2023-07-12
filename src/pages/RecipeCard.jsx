@@ -1,14 +1,20 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import apiKey from "../features/recipes/config";
-//import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
+import {
+  storeRecipesDetails,
+  selectRecipesDetails,
+} from "../features/recipes/recipeManagerSlice";
+import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
 import "../styles/recipeCard.css";
 
 const RecipeCard = () => {
   let params = useParams();
-  const [details, setDetails] = useState({});
+  const details = useSelector(selectRecipesDetails);
+  const dispatch = useDispatch();
 
   // get single recipe details
   const getRecipesDetails = async () => {
@@ -18,7 +24,8 @@ const RecipeCard = () => {
       const { data } = await axios.get(
         `https://api.spoonacular.com/recipes/${params.id}/information?&apiKey=${apiKey}`
       );
-      setDetails(data);
+      //storeRecipesDetails(data);
+      dispatch(storeRecipesDetails(data));
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +38,6 @@ const RecipeCard = () => {
 
   return (
     <div className="recipeCardContainer">
-      
       <img
         className="recipeCardImage"
         src={details.image}
@@ -44,9 +50,9 @@ const RecipeCard = () => {
             <h2>{details.title}</h2>
           </div>
 
-          {/* <div className="buttonContainer">
-            <ToggleFavouritesButton id={params.id} />{" "}
-          </div> */}
+          <div className="buttonContainer">
+            <ToggleFavouritesButton id={details.id} />{" "}
+          </div>
         </div>
         <div className="recipeCardInfo">
           <p>

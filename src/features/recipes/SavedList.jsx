@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { selectAllRecipes, selectFavourites } from "./recipeManagerSlice";
+import { selectAllRecipes, selectFavourites} from "./recipeManagerSlice";
 import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 

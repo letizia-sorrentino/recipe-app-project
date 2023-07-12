@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { setStoreUsername, setStorePassword } from "./accountSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {

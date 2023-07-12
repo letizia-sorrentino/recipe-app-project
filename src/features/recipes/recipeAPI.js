@@ -66,3 +66,5 @@ export const getRecipesByDiet = async (diet) => {
     console.log(error);
   }
 };
+
+

@@ -3,6 +3,7 @@
   width: 100vw;
   height: auto;
   margin-left: 0;
+  margin-top: 1rem;
 }
 
 .recipeCardContent {
@@ -20,9 +21,9 @@
   justify-content: flex-start;
 }
 
-/* .buttonContainer {
+.buttonContainer {
   justify-content: flex-end;
-} */
+}
 
 .recipeCardInfo,
 .recipeCardIngredients,

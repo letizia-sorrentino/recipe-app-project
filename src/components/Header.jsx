@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import GoBackButton from "./GoBackButton";
 import { ReactComponent as RecipeAppLogo } from "../assets/RecipeAppLogo.svg";
 import "../styles/header.css";
@@ -20,10 +20,12 @@ const Header = () => {
         </div>
       )}
       {!showGoBackButton && <div className="goBackButtonContainer"></div>}
+      <Link className="homepageLink" to={"/home"}>
 
       <div className="mainLogoContainer">
         <RecipeAppLogo className="mainLogo" />
       </div>
+      </Link>
     </div>
   );
 };
