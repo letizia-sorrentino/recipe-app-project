@@ -48,23 +48,21 @@ const RecipeCard = () => {
         <div className="recipeCardIntro">
           <div className="recipeCardTitle">
             <h2>{details.title}</h2>
+            <p className="recipeCardInfo">
+            Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}
+            minutes
+          </p>
           </div>
 
           <div className="buttonContainer">
             <ToggleFavouritesButton id={details.id} />{" "}
           </div>
         </div>
-        <div className="recipeCardInfo">
-          <p>
-            Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}
-            minutes
-          </p>
-        </div>
-
+       
         <div className="recipeCardIngredients">
-          <h3>Ingredients</h3>
+          <h3 className="ingredientsTitle">Ingredients</h3>
           {details.extendedIngredients ? (
-            <ul>
+            <ul className="ingredientsList" >
               {details.extendedIngredients.map((ingredient) => (
                 <li key={ingredient.id}>{ingredient.original}</li>
               ))}
@@ -75,8 +73,8 @@ const RecipeCard = () => {
         </div>
 
         <div className="recipeCardInstructions">
-          <h3>Instructions</h3>
-          <div dangerouslySetInnerHTML={{ __html: details.instructions }}></div>
+          <h3 className="instructionsTitle">Instructions</h3>
+          <div className="instructionsList" dangerouslySetInnerHTML={{ __html: details.instructions }}></div>
         </div>
       </div>
     </div>

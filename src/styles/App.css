@@ -12,14 +12,18 @@
   margin-bottom: 4rem;
 }
 
+
+
+
 .appHeader {
   width: 100%;
   background-color: rgb(255, 255, 255);
   height: 3rem;
 }
 
-h1, h2 {
-  margin-left: 1rem;
+h1,
+h2 {
+  margin-left: 2rem;
 }
 
 button {
@@ -69,8 +73,8 @@ button {
   justify-content: center;
   align-items: center;
   height: 2.35rem;
-  width: 60vw;
-  margin-left: 1rem;
+  width: 65vw;
+  margin-left: 2rem;
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   border: 2px solid rgba(244, 201, 72, 255);
@@ -96,19 +100,19 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: right;
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 .recipeImage {
-  border-radius: 0.5rem;
-  width: 90vw;
+  border-radius: 1rem;
+  width: 80vw;
 }
 
 .recipeListInfo {
   display: grid;
-  grid-template-columns: 80vw 1fr;
+  grid-template-columns: 70vw 1fr;
   justify-items: start;
-  width: 90vw;
+  width: 80vw;
 }
 
 .recipeListInfo h3 {
@@ -129,9 +133,9 @@ button {
 /* Saved Recipes */
 
 .savedRecipeImage {
-  width: 90vw;
+  width: 80vw;
   height: auto;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   text-align: center;
 }
 
@@ -141,5 +145,13 @@ button {
 }
 
 .userMessage {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
+
+/* Responsive Layout */
+
+/* Tablet */
+@media (min-width:600px) {}
+
+/* Desktop */
+@media (min-width:960px) {}
