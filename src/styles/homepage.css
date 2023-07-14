@@ -13,10 +13,10 @@
 .categoryCard {
   background-color: rgba(244, 201, 72, 255);
   border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-items: baseline;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
   height: 30vh;
 }
 
@@ -27,7 +27,8 @@
 
 .categoryLink {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
+  text-align: center;
   color: rgb(255, 255, 255);
 }

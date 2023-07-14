@@ -1,26 +1,23 @@
 /* Create an Account Form */
 
-.accountFormContainer{
+.accountFormContainer {
     margin-left: 2rem;
     margin-right: 2rem;
-    
+}
 
 .accountForm {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    row-gap: 2rem;
+    justify-items: end
 }
 
-}
-.usernameFormContainer, .passwordFormContainer {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.usernameInput, .passwordInput {
+.usernameInput,
+.emailInput,
+.passwordInput {
     height: 2.35rem;
-    width: 60vw;
+    width: 70vw;
     margin-top: 0.5rem;
     border-radius: 0.5rem;
     border: 2px solid rgba(244, 201, 72, 255);
@@ -32,10 +29,10 @@ label {
 
 .submitButton {
     background-color: rgba(244, 201, 72, 255);
-  border-color: rgba(244, 201, 72, 255);
-  border-radius: 0.5rem;
-  color: rgb(255, 255, 255);
-  font-weight: 800;
-  padding: 0.5rem;
-  align-self: flex-end;
+    border-color: rgba(244, 201, 72, 255);
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    padding: 0.5rem;
+    align-self: flex-end;
 }

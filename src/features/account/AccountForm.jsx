@@ -1,16 +1,22 @@
 import { useState } from "react";
-import { setStoreUsername, setStorePassword } from "./accountSlice";
+import { setStoreUsername, setStoreEmail, setStorePassword } from "./accountSlice";
 import { useDispatch } from "react-redux";
+// import {validate} from "../../validation/index"
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] =useState("");
   const [password, setPassword] = useState("");
 
   const dispatch = useDispatch();
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e) => {
@@ -20,8 +26,9 @@ const AccountForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(setStoreUsername(username));
+    dispatch(setStoreEmail(email));
     dispatch(setStorePassword(password));
-    console.log(username, password);
+    console.log(username, email, password);
   };
   return (
     <div>
@@ -36,6 +43,16 @@ const AccountForm = () => {
               type="text"
               value={username}
               onChange={handleUsernameChange}
+            />
+          </div>
+
+          <div className="emailFormContainer">
+            <label>Email: </label>
+            <input
+              className="emailInput"
+              type="text"
+              value={email}
+              onChange={handleEmailChange}
             />
           </div>
 
