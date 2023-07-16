@@ -15,17 +15,15 @@ export const validate = async (payload, type) => {
     }
 
     try {
-        const result = await r.validateAsync(payload)
+        const results = await r.validateAsync(payload);
         return null;
-    }
-    catch (errors) {
+    } catch (errors) {
         const errorsMod = {};
-        errors.details.forEach((error) => { 
-            errorsMod[error.context.key] = error.message 
+        errors.details.forEach((error) => {
+            errorsMod[error.context.key] = error.message
         });
         return errorsMod;
-
     }
 
 
-}
+};

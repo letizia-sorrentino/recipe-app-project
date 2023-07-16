@@ -12,9 +12,6 @@
   margin-bottom: 4rem;
 }
 
-
-
-
 .appHeader {
   width: 100%;
   background-color: rgb(255, 255, 255);
@@ -149,7 +146,6 @@ button {
 }
 
 /* Responsive Layout */
-
 /* Tablet */
 @media (min-width:600px) {}
 

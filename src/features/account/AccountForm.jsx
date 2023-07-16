@@ -1,13 +1,18 @@
 import { useState } from "react";
-import { setStoreUsername, setStoreEmail, setStorePassword } from "./accountSlice";
+import {
+  setStoreUsername,
+  setStoreEmail,
+  setStorePassword,
+} from "./accountSlice";
 import { useDispatch } from "react-redux";
-// import {validate} from "../../validation/index"
+import { validate } from "../../validation/index";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
   const [username, setUsername] = useState("");
-  const [email, setEmail] =useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState("");
 
   const dispatch = useDispatch();
 
@@ -23,13 +28,22 @@ const AccountForm = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(setStoreUsername(username));
-    dispatch(setStoreEmail(email));
-    dispatch(setStorePassword(password));
-    console.log(username, email, password);
+    const result = await validate(
+      { username, email, password },
+      "createAccount"
+    );
+    if (!result) {
+      dispatch(setStoreUsername(username));
+      dispatch(setStoreEmail(email));
+      dispatch(setStorePassword(password));
+      console.log(username, email, password);
+    }
+    setErrors(result);
+    console.log(result);
   };
+
   return (
     <div>
       {" "}
@@ -41,9 +55,13 @@ const AccountForm = () => {
             <input
               className="usernameInput"
               type="text"
+              id="username"
+              name="username"
               value={username}
               onChange={handleUsernameChange}
+              required
             />
+            <p>{errors.username}</p>
           </div>
 
           <div className="emailFormContainer">
@@ -51,19 +69,27 @@ const AccountForm = () => {
             <input
               className="emailInput"
               type="text"
+              id="email"
+              name="email"
               value={email}
               onChange={handleEmailChange}
+              required
             />
+            <p>{errors.email}</p>
           </div>
 
           <div className="passwordFormContainer">
             <label>Password: </label>
             <input
               className="passwordInput"
-              type="text"
+              type="password"
+              id="password"
+              name="password"
               value={password}
               onChange={handlePasswordChange}
+              required
             />
+            <p>{errors.password}</p>
           </div>
 
           <button className="submitButton" type="submit">
