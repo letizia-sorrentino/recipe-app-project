@@ -38,10 +38,10 @@ const AccountForm = () => {
       dispatch(setStoreUsername(username));
       dispatch(setStoreEmail(email));
       dispatch(setStorePassword(password));
-      console.log(username, email, password);
+      //console.log(username, email, password);
     }
     setErrors(result);
-    console.log(result);
+    //console.log(result);
   };
 
   return (
@@ -61,7 +61,7 @@ const AccountForm = () => {
               onChange={handleUsernameChange}
               required
             />
-            <p>{errors.username}</p>
+            {errors && <p>{errors.username}</p>}
           </div>
 
           <div className="emailFormContainer">
@@ -75,7 +75,7 @@ const AccountForm = () => {
               onChange={handleEmailChange}
               required
             />
-            <p>{errors.email}</p>
+            {errors &&<p>{errors.email}</p>}
           </div>
 
           <div className="passwordFormContainer">
@@ -89,7 +89,7 @@ const AccountForm = () => {
               onChange={handlePasswordChange}
               required
             />
-            <p>{errors.password}</p>
+            {errors && <p>{errors.password}</p>}
           </div>
 
           <button className="submitButton" type="submit">
