@@ -75,7 +75,7 @@ const AccountForm = () => {
               onChange={handleEmailChange}
               required
             />
-            {errors &&<p>{errors.email}</p>}
+            {errors && <p>{errors.email}</p>}
           </div>
 
           <div className="passwordFormContainer">
