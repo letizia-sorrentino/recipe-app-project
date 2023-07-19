@@ -1,15 +1,14 @@
 /* Onboarding */
 
-.onboardingContainer {
-  display: flex;
-  flex-direction: column;
+.logoContainer {
+  display: grid;
+  justify-items: center;
+  grid-template-rows: 20vh 50vh;
 }
 
-.logoContainer {
-  display: flex;
-  flex-direction: column;
-  height: 50vh;
-  width: 100vw;
+.logo {
+  height: 100%;
+  width: 100%;
 }
 
 .onboardingButtonsContainer {
@@ -20,7 +19,7 @@
 }
 
 .onboardingTitle {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-left: 20vw;
   margin-right: 20vw;
   text-align: center;

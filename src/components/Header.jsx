@@ -5,27 +5,35 @@ import { ReactComponent as RecipeAppLogo } from "../assets/RecipeAppLogo.svg";
 import "../styles/header.css";
 
 const Header = () => {
-  const [showGoBackButton, setShowGoBackButton] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
-    setShowGoBackButton(location.pathname !== "/");
+    setShowHeader(location.pathname !== "/");
   }, [location]);
 
   return (
     <div className="headerContainer">
-      {showGoBackButton && (
-        <div className="goBackButtonContainer">
-          <GoBackButton />
-        </div>
+      {showHeader && (
+        <>
+          <div className="goBackButtonContainer">
+            <GoBackButton />
+          </div>
+          <Link className="homepageLink" to={"/home"}>
+            <div className="mainLogoContainer">
+              <RecipeAppLogo/>
+            </div>
+          </Link>
+        </>
       )}
-      {!showGoBackButton && <div className="goBackButtonContainer"></div>}
-      <Link className="homepageLink" to={"/home"}>
 
-      <div className="mainLogoContainer">
-        <RecipeAppLogo className="mainLogo" />
-      </div>
-      </Link>
+      {!showHeader && (
+        <>
+          {" "}
+          <div className="goBackButtonContainer"></div>
+          <div className="mainLogoContainer"></div>
+        </>
+      )}
     </div>
   );
 };
