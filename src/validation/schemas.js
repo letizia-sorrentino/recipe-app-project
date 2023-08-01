@@ -14,3 +14,10 @@ export const createAccountSchema = {
     password: joi.string().required().min(8).max(32),
 
 }
+
+//login form
+export const loginAccountSchema = {
+    email: joi.string().required().email({ tlds: { allow: false } }),
+    password: joi.string().required().min(8).max(32),
+
+}

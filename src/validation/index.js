@@ -1,5 +1,5 @@
 import joi from "joi";
-import { createAccountSchema, searchRecipeSchema } from "./schemas";
+import { createAccountSchema, searchRecipeSchema, loginAccountSchema } from "./schemas";
 
 export const validate = async (payload, type) => {
     let r;
@@ -9,6 +9,9 @@ export const validate = async (payload, type) => {
             break;
         case "searchRecipe":
             r = joi.object(searchRecipeSchema);
+            break;
+        case "login":
+            r = joi.object(loginAccountSchema);
             break;
         default:
             break;

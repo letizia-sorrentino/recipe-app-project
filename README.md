@@ -9,17 +9,19 @@ The app includes an option to create an account.
 # Description
 
 This project was created using:
+
 - React;
 - Redux Toolkit;
 - CSS;
 - Joi validation library;
 - Canva for logo design and pictures.
 
-Data provided by the free version of the spoonacular API, which allows a limited number of API calls per day. 
+Data provided by the free version of the spoonacular API, which allows a limited number of API calls per day.
 
 # Live Preview
 
 [Love Food](https://64b7c43c0dd1ff7a9b7a57ce--jocular-crepe-c1d807.netlify.app/)
 
 # Available Scripts
+
 `npm run dev`open [http://localhost:3000](http://localhost:3000) to view it in your browser.
