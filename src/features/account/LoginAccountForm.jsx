@@ -19,15 +19,15 @@ const LoginAccountForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
+
+  //send result to the backend
     if (!result) {
       //console.log(email, password);
-
       const result = await axios.post(`http://localhost:6001/account/login`, {
         email,
         password,
       });
       console.log(result);
-
       localStorage.setItem("token", result.data.token);
     }
     setErrors(result);

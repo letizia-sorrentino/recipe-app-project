@@ -1,7 +1,9 @@
 import { useSelector } from "react-redux";
-import { selectAllRecipes, selectFavourites} from "./recipeManagerSlice";
+import { useEffect } from "react";
+import { selectAllRecipes, selectFavourites } from "./recipeManagerSlice";
 import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const SavedList = () => {
   const recipes = useSelector(selectAllRecipes);
@@ -10,7 +12,38 @@ const SavedList = () => {
   const favouriteRecipes = recipes.filter((recipe) => {
     return favourites.includes(recipe.id);
   });
-  //console.log(favouriteRecipes, recipes);
+  //console.log(favouriteRecipes);
+
+  const token = localStorage.getItem("token");
+  let recipeId = null;
+  if (favouriteRecipes.length > 0) {
+    recipeId = favouriteRecipes[0].id;
+  }
+  console.log(recipeId);
+
+  //send recipes to SQL
+  const savedToDatabase = async (token) => {
+    try {
+      const results = await axios.post(
+        `http://localhost:6001/favourites/`,
+        { recipeId },
+
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
+
+      console.log(results.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    savedToDatabase(token);
+  }, [recipeId, token]);
 
   const renderedFavouriteRecipes = favouriteRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>

@@ -22,7 +22,6 @@ const Interface = () => {
       <Route path="settings" element={<Settings />} />
       <Route path="searchResults" element={<SearchResults />} />
       <Route path="recipe/:id" element={<RecipeCard />} />
-
     </Routes>
   );
 };
