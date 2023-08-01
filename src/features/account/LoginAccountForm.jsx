@@ -1,15 +1,12 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
-const AccountForm = () => {
+const LoginAccountForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
-
-  const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -23,7 +20,7 @@ const AccountForm = () => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
     if (!result) {
-      //console.log(username, email, password);
+      //console.log(email, password);
 
       const result = await axios.post(`http://localhost:6001/account/login`, {
         email,
@@ -80,4 +77,4 @@ const AccountForm = () => {
   );
 };
 
-export default AccountForm;
+export default LoginAccountForm;

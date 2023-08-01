@@ -14,6 +14,10 @@ const Settings = () => {
             <p className="settingsListItem">Create an Account</p>
             <ForwardArrow className="settingsListArrow" />
           </Link>
+          <Link className="settingsLink" to={"/loginAccount"}>
+            <p className="settingsListItem">Login</p>
+            <ForwardArrow className="settingsListArrow" />
+          </Link>
           <Link className="settingsLink" to={"/favourites"}>
             <p className="settingsListItem">Saved recipes</p>
             <ForwardArrow className="settingsListArrow" />

@@ -8,15 +8,14 @@ import Settings from "../pages/Settings";
 import SearchResults from "../pages/SearchResults";
 import RecipeCard from "../pages/RecipeCard";
 import CreateAccountPage from "../pages/CreateAccountPage.jsx";
-import LoginForm from "../features/account/LoginForm"
+import LoginAccountPage from "../pages/LoginAccountPage";
 
 const Interface = () => {
   return (
     <Routes>
       <Route path="/" element={<Onboarding />} />
       <Route path="createAccount" element={<CreateAccountPage />} />
-      <Route path="loginAccount" element={<LoginForm />} />
-
+      <Route path="loginAccount" element={<LoginAccountPage />} />
       <Route path="home" element={<Homepage />} />
       <Route path="search" element={<SearchPage />} />
       <Route path="favourites" element={<FavouriteRecipes />} />
