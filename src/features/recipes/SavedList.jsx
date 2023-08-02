@@ -21,7 +21,7 @@ const SavedList = () => {
   }
   console.log(recipeId);
 
-  //send recipes to SQL
+  //save recipes to SQL
   const savedToDatabase = async (token) => {
     try {
       const results = await axios.post(
@@ -44,6 +44,45 @@ const SavedList = () => {
   useEffect(() => {
     savedToDatabase(token);
   }, [recipeId, token]);
+
+  //fetch saved recipes from SQL
+  const fetchFromDatabase = async (token) => {
+    try {
+      const results = await axios.get("http://localhost:6001/favourites/", {
+        headers: {
+          token: token,
+        },
+      });
+      console.log(results.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchFromDatabase(token);
+  }, [token]);
+
+  // //delete saved recipes from SQL
+  // const deleteFromDatabase = async (token) => {
+  //   try {
+  //     const result = await axios.delete(
+  //       `http://localhost:6001/favourites/${recipeId}`, { recipeId },
+  //       {
+  //         headers: {
+  //           token: token,
+  //         },
+  //       }
+  //     );
+  //     console.log(result.data);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   deleteFromDatabase(token);
+  // }, [recipeId, token]);
 
   const renderedFavouriteRecipes = favouriteRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>
