@@ -34,12 +34,17 @@ const LoginForm = () => {
     //console.log(result);
   };
 
+
+  const token = localStorage.getItem("token");
+
   return (
     <div>
       {" "}
       <h1>Login</h1>
       <div className="accountFormContainer">
-        <form className="accountForm" onSubmit={handleSubmit}>
+      {token ? (
+        <p className="userMessage">You are logged in!</p>) :
+      ( <form className="accountForm" onSubmit={handleSubmit}>
           <div className="emailFormContainer">
             <label>Email: </label>
             <input
@@ -72,6 +77,11 @@ const LoginForm = () => {
             Login{" "}
           </button>
         </form>
+          
+        )}
+
+
+       
       </div>
     </div>
   );

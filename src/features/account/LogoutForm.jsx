@@ -50,7 +50,7 @@ const LogoutForm = () => {
       <h1>Logout</h1>
       <div className="accountFormContainer">
         {token ? (
-          <p className="userMessage">Logout successfull!</p>
+          <p className="userMessage">You are logged out!</p>
         ) : (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
