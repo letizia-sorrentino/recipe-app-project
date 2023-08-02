@@ -3,7 +3,7 @@ import { validate } from "../../validation/index";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
-const LoginAccountForm = () => {
+const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
@@ -77,4 +77,4 @@ const LoginAccountForm = () => {
   );
 };
 
-export default LoginAccountForm;
+export default LoginForm;

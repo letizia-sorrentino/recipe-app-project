@@ -1,10 +1,10 @@
 import AccountForm from "../features/account/AccountForm";
 
-const CreateAccountPage = () => {
+const AccountPage = () => {
   return (
     <div>
       <AccountForm />
     </div>
   );
 };
-export default CreateAccountPage;
+export default AccountPage;
