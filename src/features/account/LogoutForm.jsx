@@ -38,6 +38,7 @@ const LogoutForm = () => {
           }
         );
         console.log(result);
+        // localStorage.removeItem("token");
       } catch (error) {
         console.log("logout failed:", error);
       }
@@ -49,9 +50,7 @@ const LogoutForm = () => {
     <div>
       <h1>Logout</h1>
       <div className="accountFormContainer">
-        {token ? (
-          <p className="userMessage">You are logged out!</p>
-        ) : (
+        {!token ? (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
               <label>Email: </label>
@@ -85,6 +84,8 @@ const LogoutForm = () => {
               Logout
             </button>
           </form>
+        ) : (
+          <p className="userMessage">You are logged out!</p>
         )}
       </div>
     </div>

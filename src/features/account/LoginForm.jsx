@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { validate } from "../../validation/index";
+import { loginSuccess } from "./accountSlice";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
@@ -7,6 +9,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
+  const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -20,20 +23,22 @@ const LoginForm = () => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
 
-  //send result to the backend
+  const user = {email, password};
+
+  //send result to the backend and dispatch to the store
     if (!result) {
-      //console.log(email, password);
       const result = await axios.post(`http://localhost:6001/account/login`, {
         email,
         password,
       });
-      console.log(result);
+      
       localStorage.setItem("token", result.data.token);
+      dispatch(loginSuccess(user));
+      console.log(result);
     }
     setErrors(result);
     //console.log(result);
   };
-
 
   const token = localStorage.getItem("token");
 
@@ -42,9 +47,7 @@ const LoginForm = () => {
       {" "}
       <h1>Login</h1>
       <div className="accountFormContainer">
-      {token ? (
-        <p className="userMessage">You are logged in!</p>) :
-      ( <form className="accountForm" onSubmit={handleSubmit}>
+      {token ? ( <form className="accountForm" onSubmit={handleSubmit}>
           <div className="emailFormContainer">
             <label>Email: </label>
             <input
@@ -77,7 +80,8 @@ const LoginForm = () => {
             Login{" "}
           </button>
         </form>
-          
+       ) :
+      (  <p className="userMessage">You are logged in!</p>
         )}
 
 
