@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     storeEmail: '',
     storePassword: '',
-
     isRegistered: false,
     isLoggedIn: false,
     user: null,
@@ -29,17 +28,20 @@ const accountSlice = createSlice({
         },
 
         loginSuccess: (state, action) => {
+            state.isRegistered = true;
             state.isLoggedIn = true;
             state.user = action.payload;
         },
 
         logoutSuccess: (state) => {
+            state.isRegistered = true;
             state.isLoggedIn = false;
             state.user = null;
         },
 
         deleteAccount: (state) => {
             state.isRegistered = false;
+            state.isLoggedIn = false;
             state.user = null;
 
         }

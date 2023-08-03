@@ -1,8 +1,14 @@
 import { useState } from "react";
-import { setStoreEmail, setStorePassword, createAccount, selectUser} from "./accountSlice";
+import {
+  setStoreEmail,
+  setStorePassword,
+  createAccount,
+  selectUser,
+} from "./accountSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
@@ -25,8 +31,7 @@ const AccountForm = () => {
     e.preventDefault();
 
     const result = await validate({ email, password }, "createAccount");
-
-    const user = {email, password};
+    const user = { email, password };
 
     if (!result) {
       dispatch(setStoreEmail(email));
@@ -45,13 +50,12 @@ const AccountForm = () => {
     //console.log(result);
   };
 
-
   return (
     <div>
       {" "}
       <h1>Create an Account</h1>
       <div className="accountFormContainer">
-        { !user ? (
+        {!user ? (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
               <label>Email: </label>
@@ -88,9 +92,14 @@ const AccountForm = () => {
         ) : (
           <>
             <p className="userMessage">Account created!</p>
+            <p className="userMessage">To start saving recipes, please log in:</p>
+
+            <Link className="settingsLink" to={"/login"}>
             <button className="submitButton" type="submit">
-              Delete Account{" "}
+              Login{" "}
             </button>
+          </Link>
+          
           </>
         )}
       </div>
