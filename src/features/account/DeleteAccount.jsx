@@ -1,14 +1,13 @@
-import { useDispatch } from "react-redux";
-import { deleteAccount } from "./accountSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteAccount, selectUser } from "./accountSlice";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
 const DeleteAccount = () => {
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
-  const user = { email, password };
-
-  const handleSubmit = async (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
     dispatch(deleteAccount(user));
   };
@@ -18,10 +17,11 @@ const DeleteAccount = () => {
   return (
     <>
       <h1>Delete your account</h1>
-      <h2>If you want to delete your account, hit the button:</h2>
-
-      <button className="submitButton" type="submit" onSubmit={handleSubmit}>
-        Delete
+      <p className="userMessage">
+        If you want to delete your account, hit the button:
+      </p>
+      <button className="submitButton" type="submit" onClick={handleClick}>
+        Delete account
       </button>
     </>
   );

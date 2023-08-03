@@ -92,14 +92,15 @@ const AccountForm = () => {
         ) : (
           <>
             <p className="userMessage">Account created!</p>
-            <p className="userMessage">To start saving recipes, please log in:</p>
+            <p className="userMessage">
+              To start saving recipes, please log in:
+            </p>
 
             <Link className="settingsLink" to={"/login"}>
-            <button className="submitButton" type="submit">
-              Login{" "}
-            </button>
-          </Link>
-          
+              <button className="submitButton" type="submit">
+                Login{" "}
+              </button>
+            </Link>
           </>
         )}
       </div>
