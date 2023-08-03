@@ -1,25 +1,17 @@
 import { useState } from "react";
-import {
-  setStoreUsername,
-  setStoreEmail,
-  setStorePassword,
-} from "./accountSlice";
-import { useDispatch } from "react-redux";
+import { setStoreEmail, setStorePassword, createAccount, selectUser} from "./accountSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
-
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -32,19 +24,20 @@ const AccountForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const result = await validate(
-      { username, email, password },
-      "createAccount"
-    );
+    const result = await validate({ email, password }, "createAccount");
+
+    const user = {email, password};
+
     if (!result) {
-      dispatch(setStoreUsername(username));
       dispatch(setStoreEmail(email));
       dispatch(setStorePassword(password));
-      //console.log(username, email, password);
+      dispatch(createAccount(user));
+      //console.log(email, password);
 
+      //create account in SQL
       const response = await axios.post(
         `http://localhost:6001/account/register`,
-        { username, email, password }
+        { email, password }
       );
       console.log(response.data);
     }
@@ -52,29 +45,14 @@ const AccountForm = () => {
     //console.log(result);
   };
 
-  const account = { username, email, password };
 
   return (
     <div>
       {" "}
       <h1>Create an Account</h1>
       <div className="accountFormContainer">
-        {account ? (
+        { !user ? (
           <form className="accountForm" onSubmit={handleSubmit}>
-            <div className="usernameFormContainer">
-              <label>Username: </label>
-              <input
-                className="usernameInput"
-                type="text"
-                id="username"
-                name="username"
-                value={username}
-                onChange={handleUsernameChange}
-                required
-              />
-              {errors && <p>{errors.username}</p>}
-            </div>
-
             <div className="emailFormContainer">
               <label>Email: </label>
               <input

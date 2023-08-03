@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    storeUsername: '',
     storeEmail: '',
     storePassword: '',
 
+    isRegistered: false,
     isLoggedIn: false,
     user: null,
 };
@@ -15,16 +15,17 @@ const accountSlice = createSlice({
     initialState,
     reducers: {
 
-        setStoreUsername: (state, action) => {
-            state.storeUsername = action.payload;
-        },
-
         setStoreEmail: (state, action) => {
             state.storeEmail = action.payload;
         },
 
         setStorePassword: (state, action) => {
             state.storePassword = action.payload;
+        },
+
+        createAccount: (state, action) => {
+            state.isRegistered = true;
+            state.user = action.payload;
         },
 
         loginSuccess: (state, action) => {
@@ -35,14 +36,20 @@ const accountSlice = createSlice({
         logoutSuccess: (state) => {
             state.isLoggedIn = false;
             state.user = null;
+        },
+
+        deleteAccount: (state) => {
+            state.isRegistered = false;
+            state.user = null;
+
         }
     }
 
 });
 
-export const { setStoreUsername, setStoreEmail,setStorePassword, loginSuccess, logoutSuccess } = accountSlice.actions;
-export const selectUsername = (state) => state.accountManager.storeUsername;
+export const { setStoreEmail, setStorePassword, createAccount, loginSuccess, logoutSuccess, deleteAccount } = accountSlice.actions;
 export const selectEmail = (state) => state.accountManager.storeEmail;
 export const selectPassword = (state) => state.accountManager.storePassword;
+export const selectUser = (state) => state.accountManager.user;
 
 export default accountSlice.reducer;

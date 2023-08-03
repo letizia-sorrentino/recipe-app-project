@@ -24,7 +24,7 @@ const LogoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
-    const user = {email, password};
+    const user = { email, password };
 
     //send result to the backend
     if (!result) {
@@ -44,7 +44,6 @@ const LogoutForm = () => {
         dispatch(logoutSuccess(user));
         localStorage.removeItem("token");
         console.log(result);
-
       } catch (error) {
         console.log("logout failed:", error);
       }

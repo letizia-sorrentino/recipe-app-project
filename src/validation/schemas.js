@@ -9,7 +9,6 @@ export const searchRecipeSchema = {
 
 // Create account form
 export const createAccountSchema = {
-    username: joi.string().min(3).max(20),
     email: joi.string().required().email({ tlds: { allow: false } }),
     password: joi.string().required().min(8).max(32),
 
