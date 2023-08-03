@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import { loginSuccess, selectUser } from "./accountSlice";
 import axios from "axios";
@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
-  
+
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -25,6 +25,7 @@ const LoginForm = () => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
     const user = { email, password };
+
     //send result to the backend and dispatch to the store
     if (!result) {
       dispatch(loginSuccess(user));
@@ -40,7 +41,6 @@ const LoginForm = () => {
     setErrors(result);
     //console.log(result);
   };
-
 
   return (
     <div>

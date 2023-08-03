@@ -1,9 +1,9 @@
-import LoginAccountForm from "../features/account/LoginForm";
+import LoginForm from "../features/account/LoginForm";
 
 const LoginPage = () => {
   return (
     <div>
-      <LoginAccountForm />
+      <LoginForm />
     </div>
   );
 };
