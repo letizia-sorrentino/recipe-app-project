@@ -23,7 +23,7 @@ const Onboarding = () => {
           </div>
 
           <div>
-            <Link to={"createAccount"}>
+            <Link to={"account"}>
               <button className="onboardingButton">Create an Account</button>
             </Link>
           </div>

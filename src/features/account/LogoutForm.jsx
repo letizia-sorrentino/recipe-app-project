@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { validate } from "../../validation/index";
-import { useDispatch } from "react-redux";
-import { logoutSuccess } from "./accountSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutSuccess, selectUser } from "./accountSlice";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
@@ -9,6 +9,8 @@ const LogoutForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
+
+  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
@@ -41,9 +43,10 @@ const LogoutForm = () => {
             },
           }
         );
-        dispatch(logoutSuccess(user));
         localStorage.removeItem("token");
         console.log(result);
+
+        dispatch(logoutSuccess(user));
       } catch (error) {
         console.log("logout failed:", error);
       }
@@ -55,7 +58,7 @@ const LogoutForm = () => {
     <div>
       <h1>Logout</h1>
       <div className="accountFormContainer">
-        {token ? (
+        {!user ? (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
               <label>Email: </label>
