@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { selectUser } from "../features/account/accountSlice";
+import { selectIsLoggedIn } from "../features/account/accountSlice";
 import { ReactComponent as ForwardArrow } from "../assets/forwardArrow.svg";
 import "../styles/settings.css";
 
 const Settings = () => {
-  const user = useSelector(selectUser);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <>
       <div className="settingsContainer">
@@ -13,18 +13,18 @@ const Settings = () => {
           <h1>Settings</h1>
         </div>
         <div className="settingsList">
-        {!user ? (
-          <Link className="settingsLink" to={"/login"}>
-            <p className="settingsListItem">Login</p>
-            <ForwardArrow className="settingsListArrow" />
-          </Link>
-        ) : (
-          <Link className="settingsLink" to={"/logout"}>
-            <p className="settingsListItem">Logout</p>
-            <ForwardArrow className="settingsListArrow" />
-          </Link>
-        )}
-      
+          {!isLoggedIn ? (
+            <Link className="settingsLink" to={"/login"}>
+              <p className="settingsListItem">Login</p>
+              <ForwardArrow className="settingsListArrow" />
+            </Link>
+          ) : (
+            <Link className="settingsLink" to={"/logout"}>
+              <p className="settingsListItem">Logout</p>
+              <ForwardArrow className="settingsListArrow" />
+            </Link>
+          )}
+
           <Link className="settingsLink" to={"/account"}>
             <p className="settingsListItem">Account</p>
             <ForwardArrow className="settingsListArrow" />

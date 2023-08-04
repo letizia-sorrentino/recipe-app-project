@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { deleteAccount, selectUser } from "./accountSlice";
+import LoginForm from "../account/LoginForm";
 import axios from "axios";
 import "../../styles/accountForm.css";
 
@@ -16,7 +17,11 @@ const DeleteAccount = () => {
 
   return (
     <>
-      <h1>Delete your account</h1>
+      <h1>Account</h1>
+      <p className="userMessage">
+        Login to your account:
+      </p>
+      <LoginForm/>
       <p className="userMessage">
         If you want to delete your account, hit the button:
       </p>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { validate } from "../../validation/index";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutSuccess, selectUser } from "./accountSlice";
+import { logoutSuccess, selectIsLoggedIn } from "./accountSlice";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const LogoutForm = () => {
@@ -10,7 +11,7 @@ const LogoutForm = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
-  const user = useSelector(selectUser);
+  const isLoggedin = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
@@ -30,6 +31,9 @@ const LogoutForm = () => {
 
     //send result to the backend
     if (!result) {
+      dispatch(logoutSuccess(user));
+      console.log("logout");
+
       try {
         const result = await axios.post(
           `http://localhost:6001/account/logout`,
@@ -45,8 +49,6 @@ const LogoutForm = () => {
         );
         localStorage.removeItem("token");
         console.log(result);
-
-        dispatch(logoutSuccess(user));
       } catch (error) {
         console.log("logout failed:", error);
       }
@@ -58,7 +60,16 @@ const LogoutForm = () => {
     <div>
       <h1>Logout</h1>
       <div className="accountFormContainer">
-        {!user ? (
+        {!isLoggedin ? (
+          <>
+            <p className="userMessage">You are logged out!</p>
+            <Link className="settingsLink" to={"/login"}>
+              <button className="submitButton" type="submit">
+                Login
+              </button>
+            </Link>
+          </>
+        ) : (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
               <label>Email: </label>
@@ -92,8 +103,6 @@ const LogoutForm = () => {
               Logout
             </button>
           </form>
-        ) : (
-          <p className="userMessage">You are logged out!</p>
         )}
       </div>
     </div>

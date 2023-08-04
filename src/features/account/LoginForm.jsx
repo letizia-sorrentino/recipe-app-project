@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
-import { loginSuccess, selectUser } from "./accountSlice";
+import { loginSuccess, selectIsLoggedIn } from "./accountSlice";
 import axios from "axios";
+import {Link} from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const LoginForm = () => {
@@ -10,7 +11,7 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
-  const user = useSelector(selectUser);
+  const isLoggedin = useSelector(selectIsLoggedIn);
   const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
@@ -47,7 +48,7 @@ const LoginForm = () => {
       {" "}
       <h1>Login</h1>
       <div className="accountFormContainer">
-        {!user ? (
+        {!isLoggedin ? (
           <form className="accountForm" onSubmit={handleSubmit}>
             <div className="emailFormContainer">
               <label>Email: </label>
@@ -81,8 +82,12 @@ const LoginForm = () => {
               Login{" "}
             </button>
           </form>
-        ) : (
+        ) : ( <> 
           <p className="userMessage">You are logged in!</p>
+          <Link className="settingsLink" to={"/logout"}>
+          <button className="submitButton" type="submit">
+              Logout
+            </button></Link></>
         )}
       </div>
     </div>
