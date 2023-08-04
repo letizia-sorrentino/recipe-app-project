@@ -35,3 +35,7 @@ label {
     padding: 0.5rem;
     align-self: flex-end;
 }
+
+.deleteAccountContainer {
+    margin-left: 2rem;
+}

@@ -63,7 +63,7 @@ const LogoutForm = () => {
         {!isLoggedin ? (
           <>
             <p className="userMessage">You are logged out!</p>
-            <Link className="settingsLink" to={"/login"}>
+            <Link className="formsLink" to={"/login"}>
               <button className="submitButton" type="submit">
                 Login
               </button>

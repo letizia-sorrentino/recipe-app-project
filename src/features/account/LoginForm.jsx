@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import { loginSuccess, selectIsLoggedIn } from "./accountSlice";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const LoginForm = () => {
@@ -82,12 +82,15 @@ const LoginForm = () => {
               Login{" "}
             </button>
           </form>
-        ) : ( <> 
-          <p className="userMessage">You are logged in!</p>
-          <Link className="settingsLink" to={"/logout"}>
-          <button className="submitButton" type="submit">
-              Logout
-            </button></Link></>
+        ) : (
+          <>
+            <p className="userMessage">You are logged in!</p>
+            <Link className="formLink" to={"/logout"}>
+              <button className="submitButton" type="submit">
+                Logout
+              </button>
+            </Link>
+          </>
         )}
       </div>
     </div>

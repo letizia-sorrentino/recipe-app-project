@@ -54,5 +54,6 @@ export const selectEmail = (state) => state.accountManager.storeEmail;
 export const selectPassword = (state) => state.accountManager.storePassword;
 export const selectUser = (state) => state.accountManager.user;
 export const selectIsLoggedIn = (state) => state.accountManager.isLoggedIn;
+export const selectIsRegistered = (state) => state.accountManager.isRegistered;
 
 export default accountSlice.reducer;

@@ -64,10 +64,11 @@ const SavedList = () => {
   }, [token]);
 
   // //delete saved recipes from SQL
-  // const deleteFromDatabase = async (token) => {
+  // const deleteSavedRecipes = async (token) => {
   //   try {
   //     const result = await axios.delete(
-  //       `http://localhost:6001/favourites/${recipeId}`, { recipeId },
+  //       `http://localhost:6001/favourites/${recipeId}`,
+  //     { recipeId },
   //       {
   //         headers: {
   //           token: token,
@@ -81,7 +82,7 @@ const SavedList = () => {
   // };
 
   // useEffect(() => {
-  //   deleteFromDatabase(token);
+  //   deleteSavedRecipes(token);
   // }, [recipeId, token]);
 
   const renderedFavouriteRecipes = favouriteRecipes.map((recipe) => (
