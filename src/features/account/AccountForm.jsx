@@ -8,7 +8,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
@@ -27,7 +27,7 @@ const AccountForm = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const register = async (e) => {
     e.preventDefault();
 
     const result = await validate({ email, password }, "createAccount");
@@ -56,7 +56,7 @@ const AccountForm = () => {
       <h1>Create an Account</h1>
       <div className="accountFormContainer">
         {!user ? (
-          <form className="accountForm" onSubmit={handleSubmit}>
+          <form className="accountForm" onSubmit={register}>
             <div className="emailFormContainer">
               <label>Email: </label>
               <input
@@ -91,18 +91,15 @@ const AccountForm = () => {
           </form>
         ) : (
           <>
-            <p className="userMessage">Account created!</p>
-            <p className="userMessage">
-              To start saving recipes, please log in:
-            </p>
-
-            <Link className="settingsLink" to={"/login"}>
-              <button className="submitButton" type="submit">
-                Login{" "}
-              </button>
+           <p className="userMessage">Your account has been created! To start saving recipes, please login</p>
+          <div> 
+           <Link className="formLink" to={"/login"}>
+           <button className="submitButton" type="submit">
+              Login{" "}
+            </button>
             </Link>
-          </>
-        )}
+            </div>
+          </> )}
       </div>
     </div>
   );

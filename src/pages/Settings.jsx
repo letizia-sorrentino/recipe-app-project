@@ -34,7 +34,7 @@ const Settings = () => {
               <ForwardArrow className="settingsListArrow" />
             </Link>
           ) : (
-            <Link className="settingsLink" to={"/deleteaccount"}>
+            <Link className="settingsLink" to={"/account"}>
               <p className="settingsListItem">Delete Account</p>
               <ForwardArrow className="settingsListArrow" />
             </Link>

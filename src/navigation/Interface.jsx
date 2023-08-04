@@ -8,7 +8,6 @@ import Settings from "../pages/Settings";
 import SearchResults from "../pages/SearchResults";
 import RecipeCard from "../pages/RecipeCard";
 import AccountPage from "../pages/AccountPage.jsx";
-import DeleteAccountPage from "../pages/DeleteAccountPage";
 import LoginPage from "../pages/LoginPage";
 
 const Interface = () => {
@@ -16,7 +15,6 @@ const Interface = () => {
     <Routes>
       <Route path="/" element={<Onboarding />} />
       <Route path="account" element={<AccountPage />} />
-      <Route path="deleteaccount" element={<DeleteAccountPage />} />
       <Route path="login" element={<LoginPage />} />
       <Route path="home" element={<Homepage />} />
       <Route path="search" element={<SearchPage />} />

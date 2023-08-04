@@ -21,7 +21,7 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const login = async (e) => {
     e.preventDefault();
     const result = await validate({ email, password }, "login");
     const user = { email, password };
@@ -70,7 +70,7 @@ const LoginForm = () => {
       <h1>Login</h1>
       <div className="accountFormContainer">
         {!isLoggedin ? (
-          <form className="accountForm" onSubmit={handleSubmit}>
+          <form className="accountForm" onSubmit={login}>
             <div className="emailFormContainer">
               <label>Email: </label>
               <input
