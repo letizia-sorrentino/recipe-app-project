@@ -45,8 +45,8 @@ const DeleteAccount = () => {
         });
         localStorage.removeItem("token");
         console.log(response);
-        dispatch(deleteAccount(email));
-        dispatch(deleteAccount(password));
+        //dispatch(deleteAccount(email));
+        //dispatch(deleteAccount(password));
         dispatch(deleteAccount(user));
         console.log("account deleted from the store");
       } catch (error) {

@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
-import { loginSuccess, selectIsLoggedIn } from "./accountSlice";
+import { loginSuccess, logoutSuccess, selectIsLoggedIn } from "./accountSlice";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const LoginForm = () => {
@@ -41,6 +40,28 @@ const LoginForm = () => {
     }
     setErrors(result);
     //console.log(result);
+  };
+
+  const logout = async () => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const result = await axios.delete(
+        `http://localhost:6001/account/logout`,
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
+      console.log(token, result);
+      localStorage.removeItem("token");
+      console.log(result);
+      dispatch(logoutSuccess());
+      console.log("logout");
+    } catch (error) {
+      console.log("logout failed:", error);
+    }
   };
 
   return (
@@ -85,11 +106,9 @@ const LoginForm = () => {
         ) : (
           <>
             <p className="userMessage">You are logged in!</p>
-            <Link className="formLink" to={"/logout"}>
-              <button className="submitButton" type="submit">
-                Logout
-              </button>
-            </Link>
+            <button className="submitButton" type="submit" onClick={logout}>
+              Logout
+            </button>
           </>
         )}
       </div>
