@@ -1,5 +1,4 @@
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import { selectAllRecipes, selectFavourites } from "./recipeManagerSlice";
 import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
@@ -21,7 +20,6 @@ const SavedList = () => {
   }
   console.log(recipeId);
 
-
   //fetch saved recipes from SQL
   const fetchFromDatabase = async (token) => {
     try {
@@ -35,8 +33,6 @@ const SavedList = () => {
       console.log(error);
     }
   };
-
-
 
   const renderedFavouriteRecipes = favouriteRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>

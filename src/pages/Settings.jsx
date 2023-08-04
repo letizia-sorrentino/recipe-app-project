@@ -23,7 +23,7 @@ const Settings = () => {
               <ForwardArrow className="settingsListArrow" />
             </Link>
           ) : (
-            <Link className="settingsLink" to={"/logout"}>
+            <Link className="settingsLink" to={"/login"}>
               <p className="settingsListItem">Logout</p>
               <ForwardArrow className="settingsListArrow" />
             </Link>
@@ -40,9 +40,9 @@ const Settings = () => {
             </Link>
           )}
           <Link className="settingsLink" to={"/favourites"}>
-              <p className="settingsListItem">Saved recipes</p>
-              <ForwardArrow className="settingsListArrow" />
-            </Link>
+            <p className="settingsListItem">Saved recipes</p>
+            <ForwardArrow className="settingsListArrow" />
+          </Link>
         </div>
       </div>
     </>

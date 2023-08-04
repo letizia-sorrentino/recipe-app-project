@@ -10,7 +10,6 @@ import RecipeCard from "../pages/RecipeCard";
 import AccountPage from "../pages/AccountPage.jsx";
 import DeleteAccountPage from "../pages/DeleteAccountPage";
 import LoginPage from "../pages/LoginPage";
-import LogoutPage from "../pages/LogoutPage";
 
 const Interface = () => {
   return (
@@ -19,7 +18,6 @@ const Interface = () => {
       <Route path="account" element={<AccountPage />} />
       <Route path="deleteaccount" element={<DeleteAccountPage />} />
       <Route path="login" element={<LoginPage />} />
-      <Route path="logout" element={<LogoutPage />} />
       <Route path="home" element={<Homepage />} />
       <Route path="search" element={<SearchPage />} />
       <Route path="favourites" element={<FavouriteRecipes />} />
