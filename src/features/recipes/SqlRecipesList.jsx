@@ -39,13 +39,15 @@ const SqlRecipesList = () => {
   }, []);
 
   const favouritesIds = favourites.map((recipe) => recipe.recipeId).join(",");
-  //console.log("ARRAY 1:", favouritesIds);
+  console.log("ARRAY 1:", favouritesIds);
 
   useEffect(() => {
-    getRecipesInfo(favouritesIds);
+    //if (favouritesIds !== "") {
+      getRecipesInfo(favouritesIds);
+    // }
   }, []);
 
-  //console.log("ARRAY 2:", favouritesInfo);
+  console.log("ARRAY 2:", favouritesInfo);
 
   const renderedFavouriteRecipes = favouritesInfo.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>

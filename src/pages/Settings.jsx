@@ -23,26 +23,21 @@ const Settings = () => {
               <ForwardArrow className="settingsListArrow" />
             </Link>
           ) : (
-            <Link className="settingsLink" to={"/login"}>
-              <p className="settingsListItem">Logout</p>
-              <ForwardArrow className="settingsListArrow" />
-            </Link>
+            <>
+              <Link className="settingsLink" to={"/favourites"}>
+                <p className="settingsListItem">Saved recipes</p>
+                <ForwardArrow className="settingsListArrow" />
+              </Link>
+              <Link className="settingsLink" to={"/login"}>
+                <p className="settingsListItem">Logout</p>
+                <ForwardArrow className="settingsListArrow" />
+              </Link>
+            </>
           )}
-          {!isRegistered ? (
             <Link className="settingsLink" to={"/account"}>
               <p className="settingsListItem">Account</p>
               <ForwardArrow className="settingsListArrow" />
             </Link>
-          ) : (
-            <Link className="settingsLink" to={"/account"}>
-              <p className="settingsListItem">Delete Account</p>
-              <ForwardArrow className="settingsListArrow" />
-            </Link>
-          )}
-          <Link className="settingsLink" to={"/favourites"}>
-            <p className="settingsListItem">Saved recipes</p>
-            <ForwardArrow className="settingsListArrow" />
-          </Link>
         </div>
       </div>
     </>

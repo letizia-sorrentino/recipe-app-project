@@ -3,12 +3,13 @@ import {
   setStoreEmail,
   setStorePassword,
   createAccount,
-  selectUser,
+  deleteAccount,
+  selectIsRegistered,
 } from "./accountSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
@@ -16,7 +17,7 @@ const AccountForm = () => {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
 
-  const user = useSelector(selectUser);
+  const isRegistered = useSelector(selectIsRegistered);
   const dispatch = useDispatch();
 
   const handleEmailChange = (e) => {
@@ -50,12 +51,33 @@ const AccountForm = () => {
     //console.log(result);
   };
 
+  const unregister = async (e) => {
+    const token = localStorage.getItem("token");
+
+    //delete account from SQL
+    try {
+      const response = await axios.delete(`http://localhost:6001/account/`, {
+        headers: {
+          token: token,
+        },
+      });
+      localStorage.removeItem("token");
+      console.log(response);
+
+      dispatch(deleteAccount());
+      console.log("account deleted from the store");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
       {" "}
-      <h1>Create an Account</h1>
+      <h1>Account</h1>
       <div className="accountFormContainer">
-        {!user ? (
+        {!isRegistered ? (<>
+          <h2> Create an Account</h2>
           <form className="accountForm" onSubmit={register}>
             <div className="emailFormContainer">
               <label>Email: </label>
@@ -89,17 +111,31 @@ const AccountForm = () => {
               Create Account{" "}
             </button>
           </form>
+          </>
         ) : (
           <>
-           <p className="userMessage">Your account has been created! To start saving recipes, please login</p>
-          <div> 
-           <Link className="formLink" to={"/login"}>
-           <button className="submitButton" type="submit">
-              Login{" "}
-            </button>
-            </Link>
+            <p className="userMessage">
+              Your account has been created! To start saving recipes, login:
+            </p>
+            <div>
+              <Link className="formLink" to={"/login"}>
+                <button className="submitButton" type="submit">
+                  Login{" "}
+                </button>
+              </Link>
+              <p className="userMessage">
+                To delete your account, hit the button:
+              </p>
+              <button
+                className="submitButton"
+                type="submit"
+                onClick={unregister}
+              >
+                Delete Account
+              </button>
             </div>
-          </> )}
+          </>
+        )}
       </div>
     </div>
   );
