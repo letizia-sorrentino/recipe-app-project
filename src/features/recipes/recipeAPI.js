@@ -1,7 +1,7 @@
 import axios from "axios";
 import apiKey from "./config";
 import { store } from "../../app/store";
-import { storeRecipes, storeFavoritesInfo } from "./recipeManagerSlice";
+import { storeRecipes, storeFavoritesRecipes } from "./recipeManagerSlice";
 
 // get recipes from API based on search input
 export const getRecipes = async (searchInput) => {
@@ -70,7 +70,7 @@ export const getRecipesInfo = async (ids) => {
   try {
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/informationBulk?ids=${ids}&apiKey=${apiKey}`);
-    store.dispatch(storeFavoritesInfo(data));
+    store.dispatch(storeFavoritesRecipes(data));
   } catch (error) {
     console.log(error);
   }

@@ -76,41 +76,42 @@ const AccountForm = () => {
       {" "}
       <h1>Account</h1>
       <div className="accountFormContainer">
-        {!isRegistered ? (<>
-          <h2> Create an Account</h2>
-          <form className="accountForm" onSubmit={register}>
-            <div className="emailFormContainer">
-              <label>Email: </label>
-              <input
-                className="emailInput"
-                type="text"
-                id="email"
-                name="email"
-                value={email}
-                onChange={handleEmailChange}
-                required
-              />
-              {errors && <p>{errors.email}</p>}
-            </div>
+        {!isRegistered ? (
+          <>
+            <h2> Create an Account</h2>
+            <form className="accountForm" onSubmit={register}>
+              <div className="emailFormContainer">
+                <label>Email: </label>
+                <input
+                  className="emailInput"
+                  type="text"
+                  id="email"
+                  name="email"
+                  value={email}
+                  onChange={handleEmailChange}
+                  required
+                />
+                {errors && <p>{errors.email}</p>}
+              </div>
 
-            <div className="passwordFormContainer">
-              <label>Password: </label>
-              <input
-                className="passwordInput"
-                type="password"
-                id="password"
-                name="password"
-                value={password}
-                onChange={handlePasswordChange}
-                required
-              />
-              {errors && <p>{errors.password}</p>}
-            </div>
+              <div className="passwordFormContainer">
+                <label>Password: </label>
+                <input
+                  className="passwordInput"
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={password}
+                  onChange={handlePasswordChange}
+                  required
+                />
+                {errors && <p>{errors.password}</p>}
+              </div>
 
-            <button className="submitButton" type="submit">
-              Create Account{" "}
-            </button>
-          </form>
+              <button className="submitButton" type="submit">
+                Create Account{" "}
+              </button>
+            </form>
           </>
         ) : (
           <>

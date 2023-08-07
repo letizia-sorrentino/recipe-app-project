@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   storeFavourites,
   selectFavourites,
-  selectFavouritesInfo,
+  storeFavoritesRecipes,
+  selectFavouritesRecipes,
 } from "./recipeManagerSlice";
 import { getRecipesInfo } from "./recipeAPI";
 import axios from "axios";
@@ -11,8 +12,8 @@ import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const SqlRecipesList = () => {
-  const favourites = useSelector(selectFavourites);
-  const favouritesInfo = useSelector(selectFavouritesInfo);
+  const favouritesIds = useSelector(selectFavourites);
+  const favouritedRecipes = useSelector(selectFavouritesRecipes);
   const dispatch = useDispatch();
 
   //fetch recipes from SQL
@@ -20,15 +21,21 @@ const SqlRecipesList = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const results = await axios.get("http://localhost:6001/favourites/", {
+      const { data } = await axios.get("http://localhost:6001/favourites/", {
         headers: {
           token: token,
         },
       });
-      //console.log(results.data.results); //console log the array containing the recipeIds;
+
+      const favouritesIds = data.results
+        .map((recipe) => recipe.recipeId)
+        .join(",");
+
+      console.log(favouritesIds);
 
       //send data to the store
-      dispatch(storeFavourites(results.data.results));
+      dispatch(storeFavourites(favouritesIds));
+      getRecipesInfo(favouritesIds);
     } catch (error) {
       console.log(error);
     }
@@ -38,18 +45,7 @@ const SqlRecipesList = () => {
     fetchFavourites();
   }, []);
 
-  const favouritesIds = favourites.map((recipe) => recipe.recipeId).join(",");
-  console.log("ARRAY 1:", favouritesIds);
-
-  useEffect(() => {
-    //if (favouritesIds !== "") {
-      getRecipesInfo(favouritesIds);
-    // }
-  }, []);
-
-  console.log("ARRAY 2:", favouritesInfo);
-
-  const renderedFavouriteRecipes = favouritesInfo.map((recipe) => (
+  const renderedFavouriteRecipes = favouritedRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>
       <div className="recipeTile">
         <img
