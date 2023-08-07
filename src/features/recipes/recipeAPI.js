@@ -1,7 +1,7 @@
 import axios from "axios";
 import apiKey from "./config";
 import { store } from "../../app/store";
-import { storeRecipes } from "./recipeManagerSlice";
+import { storeRecipes, storeFavoritesInfo } from "./recipeManagerSlice";
 
 // get recipes from API based on search input
 export const getRecipes = async (searchInput) => {
@@ -37,7 +37,6 @@ export const getRandomRecipes = async () => {
 export const getRecipesByType = async (type) => {
   try {
     //console.log("get recipes by type");
-
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&type=${type}`
     );
@@ -51,7 +50,6 @@ export const getRecipesByType = async (type) => {
 };
 
 // get recipes by diet
-
 export const getRecipesByDiet = async (diet) => {
   try {
     //console.log("get recipes by diet");
@@ -59,7 +57,7 @@ export const getRecipesByDiet = async (diet) => {
     const { data } = await axios.get(
       `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`
     );
-    console.log(data,  `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`);
+    console.log(data, `https://api.spoonacular.com/recipes/complexSearch?&apiKey=${apiKey}&diet=${diet}`);
     //send data to the store
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
@@ -67,4 +65,13 @@ export const getRecipesByDiet = async (diet) => {
   }
 };
 
-
+// get bulk recipes info
+export const getRecipesInfo = async (ids) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.spoonacular.com/recipes/informationBulk?ids=${ids}&apiKey=${apiKey}`);
+    store.dispatch(storeFavoritesInfo(data));
+  } catch (error) {
+    console.log(error);
+  }
+};

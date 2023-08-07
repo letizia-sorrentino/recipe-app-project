@@ -6,7 +6,7 @@ const initialState = {
   error: null,
 
   favourites: [],
-  favoritesRecipesInfo:[],
+  favoritesInfo: [],
 
   recipesDetails: [],
 };
@@ -33,16 +33,16 @@ export const recipeManagerSlice = createSlice({
         state.favourites.push(action.payload)
       }
     },
-    storeRecipesDetails: (state,action) => {
+    storeRecipesDetails: (state, action) => {
       state.recipesDetails = action.payload;
     },
-    
-    storeSqlRecipes: (state, action) => {
+
+    storeFavourites: (state, action) => {
       state.favourites = action.payload;
     },
 
-    storeFavoritesRecipesInfo: (state, action) => {
-      state.favoritesRecipesInfo = action.payload;
+    storeFavoritesInfo: (state, action) => {
+      state.favoritesInfo = action.payload;
     }
   },
 });
@@ -53,15 +53,15 @@ export const {
   filterRecipesbyType,
   filterRecipesByDiet,
   toggleFavouritedRecipe,
-  storeRecipesDetails, 
-  storeSqlRecipes,
-  storeFavoritesRecipesInfo
+  storeRecipesDetails,
+  storeFavourites,
+  storeFavoritesInfo
 } = recipeManagerSlice.actions;
 
 //export data
 export const selectAllRecipes = (state) => state.recipeManager.recipes;
 export const selectFavourites = (state) => state.recipeManager.favourites;
 export const selectRecipesDetails = (state) => state.recipeManager.recipesDetails;
-export const selectFavouritesRecipesInfo = (state) => state.recipeManager.favoritesRecipesInfo;
+export const selectFavouritesInfo = (state) => state.recipeManager.favoritesInfo;
 
 export default recipeManagerSlice.reducer;
