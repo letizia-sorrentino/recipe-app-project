@@ -106,6 +106,7 @@ const LoginForm = () => {
         ) : (
           <>
             <p className="userMessage">You are logged in!</p>
+            <p className="userMessage">Hit the button to logout</p>
             <button className="submitButton" type="submit" onClick={logout}>
               Logout
             </button>

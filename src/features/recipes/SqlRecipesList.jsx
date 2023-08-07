@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   storeFavourites,
   selectFavourites,
-  storeFavoritesRecipes,
   selectFavouritesRecipes,
 } from "./recipeManagerSlice";
 import { getRecipesInfo } from "./recipeAPI";
@@ -12,7 +11,7 @@ import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const SqlRecipesList = () => {
-  const favouritesIds = useSelector(selectFavourites);
+  //const favouritesIds = useSelector(selectFavourites);
   const favouritedRecipes = useSelector(selectFavouritesRecipes);
   const dispatch = useDispatch();
 
@@ -26,13 +25,13 @@ const SqlRecipesList = () => {
           token: token,
         },
       });
+      console.log(token);
+      console.log(data);
+      console.log(data.results);
 
       const favouritesIds = data.results
         .map((recipe) => recipe.recipeId)
         .join(",");
-
-      console.log(favouritesIds);
-
       //send data to the store
       dispatch(storeFavourites(favouritesIds));
       getRecipesInfo(favouritesIds);
@@ -44,6 +43,7 @@ const SqlRecipesList = () => {
   useEffect(() => {
     fetchFavourites();
   }, []);
+
 
   const renderedFavouriteRecipes = favouritedRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>
