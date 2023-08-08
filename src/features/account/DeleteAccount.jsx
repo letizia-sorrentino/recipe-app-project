@@ -2,20 +2,19 @@ import {
   deleteAccount,
   selectIsLoggedIn,
   selectIsRegistered,
-} from "../features/account/accountSlice";
+} from "./accountSlice";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
-import "../styles/accountForm.css";
+import "../../styles/accountForm.css";
 
 const DeleteAccount = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRegistered = useSelector(selectIsRegistered);
+  const token = localStorage.getItem("token");
 
   const dispatch = useDispatch();
 
   const unregister = async (e) => {
-    const token = localStorage.getItem("token");
-
     //delete account from SQL
     try {
       const response = await axios.delete(`http://localhost:6001/account/`, {
@@ -38,7 +37,7 @@ const DeleteAccount = () => {
       <h1>Delete your Account</h1>
 
       <div className="accountFormContainer">
-        {!isLoggedIn && !isRegistered ? (
+        {!isLoggedIn && !isRegistered && !token ? (
           <>
             <p className="userMessage">Your account has been deleted!</p>
           </>

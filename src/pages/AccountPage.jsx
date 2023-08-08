@@ -1,5 +1,5 @@
-import CreateAccount from "../components/CreateAccount";
-import DeleteAccount from "../components/DeleteAccount";
+import CreateAccount from "../features/account/CreateAccount";
+import DeleteAccount from "../features/account/DeleteAccount";
 import {
   selectIsLoggedIn,
   selectIsRegistered,
@@ -9,10 +9,15 @@ import { useSelector } from "react-redux";
 const AccountPage = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRegistered = useSelector(selectIsRegistered);
+  const token = localStorage.getItem("token");
 
   return (
     <div>
-      {!isLoggedIn && !isRegistered ? <CreateAccount /> : <DeleteAccount />}
+      {!isLoggedIn && !isRegistered && !token ? (
+        <CreateAccount />
+      ) : (
+        <DeleteAccount />
+      )}
     </div>
   );
 };

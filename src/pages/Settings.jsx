@@ -7,6 +7,7 @@ import "../styles/settings.css";
 
 const Settings = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
+  const token = localStorage.getItem("token");
   return (
     <>
       <div className="settingsContainer">
@@ -14,8 +15,10 @@ const Settings = () => {
           <h1>Settings</h1>
         </div>
         <div className="settingsList">
-          {!isLoggedIn ? (
-            <LoginSettings />
+          {!isLoggedIn && !token ? (
+            <>
+              <LoginSettings />
+            </>
           ) : (
             <>
               <LogoutSettings />

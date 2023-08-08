@@ -1,16 +1,17 @@
 import { useSelector } from "react-redux";
-import { selectIsRegistered } from "../features/account/accountSlice";
-import AccountForm from "../features/account/AccountForm";
+import { selectIsRegistered } from "./accountSlice";
+import AccountForm from "./AccountForm";
 import { Link } from "react-router-dom";
 
 const CreateAccount = () => {
   const isRegistered = useSelector(selectIsRegistered);
+  const token = localStorage.getItem("token");
 
   return (
     <>
       <h2> Create an Account</h2>
       <div className="accountFormContainer">
-        {!isRegistered ? (
+        {!isRegistered && !token ? (
           <AccountForm />
         ) : (
           <>

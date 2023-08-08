@@ -39,3 +39,20 @@ label {
 .deleteAccountContainer {
     margin-left: 2rem;
 }
+
+
+
+.welcomeMessage{
+    margin-top: 2rem;
+}
+
+.logoutButton {
+    background-color: rgba(244, 201, 72, 255);
+    border-color: rgba(244, 201, 72, 255);
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+    padding: 0.5rem;
+    margin-left: 2rem;
+    
+}
