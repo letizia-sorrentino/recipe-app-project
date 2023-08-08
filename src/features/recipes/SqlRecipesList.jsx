@@ -44,7 +44,6 @@ const SqlRecipesList = () => {
     fetchFavourites();
   }, []);
 
-
   const renderedFavouriteRecipes = favouritedRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>
       <div className="recipeTile">

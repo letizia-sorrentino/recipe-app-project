@@ -1,10 +1,12 @@
-import LoginForm from "../features/account/LoginForm";
+import { useSelector } from "react-redux";
+import { selectIsLoggedIn } from "../features/account/accountSlice";
+import LoginAccount from "../components/LoginAccount";
+import LogoutAccount from "../components/LoginAccount";
 
 const LoginPage = () => {
-  return (
-    <div>
-      <LoginForm />
-    </div>
-  );
+  const isLoggedin = useSelector(selectIsLoggedIn);
+  const token = localStorage.getItem("token");
+
+  return <>{!isLoggedin && !token ? <LoginAccount /> : <LogoutAccount />}</>;
 };
 export default LoginPage;
