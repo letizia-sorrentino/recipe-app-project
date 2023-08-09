@@ -1,8 +1,16 @@
 import { useState } from "react";
-import { setStoreEmail, setStorePassword, createAccount } from "./accountSlice";
-import { useDispatch } from "react-redux";
+import {
+  setStoreEmail,
+  setStorePassword,
+  createAccount,
+  setMessage,
+  selectMessage,
+} from "./accountSlice";
+import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/react-toastify.css";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {

@@ -6,6 +6,7 @@ const initialState = {
     isRegistered: false,
     isLoggedIn: false,
     user: null,
+    message: '',
 };
 
 const accountSlice = createSlice({
@@ -44,16 +45,22 @@ const accountSlice = createSlice({
             state.isLoggedIn = false;
             state.user = null;
 
+        },
+
+        setMessage: (state, action) => {
+            state.message = action.payload;
+
         }
     }
 
 });
 
-export const { setStoreEmail, setStorePassword, createAccount, loginSuccess, logoutSuccess, deleteAccount } = accountSlice.actions;
+export const { setStoreEmail, setStorePassword, createAccount, loginSuccess, logoutSuccess, deleteAccount, setMessage } = accountSlice.actions;
 export const selectEmail = (state) => state.accountManager.storeEmail;
 export const selectPassword = (state) => state.accountManager.storePassword;
 export const selectUser = (state) => state.accountManager.user;
 export const selectIsLoggedIn = (state) => state.accountManager.isLoggedIn;
 export const selectIsRegistered = (state) => state.accountManager.isRegistered;
+export const selectMessage = (state) => state.accountManager.message;
 
 export default accountSlice.reducer;

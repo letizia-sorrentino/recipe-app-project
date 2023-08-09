@@ -11,7 +11,7 @@ import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const SqlRecipesList = () => {
-  //const favouritesIds = useSelector(selectFavourites);
+  const favouritesIds = useSelector(selectFavourites);
   const favouritedRecipes = useSelector(selectFavouritesRecipes);
   const dispatch = useDispatch();
 
