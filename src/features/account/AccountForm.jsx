@@ -9,8 +9,8 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { validate } from "../../validation/index";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/react-toastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
