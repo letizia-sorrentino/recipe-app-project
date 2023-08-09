@@ -1,13 +1,10 @@
-import { useSelector } from "react-redux";
-import { selectIsLoggedIn } from "../features/account/accountSlice";
-import LoginSettings from "../components/LoginSettings";
-import LogoutSettings from "../components/LogoutSettings";
-import AccountSettings from "../components/AccountSettings";
+import SettingsLoggedIn from "../components/SettingsLoggedOut";
+import SettingsLoggedOut from "../components/SettingsLoggedIn";
 import "../styles/settings.css";
 
 const Settings = () => {
-  const isLoggedIn = useSelector(selectIsLoggedIn);
   const token = localStorage.getItem("token");
+
   return (
     <>
       <div className="settingsContainer">
@@ -15,16 +12,8 @@ const Settings = () => {
           <h1>Settings</h1>
         </div>
         <div className="settingsList">
-          {!isLoggedIn && !token ? (
-            <>
-              <LoginSettings />
-            </>
-          ) : (
-            <>
-              <LogoutSettings />
-              <AccountSettings />
-            </>
-          )}
+          {token && <SettingsLoggedOut />}
+          {!token && <SettingsLoggedIn />}
         </div>
       </div>
     </>
