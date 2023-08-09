@@ -13,7 +13,7 @@ const SettingsLoggedIn = () => {
         <p className="settingsListItem">Logout</p>
         <ForwardArrow className="settingsListArrow" />
       </Link>
-      <Link className="settingsLink" to={"/deleteaccount"}>
+      <Link className="settingsLink" to={"/delete-account"}>
         <p className="settingsListItem">Delete Account</p>
         <ForwardArrow className="settingsListArrow" />
       </Link>

@@ -1,4 +1,3 @@
-import SavedList from "../features/recipes/SavedList";
 import SqlRecipesList from "../features/recipes/SqlRecipesList";
 
 const FavouriteRecipes = () => {
@@ -8,7 +7,7 @@ const FavouriteRecipes = () => {
         <h1>Saved Recipes</h1>
       </div>
       <SqlRecipesList />
-      {/* <SavedList /> */}
+      
     </div>
   );
 };

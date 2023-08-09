@@ -12,8 +12,7 @@ const Settings = () => {
           <h1>Settings</h1>
         </div>
         <div className="settingsList">
-          {token && <SettingsLoggedOut />}
-          {!token && <SettingsLoggedIn />}
+          {!token ? <SettingsLoggedIn /> : <SettingsLoggedOut />}
         </div>
       </div>
     </>

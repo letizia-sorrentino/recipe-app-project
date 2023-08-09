@@ -1,7 +1,7 @@
 import LogoutButton from "../features/account/LogoutButton";
 import LoginForm from "../features/account/LoginForm";
 
-const LogoutPage = () => {
+const Logout = () => {
   const token = localStorage.getItem("token");
 
   return (
@@ -10,7 +10,7 @@ const LogoutPage = () => {
         <>
           <h1>Logout</h1>
           <div className="accountFormContainer">
-            <p className="userMessage">You are now logged out. To login:</p>
+            <p className="userMessage">You are logged out. To login:</p>
             <LoginForm />
           </div>
         </>
@@ -26,4 +26,4 @@ const LogoutPage = () => {
     </>
   );
 };
-export default LogoutPage;
+export default Logout;

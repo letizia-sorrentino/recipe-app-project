@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { getRandomRecipes } from "./features/recipes/recipeAPI";
 import Interface from "./navigation/Interface";
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./styles/app.css";
 
 const App = () => {

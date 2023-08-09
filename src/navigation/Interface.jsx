@@ -7,19 +7,23 @@ import FavouriteRecipes from "../pages/FavouriteRecipes";
 import Settings from "../pages/Settings";
 import SearchResults from "../pages/SearchResults";
 import RecipeCard from "../pages/RecipeCard";
-import CreateAccountPage from "../pages/CreateAccountPage.jsx";
-import DeleteAccountPage from "../pages/DeleteAccountPage";
-import LoginPage from "../pages/LoginPage";
-import LogoutPage from "../pages/LogoutPage";
+import CreateAccount from "../components/CreateAccount.jsx";
+import DeleteAccount from "../components/DeleteAccount";
+import Login from "../components/Login";
+import Logout from "../components/Logout";
+import AccountPage from "../pages/AccountPage";
+import LoginPage from "../pages/LoginPage"
 
 const Interface = () => {
   return (
     <Routes>
       <Route path="/" element={<Onboarding />} />
-      <Route path="createaccount" element={<CreateAccountPage />} />
-      <Route path="deleteaccount" element={<DeleteAccountPage />} />
-      <Route path="login" element={<LoginPage />} />
-      <Route path="logout" element={<LogoutPage />} />
+      <Route path="account-page" element={<AccountPage />} />
+      <Route path="login-page" element={<LoginPage />} />
+      <Route path="create-account" element={<CreateAccount />} />
+      <Route path="delete-account" element={<DeleteAccount />} />
+      <Route path="login" element={<Login />} />
+      <Route path="logout" element={<Logout />} />
       <Route path="home" element={<Homepage />} />
       <Route path="search" element={<SearchPage />} />
       <Route path="favourites" element={<FavouriteRecipes />} />

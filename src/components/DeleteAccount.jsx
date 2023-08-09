@@ -2,7 +2,7 @@ import DeleteAccountButton from "../features/account/DeleteAccountButton";
 import "../styles/accountForm.css";
 import LoginForm from "../features/account/LoginForm";
 
-const DeleteAccountPage = () => {
+const DeleteAccount = () => {
   const token = localStorage.getItem("token");
   return (
     <>
@@ -29,4 +29,4 @@ const DeleteAccountPage = () => {
   );
 };
 
-export default DeleteAccountPage;
+export default DeleteAccount;

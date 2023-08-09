@@ -1,7 +1,7 @@
 import AccountForm from "../features/account/AccountForm";
 import LoginForm from "../features/account/LoginForm";
 
-const CreateAccountPage = () => {
+const CreateAccount = () => {
   const token = localStorage.getItem("token");
 
   return (
@@ -16,7 +16,6 @@ const CreateAccountPage = () => {
         </>
       ) : (
         <>
-          <h2> Login </h2>
           <div className="accountFormContainer">
             <p className="userMessage">
               Your account has been created! Please login to start saving
@@ -29,4 +28,4 @@ const CreateAccountPage = () => {
     </>
   );
 };
-export default CreateAccountPage;
+export default CreateAccount;
