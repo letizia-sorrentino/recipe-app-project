@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { validate } from "../../validation/index";
-import { loginSuccess } from "./accountSlice";
+import { loginSuccess, logoutSuccess } from "./accountSlice";
 import axios from "axios";
 import { setMessage } from "./accountSlice";
 import "../../styles/accountForm.css";
@@ -29,23 +29,31 @@ const LoginForm = () => {
     const result = await validate({ email, password }, "login");
     const user = { email, password };
 
-    //send result to the backend and dispatch to the store
     if (!result) {
-      const result = await axios.post(`http://localhost:6001/account/login`, {
+    //send the validation result to the backend 
+      const response = await axios.post(`http://localhost:6001/account/login`, {
         email,
         password,
       });
 
-      localStorage.setItem("token", result.data.token);
-      console.log(result);
+      console.log("server response", response);
+      const status = response.data.status;
 
-      dispatch(loginSuccess(user));
-      dispatch(setMessage("You have successfully logged in"));
-      navigate("/loggedin");
+      if (status === 1) {
+        //dispatch to the store
+        localStorage.setItem("token", response.data.token);
+        dispatch(loginSuccess(user));
+        dispatch(setMessage("You have successfully logged in"));
+        navigate("/loggedin");
+      } else {
+        //handle error messages from the server
+        console.log(response);
+        dispatch(logoutSuccess(user));
+        dispatch(setMessage("Login failed, please try again."));
+      }
     }
-
     setErrors(result);
-    dispatch(setMessage("There was a problem logging in, please try again."));
+    console.log("validation error:", result);
   };
 
   return (

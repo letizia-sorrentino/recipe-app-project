@@ -12,25 +12,29 @@ const LogoutButton = () => {
   const logout = async () => {
     const token = localStorage.getItem("token");
 
-    try {
-      const result = await axios.delete(
-        `http://localhost:6001/account/logout`,
-        {
-          headers: {
-            token: token,
-          },
-        }
-      );
-      console.log(token, result);
+    //logout account from SQL
+    const response = await axios.delete(
+      `http://localhost:6001/account/logout`,
+      {
+        headers: {
+          token: token,
+        },
+      }
+    );
+    console.log("Server response", response, "token", token);
+
+    const status = response.data.status;
+
+    if (status === 1) {
+      //remove token and dispatch to the store
       localStorage.removeItem("token");
-      console.log(result);
       dispatch(logoutSuccess());
       dispatch(setMessage("Logout successfull"));
       navigate("/loggedout");
       console.log("logout successfull");
-    } catch (error) {
-      console.log("logout failed:", error);
-      dispatch(setMessage("Logout failed"));
+    } else {
+      console.log("logout failed:", response);
+      dispatch(setMessage("Logout failed, please try again"));
     }
   };
 

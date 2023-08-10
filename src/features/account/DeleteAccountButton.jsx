@@ -17,22 +17,27 @@ const DeleteAccountButton = () => {
         setMessage("To delete your account, please go to settings and login.")
       );
     }
-    //delete account from SQL
-    try {
-      const response = await axios.delete(`http://localhost:6001/account/`, {
-        headers: {
-          token: token,
-        },
-      });
-      localStorage.removeItem("token");
-      console.log(response);
 
+    //delete account from SQL
+    const response = await axios.delete(`http://localhost:6001/account/`, {
+      headers: {
+        token: token,
+      },
+    });
+    console.log("server response", response);
+
+    const status = response.data.status;
+
+    if (status === 1) {
+      //dispatch to the store
+      localStorage.removeItem("token");
       dispatch(deleteAccount());
       dispatch(setMessage("Your account has been deleted"));
       navigate("/deleted");
       console.log("account deleted from the store");
-    } catch (error) {
-      console.log(error);
+    } else {
+      //handle error messages from the server
+      console.log(response);
       dispatch(
         setMessage(
           "There was a problem deleting your account, please try again."
