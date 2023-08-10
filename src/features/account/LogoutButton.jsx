@@ -30,8 +30,7 @@ const LogoutButton = () => {
       console.log("logout successfull");
     } catch (error) {
       console.log("logout failed:", error);
-      dispatch(setMessage("Logout failed"))
-
+      dispatch(setMessage("Logout failed"));
     }
   };
 
@@ -40,7 +39,10 @@ const LogoutButton = () => {
       <button className="logoutButton" type="submit" onClick={logout}>
         Logout
       </button>
-      <div> <MessageContainer/></div>
+      <div>
+        {" "}
+        <MessageContainer />
+      </div>
     </>
   );
 };

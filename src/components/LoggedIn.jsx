@@ -6,13 +6,14 @@ const LoggedIn = () => {
   return (
     <>
       <div>
-        <p className="userMessage">You are logged in. Start saving recipes:</p>
+        <h1>Hello!</h1>
+        <p className="userMessage">You are logged in! Search new recipes here:</p>
         <SearchBar />
         <RecipesList />
       </div>
 
       <div>
-        <h1>Delete your Account</h1>
+        <h2>Delete your Account</h2>
         <div className="accountFormContainer">
           <p className="userMessage">To delete your account, hit the button:</p>
           <DeleteAccountButton />
