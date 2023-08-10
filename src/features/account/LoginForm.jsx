@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { validate } from "../../validation/index";
-import { loginSuccess, logoutSuccess } from "./accountSlice";
+import { loginSuccess } from "./accountSlice";
 import axios from "axios";
 import { setMessage } from "./accountSlice";
 import "../../styles/accountForm.css";
@@ -30,7 +30,7 @@ const LoginForm = () => {
     const user = { email, password };
 
     if (!result) {
-    //send the validation result to the backend 
+      //send the validation result to the backend
       const response = await axios.post(`http://localhost:6001/account/login`, {
         email,
         password,
@@ -40,20 +40,16 @@ const LoginForm = () => {
       const status = response.data.status;
 
       if (status === 1) {
-        //dispatch to the store
+        //add token and dispatch to the store
         localStorage.setItem("token", response.data.token);
         dispatch(loginSuccess(user));
-        dispatch(setMessage("You have successfully logged in"));
         navigate("/loggedin");
       } else {
         //handle error messages from the server
-        console.log(response);
-        dispatch(logoutSuccess(user));
         dispatch(setMessage("Login failed, please try again."));
       }
     }
     setErrors(result);
-    console.log("validation error:", result);
   };
 
   return (

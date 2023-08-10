@@ -35,6 +35,10 @@ const AccountForm = () => {
     const user = { email, password };
 
     if (!result) {
+      dispatch(setStoreEmail(email));
+      dispatch(setStorePassword(password));
+      dispatch(createAccount(user));
+
       //create account in SQL
       const response = await axios.post(
         `http://localhost:6001/account/register`,
@@ -43,22 +47,15 @@ const AccountForm = () => {
       console.log("server response", response);
       const status = response.data.status;
 
+      //toasts
       if (status === 1) {
-        //dispatch to the store
-        dispatch(setStoreEmail(email));
-        dispatch(setStorePassword(password));
-        dispatch(createAccount(user));
-        dispatch(setMessage("account successfully created!"));
         navigate("/new");
       } else {
-        //handle error messages from the server
-        console.log(response.data.status);
         dispatch(setMessage("Account not created, please try again."));
       }
     }
 
     setErrors(result);
-    console.log("validation error:", result);
   };
 
   return (

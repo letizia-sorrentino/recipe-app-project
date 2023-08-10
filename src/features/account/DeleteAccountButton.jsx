@@ -32,12 +32,9 @@ const DeleteAccountButton = () => {
       //dispatch to the store
       localStorage.removeItem("token");
       dispatch(deleteAccount());
-      dispatch(setMessage("Your account has been deleted"));
       navigate("/deleted");
-      console.log("account deleted from the store");
     } else {
       //handle error messages from the server
-      console.log(response);
       dispatch(
         setMessage(
           "There was a problem deleting your account, please try again."

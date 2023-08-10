@@ -29,11 +29,9 @@ const LogoutButton = () => {
       //remove token and dispatch to the store
       localStorage.removeItem("token");
       dispatch(logoutSuccess());
-      dispatch(setMessage("Logout successfull"));
       navigate("/loggedout");
-      console.log("logout successfull");
     } else {
-      console.log("logout failed:", response);
+      //handle error messages from the server
       dispatch(setMessage("Logout failed, please try again"));
     }
   };
