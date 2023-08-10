@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { validate } from "../../validation/index";
 import { loginSuccess } from "./accountSlice";
 import axios from "axios";
+import { setMessage } from "./accountSlice";
 import "../../styles/accountForm.css";
+import MessageContainer from "../../components/MessageContainer";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -11,6 +14,7 @@ const LoginForm = () => {
   const [errors, setErrors] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,21 +31,21 @@ const LoginForm = () => {
 
     //send result to the backend and dispatch to the store
     if (!result) {
-      dispatch(loginSuccess(user));
-      //try {
-        const result = await axios.post(`http://localhost:6001/account/login`, {
-          email,
-          password,
-        });
+      const result = await axios.post(`http://localhost:6001/account/login`, {
+        email,
+        password,
+      });
 
-        localStorage.setItem("token", result.data.token);
-        console.log(result);
-      // } catch (error) {
-      //   setErrors("login error");
-       }
-   // } else {
-      setErrors(result);
-   // }
+      localStorage.setItem("token", result.data.token);
+      console.log(result);
+
+      dispatch(loginSuccess(user));
+      dispatch(setMessage("You have successfully logged in"));
+      navigate("/loggedin");
+    }
+
+    setErrors(result);
+    dispatch(setMessage("There was a problem logging in, please try again."));
   };
 
   return (
@@ -87,6 +91,9 @@ const LoginForm = () => {
             </div>
           )}
         </form>
+      </div>
+      <div>
+        <MessageContainer />
       </div>
     </div>
   );

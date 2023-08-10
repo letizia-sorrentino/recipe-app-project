@@ -1,10 +1,13 @@
 import { useDispatch } from "react-redux";
-import { logoutSuccess } from "./accountSlice";
+import { logoutSuccess, setMessage } from "./accountSlice";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import MessageContainer from "../../components/MessageContainer";
 import "../../styles/accountForm.css";
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const logout = async () => {
     const token = localStorage.getItem("token");
@@ -22,9 +25,13 @@ const LogoutButton = () => {
       localStorage.removeItem("token");
       console.log(result);
       dispatch(logoutSuccess());
-      console.log("logout");
+      dispatch(setMessage("Logout successfull"));
+      navigate("/loggedout");
+      console.log("logout successfull");
     } catch (error) {
       console.log("logout failed:", error);
+      dispatch(setMessage("Logout failed"))
+
     }
   };
 
@@ -33,6 +40,7 @@ const LogoutButton = () => {
       <button className="logoutButton" type="submit" onClick={logout}>
         Logout
       </button>
+      <div> <MessageContainer/></div>
     </>
   );
 };

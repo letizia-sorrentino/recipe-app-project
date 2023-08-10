@@ -1,24 +1,9 @@
 import LoginForm from "../features/account/LoginForm";
-import SearchBar from "../features/search/SearchBar";
-import RecipesList from "../features/recipes/RecipesList";
+import LoggedIn from "./LoggedIn";
+
 const Login = () => {
   const token = localStorage.getItem("token");
 
-  return (
-    <>
-      {" "}
-      {!token ? (
-        <LoginForm />
-      ) : (
-        <>
-          <p className="userMessage">
-            You are logged in. Start saving recipes:
-          </p>
-          <SearchBar />
-          <RecipesList />
-        </>
-      )}
-    </>
-  );
+  return <> {!token ? <LoginForm /> : <LoggedIn />}</>;
 };
 export default Login;

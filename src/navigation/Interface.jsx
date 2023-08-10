@@ -12,7 +12,11 @@ import DeleteAccount from "../components/DeleteAccount";
 import Login from "../components/Login";
 import Logout from "../components/Logout";
 import AccountPage from "../pages/AccountPage";
-import LoginPage from "../pages/LoginPage"
+import LoginPage from "../pages/LoginPage";
+import NewAccount from "../components/NewAccount";
+import LoggedIn from "../components/LoggedIn";
+import LoggedOut from "../components/LoggedOut";
+import AccountDeleted from "../components/AccountDeleted";
 
 const Interface = () => {
   return (
@@ -21,9 +25,13 @@ const Interface = () => {
       <Route path="account-page" element={<AccountPage />} />
       <Route path="login-page" element={<LoginPage />} />
       <Route path="create-account" element={<CreateAccount />} />
+      <Route path="new" element={<NewAccount />} />
       <Route path="delete-account" element={<DeleteAccount />} />
+      <Route path="deleted" element={<AccountDeleted />} />
       <Route path="login" element={<Login />} />
+      <Route path="loggedin" element={<LoggedIn />} />
       <Route path="logout" element={<Logout />} />
+      <Route path="loggedout" element={<LoggedOut />} />
       <Route path="home" element={<Homepage />} />
       <Route path="search" element={<SearchPage />} />
       <Route path="favourites" element={<FavouriteRecipes />} />

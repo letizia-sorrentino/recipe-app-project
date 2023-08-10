@@ -9,6 +9,14 @@ const SettingsLoggedOut = () => {
         <p className="settingsListItem">Login</p>
         <ForwardArrow className="settingsListArrow" />
       </Link>
+      <Link className="settingsLink" to={"/create-account"}>
+        <p className="settingsListItem">Create a new Account</p>
+        <ForwardArrow className="settingsListArrow" />
+      </Link>
+      <Link className="settingsLink" to={"/delete-account"}>
+        <p className="settingsListItem">Delete Account</p>
+        <ForwardArrow className="settingsListArrow" />
+      </Link>
     </>
   );
 };

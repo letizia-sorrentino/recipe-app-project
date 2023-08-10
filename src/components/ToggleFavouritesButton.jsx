@@ -3,17 +3,23 @@ import {
   selectFavourites,
   toggleFavouritedRecipe,
 } from "../features/recipes/recipeManagerSlice";
+import { setMessage } from "../features/account/accountSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import MessageContainer from "./MessageContainer";
 
 const ToggleFavouritesButton = (props) => {
-  const dispatch = useDispatch();
   const favourites = useSelector(selectFavourites);
+  const dispatch = useDispatch();
 
   const onSaveInput = async () => {
     const token = localStorage.getItem("token");
     console.log(props.id);
+
+    if (!token) {
+      dispatch(setMessage("To save recipes, please go to settings and login"));
+    }
 
     if (favourites.includes(props.id)) {
       //delete the recipe
@@ -30,7 +36,6 @@ const ToggleFavouritesButton = (props) => {
       } catch (error) {
         console.log(error);
       }
-
     } else {
       //add recipe
       try {
@@ -53,7 +58,6 @@ const ToggleFavouritesButton = (props) => {
     }
   };
 
-  
   return (
     <>
       <button className="addButton" onClick={onSaveInput}>
@@ -63,6 +67,7 @@ const ToggleFavouritesButton = (props) => {
           <SaveIcon />
         )}
       </button>
+      <MessageContainer />
     </>
   );
 };

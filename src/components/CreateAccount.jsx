@@ -1,5 +1,5 @@
 import AccountForm from "../features/account/AccountForm";
-import LoginForm from "../features/account/LoginForm";
+import NewAccount from "./NewAccount";
 
 const CreateAccount = () => {
   const token = localStorage.getItem("token");
@@ -16,13 +16,7 @@ const CreateAccount = () => {
         </>
       ) : (
         <>
-          <div className="accountFormContainer">
-            <p className="userMessage">
-              Your account has been created! Please login to start saving
-              recipes:{" "}
-            </p>
-            <LoginForm />
-          </div>
+          <NewAccount />
         </>
       )}
     </>

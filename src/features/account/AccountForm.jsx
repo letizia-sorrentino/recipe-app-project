@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { setStoreEmail, setStorePassword, createAccount } from "./accountSlice";
+import {
+  setStoreEmail,
+  setStorePassword,
+  createAccount,
+  setMessage,
+} from "./accountSlice";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { validate } from "../../validation/index";
 import axios from "axios";
+import MessageContainer from "../../components/MessageContainer";
 import "../../styles/accountForm.css";
 
 const AccountForm = () => {
@@ -11,6 +18,7 @@ const AccountForm = () => {
   const [errors, setErrors] = useState("");
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -30,6 +38,8 @@ const AccountForm = () => {
       dispatch(setStoreEmail(email));
       dispatch(setStorePassword(password));
       dispatch(createAccount(user));
+      dispatch(setMessage("account successfully created!"));
+      navigate("/new");
 
       //create account in SQL
       const response = await axios.post(
@@ -76,6 +86,10 @@ const AccountForm = () => {
           Create Account{" "}
         </button>
       </form>
+
+      <div>
+        <MessageContainer />
+      </div>
     </div>
   );
 };

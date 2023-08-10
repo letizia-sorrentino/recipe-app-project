@@ -4,6 +4,7 @@ import LoginForm from "../features/account/LoginForm";
 
 const DeleteAccount = () => {
   const token = localStorage.getItem("token");
+
   return (
     <>
       {!token ? (
