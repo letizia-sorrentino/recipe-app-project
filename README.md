@@ -10,13 +10,16 @@ The app includes an option to create an account, login and logout.
 
 The front-end project was created using:
 
-- React
-- Redux Toolkit
-- CSS
-- The Joi validation library
-- Canva for logo design and pictures.
+- React;
+- Redux Toolkit;
+- CSS;
 
-It also features the following packages: React Router Dom for navigation and Toastify React for displaying messages to the user.
+It also features the following libraries:
+- Joi for validation;
+- React Router Dom library for links and navigation;
+- Toastify React to handle user notifications;
+
+Logo and all images are designed with Canva. 
 
 Recipes are provided by the free version of the spoonacular API, which allows a limited number of API calls per day.
 
