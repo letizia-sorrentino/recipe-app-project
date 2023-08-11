@@ -15,11 +15,14 @@ const SqlRecipesList = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const { data } = await axios.get("http://localhost:6001/favourites/", {
-        headers: {
-          token: token,
-        },
-      });
+      const { data } = await axios.get(
+        "https://api.lovefoodapp.co.uk/favourites/",
+        {
+          headers: {
+            token: token,
+          },
+        }
+      );
       console.log(token);
       console.log(data);
       console.log(data.results);

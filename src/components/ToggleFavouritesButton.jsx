@@ -27,7 +27,7 @@ const ToggleFavouritesButton = (props) => {
       //delete the recipe
       try {
         const result = await axios.delete(
-          `http://localhost:6001/favourites/${props.id}`,
+          `https://api.lovefoodapp.co.uk/favourites/${props.id}`,
           {
             headers: {
               token: token,
@@ -42,7 +42,7 @@ const ToggleFavouritesButton = (props) => {
       //add recipe
       try {
         const results = await axios.post(
-          `http://localhost:6001/favourites/`,
+          `https://api.lovefoodapp.co.uk/favourites/`,
           { recipeId: props.id },
 
           {

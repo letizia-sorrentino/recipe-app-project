@@ -31,10 +31,13 @@ const LoginForm = () => {
 
     if (!result) {
       //send the validation result to the backend
-      const response = await axios.post(`http://localhost:6001/account/login`, {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        `https://api.lovefoodapp.co.uk/account/login`,
+        {
+          email,
+          password,
+        }
+      );
 
       console.log("server response", response);
       const status = response.data.status;

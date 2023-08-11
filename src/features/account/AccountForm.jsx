@@ -41,7 +41,7 @@ const AccountForm = () => {
 
       //create account in SQL
       const response = await axios.post(
-        `http://localhost:6001/account/register`,
+        `https://api.lovefoodapp.co.uk/account/register`,
         { email, password }
       );
       console.log("server response", response);

@@ -14,7 +14,7 @@ const LogoutButton = () => {
 
     //logout account from SQL
     const response = await axios.delete(
-      `http://localhost:6001/account/logout`,
+      `https://api.lovefoodapp.co.uk/account/logout`,
       {
         headers: {
           token: token,

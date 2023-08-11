@@ -20,7 +20,7 @@ Data provided by the free version of the spoonacular API, which allows a limited
 
 # Live Preview
 
-[Love Food](https://64b7c43c0dd1ff7a9b7a57ce--jocular-crepe-c1d807.netlify.app/)
+[Love Food](https://lovefoodapp.co.uk/)
 
 # Available Scripts
 

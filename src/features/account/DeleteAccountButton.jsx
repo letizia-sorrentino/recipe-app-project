@@ -19,11 +19,14 @@ const DeleteAccountButton = () => {
     }
 
     //delete account from SQL
-    const response = await axios.delete(`http://localhost:6001/account/`, {
-      headers: {
-        token: token,
-      },
-    });
+    const response = await axios.delete(
+      `https://api.lovefoodapp.co.uk/account/`,
+      {
+        headers: {
+          token: token,
+        },
+      }
+    );
     console.log("server response", response);
 
     const status = response.data.status;
