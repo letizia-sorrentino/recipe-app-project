@@ -1,22 +1,17 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  storeFavourites,
-  selectFavourites,
-  selectFavouritesRecipes,
-} from "./recipeManagerSlice";
+import { storeFavourites, selectFavouritesRecipes } from "./recipeManagerSlice";
 import { getRecipesInfo } from "./recipeAPI";
 import axios from "axios";
 import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const SqlRecipesList = () => {
-  const favouritesIds = useSelector(selectFavourites);
   const favouritedRecipes = useSelector(selectFavouritesRecipes);
   const dispatch = useDispatch();
 
   //fetch recipes from SQL
-  const fetchFavourites = async () => {
+  const fetchFavourites = useCallback(async () => {
     const token = localStorage.getItem("token");
 
     try {
@@ -38,11 +33,11 @@ const SqlRecipesList = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [dispatch]);
 
   useEffect(() => {
     fetchFavourites();
-  }, []);
+  }, [fetchFavourites]);
 
   const renderedFavouriteRecipes = favouritedRecipes.map((recipe) => (
     <div className="recipeListContainer" key={recipe.id}>

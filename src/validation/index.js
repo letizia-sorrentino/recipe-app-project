@@ -18,7 +18,7 @@ export const validate = async (payload, type) => {
     }
 
     try {
-        const results = await r.validateAsync(payload);
+        await r.validateAsync(payload);
         return null;
     } catch (errors) {
         const errorsMod = {};

@@ -12,7 +12,7 @@ const MessageContainer = () => {
     if (!message) return;
     toast(message);
     dispatch(setMessage(""));
-  }, [message]);
+  }, [dispatch, message]);
 
   return <ToastContainer />;
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -17,7 +17,7 @@ const RecipeCard = () => {
   const dispatch = useDispatch();
 
   // get single recipe details
-  const getRecipesDetails = async () => {
+  const getRecipesDetails = useCallback(async () => {
     try {
       //console.log("get recipes details");
 
@@ -29,12 +29,12 @@ const RecipeCard = () => {
     } catch (error) {
       console.log(error);
     }
-  };
+  }, [dispatch, params.id]);
 
   useEffect(() => {
     getRecipesDetails();
     //console.log(details);
-  }, [params.id]);
+  }, [getRecipesDetails]);
 
   return (
     <div className="recipeCardContainer">

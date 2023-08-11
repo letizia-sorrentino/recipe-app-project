@@ -51,13 +51,12 @@ const ToggleFavouritesButton = (props) => {
             },
           }
         );
-
         console.log(results.data);
+        dispatch(toggleFavouritedRecipe(props.id));
+        navigate("/favourites");
       } catch (error) {
         console.log(error);
       }
-      dispatch(toggleFavouritedRecipe(props.id));
-      navigate("/favourites");
     }
   };
 
