@@ -1,4 +1,4 @@
-# Love Food Recipe App
+# Love Food App
 
 A full stack web application that allows the user to browse within the Spoonacular recipe database, search for recipes based on a random search and filter recipes by diet and meal type.
 
