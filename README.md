@@ -6,7 +6,7 @@ Each recipe links to a recipe card with a list of ingredients and instructions a
 
 The app includes an option to create an account, login and logout.
 
-## Description
+## Overview
 
 The front-end project was created using:
 
@@ -15,11 +15,12 @@ The front-end project was created using:
 - CSS;
 
 It also features the following libraries:
+
 - Joi for validation;
 - React Router Dom library for links and navigation;
 - Toastify React to handle user notifications;
 
-Logo and all images are designed with Canva. 
+Logo and all images are designed with Canva.
 
 Recipes are provided by the free version of the spoonacular API, which allows a limited number of API calls per day.
 
@@ -29,7 +30,7 @@ The back end was built using:
 - Express.js
 - An SQL database
 
-Backend files are available in the [recipe-app-backend](https://github.com/letizia-sorrentino/recipe-app-backend) repository.
+Backend files are available in the [backend repository](https://github.com/letizia-sorrentino/recipe-app-backend).
 
 ## Live Website
 
