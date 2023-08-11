@@ -25,7 +25,7 @@ The back end was built using:
 
 Backend files are available in the [recipe-app-backend repository](https://github.com/letizia-sorrentino/recipe-app-backend)
 
-# Live Preview
+# Live Website
 
 [Love Food](https://lovefoodapp.co.uk/)
 
