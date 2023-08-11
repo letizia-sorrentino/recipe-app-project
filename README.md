@@ -6,7 +6,7 @@ Each recipe links to a recipe card with a list of ingredients and instructions a
 
 The app includes an option to create an account, login and logout.
 
-## Description
+### Description
 
 The front-end project was created using:
 
@@ -26,12 +26,12 @@ The back end was built using:
 - Express.js
 - An SQL database
 
-Backend files are available in the [recipe-app-backend repository](https://github.com/letizia-sorrentino/recipe-app-backend)
+Backend files are available in the [recipe-app-backend](https://github.com/letizia-sorrentino/recipe-app-backend) repository.
 
-## Live Website
+### Live Website
 
 [Love Food](https://lovefoodapp.co.uk/)
 
-## Available Scripts
+### Available Scripts
 
 `npm run dev`open [http://localhost:3000](http://localhost:3000) to view it in your browser.
