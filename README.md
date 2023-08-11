@@ -1,4 +1,4 @@
-# Love Food App
+## Love Food App
 
 A full stack web application that allows the user to browse within the Spoonacular recipe database, search for recipes based on a random search and filter recipes by diet and meal type.
 
@@ -6,29 +6,32 @@ Each recipe links to a recipe card with a list of ingredients and instructions a
 
 The app includes an option to create an account, login and logout.
 
-# Description
+## Description
 
-The front end project was created using:
+The front-end project was created using:
 
-- React;
-- Redux Toolkit;
-- CSS;
-- Joi validation library;
+- React
+- Redux Toolkit
+- CSS
+- The Joi validation library
 - Canva for logo design and pictures.
 
-Data provided by the free version of the spoonacular API, which allows a limited number of API calls per day.
+It also features the following packages: React Router Dom for navigation and Toastify React for displaying messages to the user.
+
+Recipes are provided by the free version of the spoonacular API, which allows a limited number of API calls per day.
 
 The back end was built using:
-- Node.js;
-- Express.js;
-- SQL database;
+
+- Node.js
+- Express.js
+- An SQL database
 
 Backend files are available in the [recipe-app-backend repository](https://github.com/letizia-sorrentino/recipe-app-backend)
 
-# Live Website
+## Live Website
 
 [Love Food](https://lovefoodapp.co.uk/)
 
-# Available Scripts
+## Available Scripts
 
 `npm run dev`open [http://localhost:3000](http://localhost:3000) to view it in your browser.
