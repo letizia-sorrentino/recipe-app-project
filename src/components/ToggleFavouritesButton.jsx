@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import {
   selectFavourites,
   toggleFavouritedRecipe,
+  storeFavourites,
 } from "../app/recipeManagerSlice";
 import { setMessage } from "../app/accountSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
@@ -9,11 +10,37 @@ import axios from "axios";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import MessageContainer from "./MessageContainer";
+import { url } from "../app/config";
+import { getRecipesInfo } from "../app/recipeAPI";
 
 const ToggleFavouritesButton = (props) => {
   const favourites = useSelector(selectFavourites);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const token = localStorage.getItem("token");
+
+  const fetchFavourites = async () => {
+    try {
+      const { data } = await axios.get(`${url}/favourites/`, {
+        headers: {
+          token: token,
+        },
+      });
+      console.log(token);
+      console.log(data);
+      console.log(data.results);
+
+      const favouritesIds = data.results
+        .map((recipe) => recipe.recipeId)
+        .join(",");
+      //send data to the store
+      dispatch(storeFavourites(favouritesIds));
+      getRecipesInfo(favouritesIds);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const onSaveInput = async () => {
     const token = localStorage.getItem("token");
@@ -26,15 +53,13 @@ const ToggleFavouritesButton = (props) => {
     if (favourites.includes(props.id)) {
       //delete the recipe
       try {
-        const result = await axios.delete(
-          `https://api.lovefoodapp.co.uk/favourites/${props.id}`,
-          {
-            headers: {
-              token: token,
-            },
-          }
-        );
+        const result = await axios.delete(`${url}/favourites/${props.id}`, {
+          headers: {
+            token: token,
+          },
+        });
         console.log(result.data);
+        fetchFavourites();
       } catch (error) {
         console.log(error);
       }
@@ -42,7 +67,7 @@ const ToggleFavouritesButton = (props) => {
       //add recipe
       try {
         const results = await axios.post(
-          `https://api.lovefoodapp.co.uk/favourites/`,
+          `${url}/favourites/`,
           { recipeId: props.id },
 
           {
@@ -51,14 +76,17 @@ const ToggleFavouritesButton = (props) => {
             },
           }
         );
-        console.log(results.data);
-        dispatch(toggleFavouritedRecipe(props.id));
+        console.log("error", results.data);
+        fetchFavourites();
+        //dispatch(toggleFavouritedRecipe(props.id));
         navigate("/favourites");
       } catch (error) {
         console.log(error);
       }
     }
   };
+
+  if (!token) return;
 
   return (
     <>

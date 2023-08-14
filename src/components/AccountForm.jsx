@@ -11,6 +11,7 @@ import { validate } from "../validation/index";
 import axios from "axios";
 import MessageContainer from "./MessageContainer";
 import "../styles/accountForm.css";
+import { url } from "../app/config";
 
 const AccountForm = () => {
   const [email, setEmail] = useState("");
@@ -41,7 +42,7 @@ const AccountForm = () => {
 
       //create account in SQL
       const response = await axios.post(
-        `https://api.lovefoodapp.co.uk/account/register`,
+        `${url}}/account/register`,
         { email, password }
       );
       console.log("server response", response);

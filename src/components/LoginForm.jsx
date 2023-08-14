@@ -7,6 +7,7 @@ import axios from "axios";
 import { setMessage } from "../app/accountSlice";
 import MessageContainer from "./MessageContainer";
 import "../styles/accountForm.css";
+import { url } from "../app/config";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -32,7 +33,7 @@ const LoginForm = () => {
     if (!result) {
       //send the validation result to the backend
       const response = await axios.post(
-        `https://api.lovefoodapp.co.uk/account/login`,
+        `${url}/account/login`,
         {
           email,
           password,

@@ -8,6 +8,7 @@ import { getRecipesInfo } from "../app/recipeAPI";
 import axios from "axios";
 import ToggleFavouritesButton from "./ToggleFavouritesButton";
 import { Link } from "react-router-dom";
+import { url } from "../app/config";
 
 const SqlRecipesList = () => {
   const favouritedRecipes = useSelector(selectFavouritesRecipes);
@@ -19,7 +20,7 @@ const SqlRecipesList = () => {
 
     try {
       const { data } = await axios.get(
-        "https://api.lovefoodapp.co.uk/favourites/",
+        `${url}/favourites/`,
         {
           headers: {
             token: token,

@@ -30,6 +30,7 @@ export const recipeManagerSlice = createSlice({
         const indexOf = state.favourites.indexOf(action.payload);
         state.favourites.splice(indexOf, 1);
       } else {
+        console.log("pushing");
         state.favourites.push(action.payload)
       }
     },
