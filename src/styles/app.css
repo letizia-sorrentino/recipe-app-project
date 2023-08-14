@@ -58,7 +58,7 @@ button {
 }
 
 /* Search Bar */
-.searchBarContainer {
+.searchForm {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 0.5rem;
@@ -126,6 +126,8 @@ button {
 .recipeLink {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+
 }
 
 .addButton {
@@ -167,10 +169,7 @@ button {
     gap: 1rem;
   }
 
-  .recipeTile {
-   
-    
-  }
+  .recipeTile {}
 
   .recipeImage {
     height: auto;

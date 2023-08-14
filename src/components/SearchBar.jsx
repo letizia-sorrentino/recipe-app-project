@@ -32,23 +32,30 @@ const SearchBar = () => {
   return (
     <>
       <div className="searchBarContainer">
-        <input
-          className="searchBar"
-          type="text"
-          placeholder="Search Recipes..."
-          autoFocus={true}
-          value={searchInput}
-          onInput={onSearchInput}
-        />
-
-        <button
-          className="searchButton"
-          onClick={() => {
+        <form
+          className="searchForm"
+          onSubmit={(e) => {
+            e.preventDefault();
             getRecipes(searchInput);
           }}
         >
-          <img className="forwardArrow" src={forwardArrow} alt="forwardArrow" />
-        </button>
+          <input
+            className="searchBar"
+            type="text"
+            placeholder="Search Recipes..."
+            autoFocus={true}
+            value={searchInput}
+            onInput={onSearchInput}
+          />
+
+          <button className="searchButton">
+            <img
+              className="forwardArrow"
+              src={forwardArrow}
+              alt="forwardArrow"
+            />
+          </button>
+        </form>
       </div>
       <div className="errorMessage">
         {" "}

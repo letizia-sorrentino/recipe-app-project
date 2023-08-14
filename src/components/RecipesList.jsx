@@ -10,19 +10,27 @@ const RecipesList = () => {
 
   if (!recipes || recipes.length === 0) return <Loading />;
 
-  const renderedRecipes = recipes.map((recipe) => (
-    <div className="recipeListContainer" key={recipe.id}>
-      <div className="recipeTile">
-        <img className="recipeImage" src={recipe.image} alt={recipe.title} />
-        <div className="recipeListInfo">
+  const renderedRecipes = recipes
+    .filter((recipe) => recipe.image)
+    .map((recipe) => (
+      <div className="recipeListContainer" key={recipe.id}>
+        <div className="recipeTile">
           <Link className="recipeLink" to={"/recipe/" + recipe.id}>
-            <h3 className="recipeTitle">{recipe.title}</h3>
+            <img
+              className="recipeImage"
+              src={recipe.image}
+              alt={recipe.title}
+            />
           </Link>
-          <ToggleFavouritesButton id={recipe.id} />
+          <div className="recipeListInfo">
+            <Link className="recipeLink" to={"/recipe/" + recipe.id}>
+              <h3 className="recipeTitle">{recipe.title}</h3>
+            </Link>
+            <ToggleFavouritesButton id={recipe.id} />
+          </div>
         </div>
       </div>
-    </div>
-  ));
+    ));
 
   return <section>{renderedRecipes}</section>;
 };
