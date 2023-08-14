@@ -3,7 +3,7 @@
 .logoContainer {
   display: grid;
   justify-items: center;
-  grid-template-rows: 20vh 50vh;
+  grid-template-rows: 10vh 50vh;
 }
 
 .logo {
