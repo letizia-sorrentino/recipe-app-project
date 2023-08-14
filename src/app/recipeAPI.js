@@ -2,6 +2,7 @@ import axios from "axios";
 import apiKey from "./config";
 import { store } from "./store";
 import { storeRecipes, storeFavoritesRecipes } from "./recipeManagerSlice";
+import APIErrorPage from "../pages/APIErrorPage";
 
 // get recipes from API based on search input
 export const getRecipes = async (searchInput) => {
@@ -15,6 +16,9 @@ export const getRecipes = async (searchInput) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
+    if (error === 401) {
+      return <APIErrorPage />
+    }
   }
 };
 
@@ -30,6 +34,9 @@ export const getRandomRecipes = async () => {
     store.dispatch(storeRecipes(data.recipes));
   } catch (error) {
     console.log(error);
+    if (error === 401) {
+      return <APIErrorPage />
+    }
   }
 };
 
@@ -46,6 +53,9 @@ export const getRecipesByType = async (type) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
+    if (error === 401) {
+      return <APIErrorPage />
+    }
   }
 };
 
@@ -62,6 +72,9 @@ export const getRecipesByDiet = async (diet) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
+    if (error === 401) {
+      return <APIErrorPage />
+    }
   }
 };
 
@@ -73,5 +86,8 @@ export const getRecipesInfo = async (ids) => {
     store.dispatch(storeFavoritesRecipes(data));
   } catch (error) {
     console.log(error);
+    if (error === 401) {
+      return <APIErrorPage />
+    }
   }
 };

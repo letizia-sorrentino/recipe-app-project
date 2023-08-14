@@ -1,4 +1,3 @@
-import RecipesList from "../components/RecipesList";
 import SearchBar from "../components/SearchBar";
 import vegetarianDish from "../assets/vegetarianDish.png";
 import veganDish from "../assets/veganDish.png";
@@ -7,6 +6,7 @@ import whole30Dish from "../assets/Whole30Dish.png";
 import { getRecipesByDiet } from "../app/recipeAPI";
 import { Link } from "react-router-dom";
 import "../styles/homepage.css";
+import RecipesList from "../components/RecipesList";
 
 const Homepage = () => {
   return (
@@ -16,15 +16,22 @@ const Homepage = () => {
         <div>
           <SearchBar />
         </div>
+        <div>
+          <h2>Recipes</h2>
+          <RecipesList />
+        </div>
       </div>
-      <div>
-        <h2>Recipes</h2>
-        <RecipesList />
-      </div>
+
       <div>
         <h2>Popular Recipes</h2>
         <div className="categoriesContainer">
-          <div className="categoryCard">
+          <div
+            className="categoryCard"
+            onClick={() => {
+              getRecipesByDiet("vegetarian");
+              console.log("vegetarian recipes");
+            }}
+          >
             <Link className="categoryLink" to={"/searchResults"}>
               <div>
                 <img
@@ -34,19 +41,17 @@ const Homepage = () => {
                 />
               </div>
               <div>
-                <button
-                  className="categoryTitle"
-                  onClick={() => {
-                    getRecipesByDiet("vegetarian");
-                    console.log("vegetarian recipes");
-                  }}
-                >
-                  Vegeterian
-                </button>
+                <button className="categoryTitle">Vegeterian</button>
               </div>
             </Link>
           </div>
-          <div className="categoryCard">
+          <div
+            className="categoryCard"
+            onClick={() => {
+              getRecipesByDiet("vegan");
+              console.log("vegan recipes");
+            }}
+          >
             <Link className="categoryLink" to={"/searchResults"}>
               <div>
                 <img
@@ -56,19 +61,17 @@ const Homepage = () => {
                 />
               </div>
               <div>
-                <button
-                  className="categoryTitle"
-                  onClick={() => {
-                    getRecipesByDiet("vegan");
-                    console.log("vegan recipes");
-                  }}
-                >
-                  Vegan
-                </button>
+                <button className="categoryTitle">Vegan</button>
               </div>
             </Link>
           </div>
-          <div className="categoryCard">
+          <div
+            className="categoryCard"
+            onClick={() => {
+              getRecipesByDiet("pescatarian");
+              console.log("pescatarian recipes");
+            }}
+          >
             <Link className="categoryLink" to={"/searchResults"}>
               <div>
                 <img
@@ -78,19 +81,17 @@ const Homepage = () => {
                 />
               </div>
               <div>
-                <button
-                  className="categoryTitle"
-                  onClick={() => {
-                    getRecipesByDiet("pescatarian");
-                    console.log("pescatarian recipes");
-                  }}
-                >
-                  Pescatarian{" "}
-                </button>
+                <button className="categoryTitle">Pescatarian </button>
               </div>
             </Link>{" "}
           </div>
-          <div className="categoryCard">
+          <div
+            className="categoryCard"
+            onClick={() => {
+              getRecipesByDiet("whole30");
+              console.log("whole30");
+            }}
+          >
             <Link className="categoryLink" to={"/searchResults"}>
               <div>
                 <img
@@ -100,15 +101,7 @@ const Homepage = () => {
                 />
               </div>
               <div>
-                <button
-                  className="categoryTitle"
-                  onClick={() => {
-                    getRecipesByDiet("whole30");
-                    console.log("whole30");
-                  }}
-                >
-                  Whole30
-                </button>
+                <button className="categoryTitle">Whole30</button>
               </div>
             </Link>{" "}
           </div>
