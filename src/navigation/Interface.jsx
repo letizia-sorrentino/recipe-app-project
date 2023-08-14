@@ -17,6 +17,7 @@ import NewAccount from "../components/NewAccount";
 import LoggedIn from "../components/LoggedIn";
 import LoggedOut from "../components/LoggedOut";
 import AccountDeleted from "../components/AccountDeleted";
+import NotFound from "../pages/NotFound";
 
 const Interface = () => {
   return (
@@ -38,6 +39,7 @@ const Interface = () => {
       <Route path="settings" element={<Settings />} />
       <Route path="searchResults" element={<SearchResults />} />
       <Route path="recipe/:id" element={<RecipeCard />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

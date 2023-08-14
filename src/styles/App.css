@@ -145,6 +145,13 @@ button {
   margin-left: 2rem;
 }
 
+.pageNotFoundContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+}
+
+
 /* Responsive Layout */
 /* Tablet */
 @media (min-width:600px) {}
