@@ -153,5 +153,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # files
-config.jsx
+config.js 
+
+
 

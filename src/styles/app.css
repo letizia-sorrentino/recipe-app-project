@@ -94,11 +94,17 @@ button {
 
 /* Recipes */
 .recipeListContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: right;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: start;
   margin-left: 2rem;
 }
+
+.recipeTile {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
 
 .recipeImage {
   border-radius: 1rem;
@@ -154,7 +160,30 @@ button {
 
 /* Responsive Layout */
 /* Tablet */
-@media (min-width:600px) {}
+@media (min-width:600px) {
+
+  .recipeListContainer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .recipeTile {
+   
+    
+  }
+
+  .recipeImage {
+    height: auto;
+    width: 40vw;
+  }
+
+  .recipeListInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: start;
+    width: 40vw;
+  }
+}
 
 /* Desktop */
 @media (min-width:960px) {}
