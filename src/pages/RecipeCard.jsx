@@ -3,11 +3,11 @@ import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import apiKey from "../features/recipes/config";
+import apiKey from "../app/config";
 import {
   storeRecipesDetails,
   selectRecipesDetails,
-} from "../features/recipes/recipeManagerSlice";
+} from "../app/recipeManagerSlice";
 import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
 import "../styles/recipeCard.css";
 

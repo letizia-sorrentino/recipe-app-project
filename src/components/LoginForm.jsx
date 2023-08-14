@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { validate } from "../../validation/index";
-import { loginSuccess } from "./accountSlice";
+import { validate } from "../validation/index";
+import { loginSuccess } from "../app/accountSlice";
 import axios from "axios";
-import { setMessage } from "./accountSlice";
-import "../../styles/accountForm.css";
-import MessageContainer from "../../components/MessageContainer";
+import { setMessage } from "../app/accountSlice";
+import MessageContainer from "./MessageContainer";
+import "../styles/accountForm.css";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");

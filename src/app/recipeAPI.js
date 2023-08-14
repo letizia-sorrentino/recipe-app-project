@@ -1,6 +1,6 @@
 import axios from "axios";
 import apiKey from "./config";
-import { store } from "../../app/store";
+import { store } from "./store";
 import { storeRecipes, storeFavoritesRecipes } from "./recipeManagerSlice";
 
 // get recipes from API based on search input

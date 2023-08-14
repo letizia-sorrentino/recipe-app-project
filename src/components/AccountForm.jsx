@@ -4,13 +4,13 @@ import {
   setStorePassword,
   createAccount,
   setMessage,
-} from "./accountSlice";
+} from "../app/accountSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { validate } from "../../validation/index";
+import { validate } from "../validation/index";
 import axios from "axios";
-import MessageContainer from "../../components/MessageContainer";
-import "../../styles/accountForm.css";
+import MessageContainer from "./MessageContainer";
+import "../styles/accountForm.css";
 
 const AccountForm = () => {
   const [email, setEmail] = useState("");

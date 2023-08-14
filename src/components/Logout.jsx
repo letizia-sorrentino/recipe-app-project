@@ -1,4 +1,4 @@
-import LogoutButton from "../features/account/LogoutButton";
+import LogoutButton from "./LogoutButton";
 import LoggedOut from "./LoggedOut";
 
 const Logout = () => {

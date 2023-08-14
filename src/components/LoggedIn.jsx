@@ -1,13 +1,15 @@
-import SearchBar from "../features/search/SearchBar";
-import RecipesList from "../features/recipes/RecipesList";
-import DeleteAccountButton from "../features/account/DeleteAccountButton";
+import SearchBar from "./SearchBar";
+import RecipesList from ".//RecipesList";
+import DeleteAccountButton from "./DeleteAccountButton";
 
 const LoggedIn = () => {
   return (
     <>
       <div>
         <h1>Hello!</h1>
-        <p className="userMessage">You are logged in! Search new recipes here:</p>
+        <p className="userMessage">
+          You are logged in! Search new recipes here:
+        </p>
         <SearchBar />
         <RecipesList />
       </div>

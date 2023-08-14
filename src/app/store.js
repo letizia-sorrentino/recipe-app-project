@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
-import recipeManagerReducer from '../features/recipes/recipeManagerSlice';
-import searchInputManagerReducer from '../features/search/searchInputManagerSlice';
-import accountManagerReducer from '../features/account/accountSlice'
+import recipeManagerReducer from './recipeManagerSlice';
+import searchInputManagerReducer from './searchInputManagerSlice';
+import accountManagerReducer from './accountSlice'
 
 export const store = configureStore({
   reducer: {

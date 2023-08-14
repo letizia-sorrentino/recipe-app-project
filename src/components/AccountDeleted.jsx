@@ -1,4 +1,4 @@
-import AccountForm from "../features/account/AccountForm";
+import AccountForm from "./AccountForm";
 import "../styles/accountForm.css";
 
 const AccountDeleted = () => {

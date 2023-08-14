@@ -2,8 +2,8 @@ import { useDispatch } from "react-redux";
 import {
   selectFavourites,
   toggleFavouritedRecipe,
-} from "../features/recipes/recipeManagerSlice";
-import { setMessage } from "../features/account/accountSlice";
+} from "../app/recipeManagerSlice";
+import { setMessage } from "../app/accountSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import axios from "axios";
 import { useSelector } from "react-redux";

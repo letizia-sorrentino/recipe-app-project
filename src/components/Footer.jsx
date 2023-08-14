@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Nav from "../navigation/Nav";
+import Nav from "./Nav";
 const Footer = () => {
   const [showNav, setShowNav] = useState(true);
   const location = useLocation();

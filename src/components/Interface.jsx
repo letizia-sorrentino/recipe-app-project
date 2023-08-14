@@ -7,16 +7,16 @@ import FavouriteRecipes from "../pages/FavouriteRecipes";
 import Settings from "../pages/Settings";
 import SearchResults from "../pages/SearchResults";
 import RecipeCard from "../pages/RecipeCard";
-import CreateAccount from "../components/CreateAccount.jsx";
-import DeleteAccount from "../components/DeleteAccount";
-import Login from "../components/Login";
-import Logout from "../components/Logout";
+import CreateAccount from "./CreateAccount.jsx";
+import DeleteAccount from "./DeleteAccount";
+import Login from "./Login";
+import Logout from "./Logout";
 import AccountPage from "../pages/AccountPage";
 import LoginPage from "../pages/LoginPage";
-import NewAccount from "../components/NewAccount";
-import LoggedIn from "../components/LoggedIn";
-import LoggedOut from "../components/LoggedOut";
-import AccountDeleted from "../components/AccountDeleted";
+import NewAccount from "./NewAccount";
+import LoggedIn from "./LoggedIn";
+import LoggedOut from "./LoggedOut";
+import AccountDeleted from "./AccountDeleted";
 import NotFound from "../pages/NotFound";
 
 const Interface = () => {

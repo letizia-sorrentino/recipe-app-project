@@ -1,4 +1,4 @@
-import LoginForm from "../features/account/LoginForm";
+import LoginForm from "./LoginForm";
 import LoggedIn from "./LoggedIn";
 
 const Login = () => {

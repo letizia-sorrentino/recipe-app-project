@@ -1,4 +1,4 @@
-import SqlRecipesList from "../features/recipes/SqlRecipesList";
+import SqlRecipesList from "../components/SqlRecipesList";
 
 const FavouriteRecipes = () => {
   return (
@@ -7,7 +7,6 @@ const FavouriteRecipes = () => {
         <h1>Saved Recipes</h1>
       </div>
       <SqlRecipesList />
-      
     </div>
   );
 };

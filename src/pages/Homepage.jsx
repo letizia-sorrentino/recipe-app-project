@@ -1,10 +1,10 @@
-import RecipesList from "../features/recipes/RecipesList";
-import SearchBar from "../features/search/SearchBar";
+import RecipesList from "../components/RecipesList";
+import SearchBar from "../components/SearchBar";
 import vegetarianDish from "../assets/vegetarianDish.png";
 import veganDish from "../assets/veganDish.png";
 import pescatarianDish from "../assets/pescatarianDish.png";
 import whole30Dish from "../assets/Whole30Dish.png";
-import { getRecipesByDiet } from "../features/recipes/recipeAPI";
+import { getRecipesByDiet } from "../app/recipeAPI";
 import { Link } from "react-router-dom";
 import "../styles/homepage.css";
 

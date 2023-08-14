@@ -1,9 +1,9 @@
-import { deleteAccount, setMessage } from "./accountSlice";
+import { deleteAccount, setMessage } from "../app/accountSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import MessageContainer from "../../components/MessageContainer";
-import "../../styles/accountForm.css";
+import MessageContainer from "./MessageContainer";
+import "../styles/accountForm.css";
 
 const DeleteAccountButton = () => {
   const dispatch = useDispatch();

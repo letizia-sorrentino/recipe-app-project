@@ -1,9 +1,12 @@
 import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { storeFavourites, selectFavouritesRecipes } from "./recipeManagerSlice";
-import { getRecipesInfo } from "./recipeAPI";
+import {
+  storeFavourites,
+  selectFavouritesRecipes,
+} from "../app/recipeManagerSlice";
+import { getRecipesInfo } from "../app/recipeAPI";
 import axios from "axios";
-import ToggleFavouritesButton from "../../components/ToggleFavouritesButton";
+import ToggleFavouritesButton from "./ToggleFavouritesButton";
 import { Link } from "react-router-dom";
 
 const SqlRecipesList = () => {

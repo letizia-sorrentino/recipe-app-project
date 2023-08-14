@@ -1,6 +1,6 @@
-import DeleteAccountButton from "../features/account/DeleteAccountButton";
+import DeleteAccountButton from "./DeleteAccountButton";
+import LoginForm from "./LoginForm";
 import "../styles/accountForm.css";
-import LoginForm from "../features/account/LoginForm";
 
 const DeleteAccount = () => {
   const token = localStorage.getItem("token");

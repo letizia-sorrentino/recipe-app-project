@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import { logoutSuccess, setMessage } from "./accountSlice";
+import { logoutSuccess, setMessage } from "../app/accountSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import MessageContainer from "../../components/MessageContainer";
-import "../../styles/accountForm.css";
+import MessageContainer from "./MessageContainer";
+import "../styles/accountForm.css";
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
