@@ -9,12 +9,7 @@ const Footer = () => {
     setShowNav(location.pathname !== "/");
   }, [location]);
 
-  return (
-    <>
-      {showNav && <Nav />}
-      {!showNav && <div></div>}
-    </>
-  );
+  return <>{showNav && <Nav />}</>;
 };
 
 export default Footer;
