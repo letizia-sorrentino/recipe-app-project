@@ -19,14 +19,11 @@ const SqlRecipesList = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const { data } = await axios.get(
-        `${url}/favourites/`,
-        {
-          headers: {
-            token: token,
-          },
-        }
-      );
+      const { data } = await axios.get(`${url}/favourites/`, {
+        headers: {
+          token: token,
+        },
+      });
       console.log(token);
       console.log(data);
       console.log(data.results);
@@ -66,7 +63,7 @@ const SqlRecipesList = () => {
 
   return (
     <>
-      <section>
+      <section className="recipeListsContainer">
         {renderedFavouriteRecipes.length === 0 && (
           <p className="userMessage">You have not saved any recipes yet!</p>
         )}{" "}

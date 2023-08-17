@@ -93,18 +93,23 @@ button {
 }
 
 /* Recipes */
+
+.recipeListsContainer {
+  margin-left: 2rem;
+  margin-right: 2rem;
+
+}
+
 .recipeListContainer {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: start;
-  margin-left: 2rem;
 }
 
 .recipeTile {
   display: grid;
   grid-template-columns: 1fr;
 }
-
 
 .recipeImage {
   border-radius: 1rem;
@@ -168,6 +173,7 @@ button {
     display: flex;
     flex-wrap: wrap;
     width: 90vw;
+    justify-content: space-around;
   }
 
   .recipeListContainer {
