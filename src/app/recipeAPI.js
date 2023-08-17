@@ -1,6 +1,6 @@
 import axios from "axios";
 import { store } from "./store";
-import { storeRecipes, storeFavoritesRecipes } from "./recipeManagerSlice";
+import { storeRecipes, storeFavoritesRecipes, storeRecipesDetails } from "./recipeManagerSlice";
 import { setMessage } from "./accountSlice";
 import { getApiKey } from "./config";
 
@@ -88,4 +88,18 @@ export const getRecipesInfo = async (ids) => {
   }
 };
 
+// get single recipe details
+  export const getRecipesDetails = async (id) => {
+    try {
+      //console.log("get recipes details");
+
+      const { data } = await axios.get(
+        `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${getApiKey()}`
+      );
+      //storeRecipesDetails(data);
+      store.dispatch(storeRecipesDetails(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 

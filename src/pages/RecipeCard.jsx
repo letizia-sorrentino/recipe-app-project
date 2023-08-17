@@ -1,40 +1,20 @@
 import React from "react";
-import { useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import axios from "axios";
-import {
-  storeRecipesDetails,
-  selectRecipesDetails,
-} from "../app/recipeManagerSlice";
+import { selectRecipesDetails } from "../app/recipeManagerSlice";
 import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
+import { getRecipesDetails } from "../app/recipeAPI";
 import "../styles/recipeCard.css";
-import { getApiKey } from "../app/config";
 
 const RecipeCard = () => {
   let params = useParams();
   const details = useSelector(selectRecipesDetails);
-  const dispatch = useDispatch();
-
-  // get single recipe details
-  const getRecipesDetails = useCallback(async () => {
-    try {
-      //console.log("get recipes details");
-
-      const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/${params.id}/information?&apiKey=${getApiKey()}`
-      );
-      //storeRecipesDetails(data);
-      dispatch(storeRecipesDetails(data));
-    } catch (error) {
-      console.log(error);
-    }
-  }, [dispatch, params.id]);
 
   useEffect(() => {
-    getRecipesDetails();
+    getRecipesDetails(params.id);
     //console.log(details);
-  }, [getRecipesDetails]);
+  }, [params.id]);
 
   return (
     <div className="recipeCardContainer">
