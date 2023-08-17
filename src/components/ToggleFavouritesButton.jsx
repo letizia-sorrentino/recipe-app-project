@@ -1,15 +1,10 @@
 import { useDispatch } from "react-redux";
-import {
-  selectFavourites,
-  toggleFavouritedRecipe,
-  storeFavourites,
-} from "../app/recipeManagerSlice";
+import { selectFavourites, storeFavourites } from "../app/recipeManagerSlice";
 import { setMessage } from "../app/accountSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import MessageContainer from "./MessageContainer";
 import { url } from "../app/config";
 import { getRecipesInfo } from "../app/recipeAPI";
 
@@ -97,7 +92,6 @@ const ToggleFavouritesButton = (props) => {
           <SaveIcon />
         )}
       </button>
-      <MessageContainer />
     </>
   );
 };

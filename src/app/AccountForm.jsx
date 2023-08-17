@@ -93,8 +93,6 @@ const AccountForm = () => {
           Create Account{" "}
         </button>
       </form>
-
-  
     </div>
   );
 };

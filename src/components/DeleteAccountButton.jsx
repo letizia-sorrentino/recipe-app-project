@@ -2,7 +2,6 @@ import { deleteAccount, setMessage } from "../app/accountSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import MessageContainer from "./MessageContainer";
 import "../styles/accountForm.css";
 
 const DeleteAccountButton = () => {
@@ -51,9 +50,6 @@ const DeleteAccountButton = () => {
       <button className="submitButton" type="submit" onClick={unregister}>
         Delete Account
       </button>
-      <div>
-        <MessageContainer />{" "}
-      </div>
     </>
   );
 };

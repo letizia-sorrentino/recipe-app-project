@@ -32,6 +32,6 @@ const RecipesList = () => {
       </div>
     ));
 
-  return <section>{renderedRecipes}</section>;
+  return <section className="recipeListsContainer">{renderedRecipes}</section>;
 };
 export default RecipesList;

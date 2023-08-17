@@ -2,7 +2,6 @@ import { useDispatch } from "react-redux";
 import { logoutSuccess, setMessage } from "../app/accountSlice";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import MessageContainer from "./MessageContainer";
 import "../styles/accountForm.css";
 
 const LogoutButton = () => {
@@ -41,10 +40,6 @@ const LogoutButton = () => {
       <button className="logoutButton" type="submit" onClick={logout}>
         Logout
       </button>
-      <div>
-        {" "}
-        <MessageContainer />
-      </div>
     </>
   );
 };

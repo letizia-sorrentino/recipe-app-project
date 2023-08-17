@@ -3,6 +3,7 @@ import { getRandomRecipes } from "./app/recipeAPI";
 import Interface from "./components/Interface";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import MessageContainer from "./components/MessageContainer";
 import "./styles/app.css";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <MessageContainer />
       <div className="appContainer">
         <header className="appHeader">
           <Header />

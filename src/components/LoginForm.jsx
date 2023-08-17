@@ -5,7 +5,6 @@ import { validate } from "../validation/index";
 import { loginSuccess } from "../app/accountSlice";
 import axios from "axios";
 import { setMessage } from "../app/accountSlice";
-import MessageContainer from "./MessageContainer";
 import "../styles/accountForm.css";
 import { url } from "../app/config";
 
@@ -32,13 +31,10 @@ const LoginForm = () => {
 
     if (!result) {
       //send the validation result to the backend
-      const response = await axios.post(
-        `${url}/account/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${url}/account/login`, {
+        email,
+        password,
+      });
 
       console.log("server response", response);
       const status = response.data.status;
@@ -99,9 +95,6 @@ const LoginForm = () => {
             </div>
           )}
         </form>
-      </div>
-      <div>
-        <MessageContainer />
       </div>
     </div>
   );

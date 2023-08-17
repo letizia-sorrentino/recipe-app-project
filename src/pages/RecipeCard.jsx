@@ -3,13 +3,13 @@ import { useEffect, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import apiKey from "../app/config";
 import {
   storeRecipesDetails,
   selectRecipesDetails,
 } from "../app/recipeManagerSlice";
 import ToggleFavouritesButton from "../components/ToggleFavouritesButton";
 import "../styles/recipeCard.css";
+import { getApiKey } from "../app/config";
 
 const RecipeCard = () => {
   let params = useParams();
@@ -22,7 +22,7 @@ const RecipeCard = () => {
       //console.log("get recipes details");
 
       const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/${params.id}/information?&apiKey=${apiKey}`
+        `https://api.spoonacular.com/recipes/${params.id}/information?&apiKey=${getApiKey()}`
       );
       //storeRecipesDetails(data);
       dispatch(storeRecipesDetails(data));
