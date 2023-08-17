@@ -191,4 +191,11 @@ button {
     height: auto;
     width: 30vw;
   }
+
+  .recipeListInfo {
+    display: grid;
+    grid-template-columns: 1fr 10vw;
+    justify-items: start;
+    width: 30vw;
+  }
 }
