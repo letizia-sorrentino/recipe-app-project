@@ -41,10 +41,10 @@ const AccountForm = () => {
       dispatch(createAccount(user));
 
       //create account in SQL
-      const response = await axios.post(
-        `${url}}/account/register`,
-        { email, password }
-      );
+      const response = await axios.post(`${url}/account/register`, {
+        email,
+        password,
+      });
       console.log("server response", response);
       const status = response.data.status;
 

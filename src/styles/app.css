@@ -169,16 +169,15 @@ button {
     gap: 1rem;
   }
 
-  .recipeTile {}
-
-  .recipeImage {
+  .recipeImage,
+  .savedRecipeImage {
     height: auto;
     width: 40vw;
   }
 
   .recipeListInfo {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 10vw;
     justify-items: start;
     width: 40vw;
   }

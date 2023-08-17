@@ -16,7 +16,7 @@ export const getRecipes = async (searchInput) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
-    if (error === 401) {
+    if (error === 402) {
       return <APIErrorPage />
     }
   }
@@ -34,7 +34,7 @@ export const getRandomRecipes = async () => {
     store.dispatch(storeRecipes(data.recipes));
   } catch (error) {
     console.log(error);
-    if (error === 401) {
+    if (error === 402) {
       return <APIErrorPage />
     }
   }
@@ -53,7 +53,7 @@ export const getRecipesByType = async (type) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
-    if (error === 401) {
+    if (error === 402) {
       return <APIErrorPage />
     }
   }
@@ -72,7 +72,7 @@ export const getRecipesByDiet = async (diet) => {
     store.dispatch(storeRecipes(data.results));
   } catch (error) {
     console.log(error);
-    if (error === 401) {
+    if (error === 402) {
       return <APIErrorPage />
     }
   }
@@ -86,7 +86,7 @@ export const getRecipesInfo = async (ids) => {
     store.dispatch(storeFavoritesRecipes(data));
   } catch (error) {
     console.log(error);
-    if (error === 401) {
+    if (error === 402) {
       return <APIErrorPage />
     }
   }
