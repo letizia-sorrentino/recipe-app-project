@@ -184,4 +184,11 @@ button {
 }
 
 /* Desktop */
-@media (min-width:960px) {}
+@media (min-width:960px) {
+
+  .recipeImage,
+  .savedRecipeImage {
+    height: auto;
+    width: 30vw;
+  }
+}
