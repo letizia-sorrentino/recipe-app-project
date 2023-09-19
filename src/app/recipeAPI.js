@@ -33,7 +33,7 @@ export const getRandomRecipes = async () => {
     //console.log("get recipes");
 
     const { data } = await axios.get(
-      `https://api.spoonacular.com/recipes/random?&apiKey=${getApiKey()}`
+      `https://api.spoonacular.com/recipes/random?number=4&apiKey=${getApiKey()}`
     );
     //send data to the store
     store.dispatch(storeRecipes(data.recipes));
@@ -89,17 +89,17 @@ export const getRecipesInfo = async (ids) => {
 };
 
 // get single recipe details
-  export const getRecipesDetails = async (id) => {
-    try {
-      //console.log("get recipes details");
+export const getRecipesDetails = async (id) => {
+  try {
+    //console.log("get recipes details");
 
-      const { data } = await axios.get(
-        `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${getApiKey()}`
-      );
-      //storeRecipesDetails(data);
-      store.dispatch(storeRecipesDetails(data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    const { data } = await axios.get(
+      `https://api.spoonacular.com/recipes/${id}/information?&apiKey=${getApiKey()}`
+    );
+    //storeRecipesDetails(data);
+    store.dispatch(storeRecipesDetails(data));
+  } catch (error) {
+    console.log(error);
+  }
+};
 
