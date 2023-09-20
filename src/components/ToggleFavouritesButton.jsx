@@ -69,7 +69,7 @@ const ToggleFavouritesButton = (props) => {
             },
           }
         );
-        console.log("error", results.data);
+        console.log(results.data);
         fetchFavourites();
       } catch (error) {
         console.log(error);

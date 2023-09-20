@@ -10,8 +10,8 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { validate } from "../validation/index";
 import axios from "axios";
-import "../styles/accountForm.css";
 import { url } from "../app/config";
+import "../styles/accountForm.css";
 
 const AccountForm = () => {
   const [email, setEmail] = useState("");
