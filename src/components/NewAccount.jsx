@@ -1,4 +1,5 @@
-import LoginForm from "./LoginForm";
+import SearchBar from "./SearchBar";
+import RecipesList from "./RecipesList";
 
 const NewAccount = () => {
   return (
@@ -6,8 +7,9 @@ const NewAccount = () => {
       <h1>Welcome to Love Food</h1>
       <p className="userMessage">Your account has been successfully created.</p>
 
-      <p className="userMessage">Login to start saving recipes</p>
-      <LoginForm />
+      <h2>Start saving recipes here:</h2>
+      <SearchBar />
+      <RecipesList />
     </>
   );
 };

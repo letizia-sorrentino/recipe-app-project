@@ -4,6 +4,7 @@ import {
   setStorePassword,
   createAccount,
   setMessage,
+  loginSuccess,
 } from "../app/accountSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -49,6 +50,18 @@ const AccountForm = () => {
 
       //toasts
       if (status === 1) {
+        //login user in the backend
+        const response2 = await axios.post(`${url}/account/login`, {
+          email,
+          password,
+        });
+        console.log("server response", response2);
+
+        //add token and dispatch to the store
+        localStorage.setItem("token", response2.data.token);
+        dispatch(loginSuccess(user));
+
+        //redirect to new account page
         navigate("/new");
       } else {
         dispatch(setMessage("Account not created, please try again."));
@@ -93,8 +106,6 @@ const AccountForm = () => {
           Create Account{" "}
         </button>
       </form>
-
-  
     </div>
   );
 };
