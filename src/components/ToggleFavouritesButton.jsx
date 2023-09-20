@@ -4,14 +4,12 @@ import { setMessage } from "../app/accountSlice";
 import { ReactComponent as SaveIcon } from "../assets/saveIcon.svg";
 import axios from "axios";
 import { useSelector } from "react-redux";
-//import { useNavigate } from "react-router-dom";
 import { url } from "../app/config";
 import { getRecipesInfo } from "../app/recipeAPI";
 
 const ToggleFavouritesButton = (props) => {
   const favourites = useSelector(selectFavourites);
   const dispatch = useDispatch();
-  //const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
 
@@ -73,8 +71,6 @@ const ToggleFavouritesButton = (props) => {
         );
         console.log("error", results.data);
         fetchFavourites();
-        //dispatch(toggleFavouritedRecipe(props.id));
-        //navigate("/favourites");
       } catch (error) {
         console.log(error);
       }
