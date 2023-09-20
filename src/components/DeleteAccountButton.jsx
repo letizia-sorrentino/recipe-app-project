@@ -2,6 +2,7 @@ import { deleteAccount, setMessage } from "../app/accountSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { url } from "../app/config";
 import "../styles/accountForm.css";
 
 const DeleteAccountButton = () => {
@@ -18,14 +19,11 @@ const DeleteAccountButton = () => {
     }
 
     //delete account from SQL
-    const response = await axios.delete(
-      `https://api.lovefoodapp.co.uk/account/`,
-      {
-        headers: {
-          token: token,
-        },
-      }
-    );
+    const response = await axios.delete(`${url}/account/`, {
+      headers: {
+        token: token,
+      },
+    });
     console.log("server response", response);
 
     const status = response.data.status;

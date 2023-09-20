@@ -5,8 +5,8 @@ import { validate } from "../validation/index";
 import { loginSuccess } from "../app/accountSlice";
 import axios from "axios";
 import { setMessage } from "../app/accountSlice";
-import "../styles/accountForm.css";
 import { url } from "../app/config";
+import "../styles/accountForm.css";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -38,12 +38,15 @@ const LoginForm = () => {
 
       console.log("server response", response);
       const status = response.data.status;
+      const errorType = response.data.reason;
 
       if (status === 1) {
         //add token and dispatch to the store
         localStorage.setItem("token", response.data.token);
         dispatch(loginSuccess(user));
         navigate("/loggedin");
+      } else if (errorType) {
+        dispatch(setMessage(errorType));
       } else {
         //handle error messages from the server
         dispatch(setMessage("Login failed, please try again."));

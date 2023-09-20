@@ -47,6 +47,7 @@ const AccountForm = () => {
       });
       console.log("server response", response);
       const status = response.data.status;
+      const errorType = response.data.reason;
 
       //toasts
       if (status === 1) {
@@ -63,6 +64,8 @@ const AccountForm = () => {
 
         //redirect to new account page
         navigate("/new");
+      } else if (errorType) {
+        dispatch(setMessage(errorType));
       } else {
         dispatch(setMessage("Account not created, please try again."));
       }
