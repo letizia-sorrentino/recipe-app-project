@@ -1,23 +1,27 @@
-
 /* Search Page */
 
 .filtersContainer {
-    margin-bottom: 2rem;
-  }
-  
-  .searchFilters {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .filterButton {
-    font-weight: 400;
-    width: 5rem;
-    margin: 0.5rem;
-    border-radius: 0.25rem;
-    border-style: solid;
-  }
+  margin-bottom: 2rem;
+}
 
-  .errorMessage {
-    margin-left: 2rem;
-  }
+.searchFilters {
+  display: flex;
+  justify-content: space-around;
+}
+
+.filterButton {
+  font-weight: 400;
+  width: 5rem;
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  border-style: solid;
+}
+
+.errorMessage {
+  margin-left: 2rem;
+}
+
+
+@media (min-width:960px) {
+  .searchResults {}
+}

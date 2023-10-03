@@ -199,6 +199,10 @@ button {
 /* Desktop */
 @media (min-width:960px) {
 
+  .recipeListsContainer {
+    max-width: 80vw;
+  }
+
   .recipeImage,
   .savedRecipeImage {
     height: auto;

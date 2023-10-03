@@ -12,17 +12,6 @@ const Homepage = () => {
   return (
     <>
       <div>
-        <h1>Find the best recipes:</h1>
-        <div>
-          <SearchBar />
-        </div>
-        <div>
-          <h2>Recipes</h2>
-          <RecipesList />
-        </div>
-      </div>
-
-      <div>
         <h2>Popular Recipes</h2>
         <div className="categoriesContainer">
           <div
@@ -105,6 +94,16 @@ const Homepage = () => {
               </div>
             </Link>{" "}
           </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Find the best recipes:</h2>
+        <div>
+          <SearchBar />
+        </div>
+        <div className="recipesList">
+          <RecipesList />
         </div>
       </div>
     </>
