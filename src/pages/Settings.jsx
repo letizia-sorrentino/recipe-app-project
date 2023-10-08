@@ -8,9 +8,9 @@ const Settings = () => {
   return (
     <>
       <div className="settingsContainer">
-        <div>
-          <h1>Settings</h1>
-        </div>
+        <h1>Settings</h1>
+
+        {/* <img className="" src={} alt="veggie-background" /> */}
         <div className="settingsList">
           {!token ? <SettingsLoggedIn /> : <SettingsLoggedOut />}
         </div>

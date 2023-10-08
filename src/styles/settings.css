@@ -1,4 +1,4 @@
-.settingsList{
+.settingsList {
     display: flex;
     flex-direction: column;
     margin-left: 2rem;
@@ -7,13 +7,14 @@
     border-radius: 1rem;
     height: 50vw;
 }
+
 .settingsLink {
     text-decoration: none;
     color: inherit;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: start;
-    align-items:center;
+    align-items: center;
     margin-left: 1rem;
 }
 
@@ -25,5 +26,5 @@
     fill: black;
     height: 1.5rem;
     width: 1.5rem;
-    
+
 }

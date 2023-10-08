@@ -6,16 +6,17 @@ import "../styles/searchPage.css";
 const SearchPage = () => {
   return (
     <>
-      <div>
+      <div className="pageTitle">
         <h1>Search</h1>
       </div>
       <div className="controlsBar">
         <SearchBar />
       </div>
       <div className="filtersContainer">
-        <h2>Popular filters:</h2>
+        <h2>Recipes by Meal</h2>
         <div className="searchFilters">
           <button
+            className="filterButton"
             onClick={() => {
               getRecipesByType("breakfast");
             }}
@@ -23,6 +24,7 @@ const SearchPage = () => {
             Breakfast
           </button>
           <button
+            className="filterButton"
             onClick={() => {
               getRecipesByType("lunch");
             }}
@@ -30,6 +32,7 @@ const SearchPage = () => {
             Lunch
           </button>
           <button
+            className="filterButton"
             onClick={() => {
               getRecipesByType("snack");
             }}
@@ -37,6 +40,7 @@ const SearchPage = () => {
             Snack
           </button>
           <button
+            className="filterButton"
             onClick={() => {
               getRecipesByType("dinner");
             }}
@@ -46,6 +50,8 @@ const SearchPage = () => {
         </div>
       </div>
       <div className="searchResults">
+        <h2>Popular recipes</h2>
+
         <RecipesList />
       </div>
     </>
