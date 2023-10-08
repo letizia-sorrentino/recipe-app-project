@@ -50,8 +50,7 @@ const SearchPage = () => {
         </div>
       </div>
       <div className="searchResults">
-        <h2>Popular recipes</h2>
-
+        <h2>Recipes</h2>
         <RecipesList />
       </div>
     </>

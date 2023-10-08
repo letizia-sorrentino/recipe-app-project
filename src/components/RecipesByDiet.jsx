@@ -4,7 +4,7 @@ import pescatarianDish from "../assets/pescatarianDish.png";
 import whole30Dish from "../assets/Whole30Dish.png";
 import { getRecipesByDiet } from "../app/recipeAPI";
 import { Link } from "react-router-dom";
-import "../styles/homepage.css";
+import "../styles/recipesByDiet.css";
 
 const RecipesByDiet = () => {
   return (
