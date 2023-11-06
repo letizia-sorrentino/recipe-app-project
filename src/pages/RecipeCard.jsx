@@ -16,6 +16,10 @@ const RecipeCard = () => {
     //console.log(details);
   }, [params.id]);
 
+  const instructions = details.instructions
+    ? details.instructions.split("\n")
+    : [];
+
   return (
     <div className="recipeCardContainer">
       <div className="recipeCardContent">
@@ -44,8 +48,8 @@ const RecipeCard = () => {
           <h3 className="ingredientsTitle">Ingredients</h3>
           {details.extendedIngredients ? (
             <ul className="ingredientsList">
-              {details.extendedIngredients.map((ingredient) => (
-                <li key={ingredient.id}>{ingredient.original}</li>
+              {details.extendedIngredients.map((ingredient, index) => (
+                <li key={index}>{ingredient.original}</li>
               ))}
             </ul>
           ) : (
@@ -55,10 +59,17 @@ const RecipeCard = () => {
 
         <div className="recipeCardInstructions">
           <h3 className="instructionsTitle">Instructions</h3>
-          <div
-            className="instructionsList"
-            dangerouslySetInnerHTML={{ __html: details.instructions }}
-          ></div>
+          {instructions.length > 0 ? (
+            <div className="instructionsList">
+              <ul>
+                {instructions.map((instruction, index) => (
+                  <li key={index}>{instruction}</li>
+                ))}
+              </ul>{" "}
+            </div>
+          ) : (
+            <p>No instructions available</p>
+          )}
         </div>
       </div>
     </div>
