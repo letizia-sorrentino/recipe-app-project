@@ -18,25 +18,26 @@ const RecipeCard = () => {
 
   return (
     <div className="recipeCardContainer">
-      <img
-        className="recipeCardImage"
-        src={details.image}
-        alt={details.title}
-      />
-
       <div className="recipeCardContent">
         <div className="recipeCardIntro">
-          <div className="recipeCardTitle">
-            <h2>{details.title}</h2>
-            <p className="recipeCardInfo">
-              Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}
-              minutes
-            </p>
-          </div>
+          <div className="recipeCardInfo">
+            <div className="recipeCardTitle">
+              <h2>{details.title}</h2>
+              <p className="recipeCardDetails">
+                Serves: {details.servings} - Ready in {details.readyInMinutes}{" "}
+                minutes
+              </p>
+            </div>
 
-          <div className="buttonContainer">
-            <ToggleFavouritesButton id={details.id} />{" "}
+            <div className="buttonContainer">
+              <ToggleFavouritesButton id={details.id} />{" "}
+            </div>
           </div>
+          <img
+            className="recipeCardImage"
+            src={details.image}
+            alt={details.title}
+          />
         </div>
 
         <div className="recipeCardIngredients">
