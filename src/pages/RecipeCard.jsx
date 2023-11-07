@@ -60,13 +60,10 @@ const RecipeCard = () => {
         <div className="recipeCardInstructions">
           <h3 className="instructionsTitle">Instructions</h3>
           {instructions.length > 0 ? (
-            <div className="instructionsList">
-              <ul>
-                {instructions.map((instruction, index) => (
-                  <li key={index}>{instruction}</li>
-                ))}
-              </ul>{" "}
-            </div>
+            <div
+              className="instructionsList"
+              dangerouslySetInnerHTML={{ __html: instructions }}
+            ></div>
           ) : (
             <p>No instructions available</p>
           )}
