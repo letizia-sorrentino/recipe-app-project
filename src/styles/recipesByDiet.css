@@ -39,9 +39,9 @@
 
 @media (min-width:960px) {
   .categoriesContainer {
-   
     display: flex;
-
+    justify-content: center;
+    align-items: center;
   }
 
 }
