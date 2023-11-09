@@ -75,6 +75,7 @@ button {
   margin-bottom: 1rem;
   border-radius: 0.5rem;
   border: 2px solid rgba(244, 201, 72, 255);
+  background-color: rgb(250, 250, 245);
 }
 
 .searchButton {
