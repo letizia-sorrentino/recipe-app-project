@@ -60,18 +60,13 @@ const RecipeCard = () => {
         <div className="recipeCardInstructions">
           <h3 className="instructionsTitle">Instructions</h3>
           {instructions.length > 0 ? (
-            <div
-              className="instructionsList"
-              // dangerouslySetInnerHTML={{ __html: instructions }}
-            >
-              {instructions
-                // .filter((instruction) => instruction.includes("<li>"))
-                .map((instruction, index) => (
-                  <p
-                    key={index}
-                    dangerouslySetInnerHTML={{ __html: instruction }}
-                  />
-                ))}
+            <div className="instructionsList">
+              {instructions.map((instruction, index) => (
+                <p
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: instruction }}
+                />
+              ))}
             </div>
           ) : (
             <p>No instructions available</p>

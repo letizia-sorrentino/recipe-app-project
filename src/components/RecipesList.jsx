@@ -12,6 +12,9 @@ const RecipesList = () => {
 
   const renderedRecipes = recipes
     .filter((recipe) => recipe.image)
+    // .filter((recipe) =>
+    //   /<ol>.*?<li>.*?<\/li>.*?<\/ol>/.test(recipe.instructions)
+    // )
     .map((recipe) => (
       <div className="recipeListContainer" key={recipe.id}>
         <div className="recipeTile">
